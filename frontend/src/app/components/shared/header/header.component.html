@@ -1,0 +1,9 @@
+<nav class="navbar navbar-dark bg-dark">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item" data-target=".navbar-collapse.show" data-toggle="collapse">
+            <a class="btn btn-outline-light btn-lg" href="#" data-toggle="collapse" *ngIf="!authenticationService.isAuthenticated()" routerLink="/ingreso">
+                <i class="fas fa-key"></i> Iniciar Sesion
+            </a>
+        </li>
+    </ul>
+</nav>

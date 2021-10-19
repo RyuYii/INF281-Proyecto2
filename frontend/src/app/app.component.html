@@ -1,0 +1,24 @@
+<app-header></app-header>
+<!-- <app-login></app-login> -->
+<!-- <app-usuario-dashboard></app-usuario-dashboard> -->
+<router-outlet></router-outlet>
+
+<app-footer></app-footer>
+
+<ngx-spinner bdColor="rgba(0,0,0,0.57)" size="large" color="#14411b" type="ball-fussion" [fullScreen]="true">
+    <h3 class="p-3" style="color: white"> Recuperando Información... </h3>
+</ngx-spinner>
+
+<!-- <ng-template #sesionTemplate>
+    <div class="modal-header">
+        <h4 class="modal-title pull-left">Aviso</h4>
+    </div>
+    <div class="modal-body">
+        Su sesión finalizara en {{tiempo}}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="continuar()">Continuar</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="finalizarSesion()">Finalizar Sesión</button>
+    </div>
+
+</ng-template> -->

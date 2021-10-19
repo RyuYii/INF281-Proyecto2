@@ -1,0 +1,30 @@
+version: '3.8'
+services:
+    mysql:
+        build:
+            context: . 
+            dockerfile: DockerFile
+        container_name: mysql
+        restart: always
+        ports:
+            - 23306:3306
+        environment: 
+            MYSQL_ROOT_PASSWORD: "Proyecto2_INF281"
+            MYSQL_DATABASE: "db_gestor"
+            MYSQL_USER: "grupo6"
+            MYSQL_PASSWORD: "user_grupo6"
+        volumes:
+            - ./schemas:/var/lib/mysql:rw
+        networks:
+            mysql_network:
+                aliases:
+                    - mysql_host
+volumes:
+    schemas: {}
+networks:
+    mysql_network:
+        name: mysql_net
+        driver: bridge
+
+
+        
