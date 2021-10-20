@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,9 @@ import { ConfirmModalComponent } from './components/modal/confirm-modal/confirm-
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { ModalModule } from 'ngx-bootstrap/modal';
+
+import { IntercepterRequestService } from './services/util/intercepter-request.service';
+import { BnNgIdleService } from 'bn-ng-idle';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,19 @@ import { ModalModule } from 'ngx-bootstrap/modal';
     ReactiveFormsModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
-  providers: [],
+  providers: [
+    DatePipe,
+    BnNgIdleService,
+    {
+      provide: LOCALE_ID,
+      useValue: 'es-BO',
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: IntercepterRequestService,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

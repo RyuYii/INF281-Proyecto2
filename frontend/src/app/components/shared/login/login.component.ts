@@ -29,17 +29,9 @@ export class LoginComponent implements OnInit {
     this.authenticationService.authenticate(this.username, this.password)
       .subscribe(
         (response) => {
-          console.log('======================response======================');
-          console.log(response);
-          console.log('====================================================');
-          if (!this.authenticationService.isRole('ROLE_USER')) {
-
-            this.router.navigate(['welcome']);
-          } else {
-            this.authenticationService.logout();
-            this.sinRoles = true;
-            // this.captchaRef.reset();
-          }
+          // this.authenticationService.saveToken(response['token'])
+          console.log(this.authenticationService.getAuthenticatedToken())
+          this.router.navigate(['welcome']);
         },
         error => {
           this.errorLogin = true;

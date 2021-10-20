@@ -21,12 +21,11 @@ export class AuthenticationService {
         map(
           response => {
             
-            sessionStorage.setItem(TOKEN, response.headers.get('Authorization'));
+            sessionStorage.setItem(TOKEN, response.body['token']);
             //SI SOLO TIENE ESTE ROL, SIGNIFICA QUE NO TIENE NINGUN ROL HABILITADO EN LA TABLA ADM_USUARIOS_ROLES
             // if (!this.isRole('ROLE_USER')) {
             //   this.setConfiguration();
             // } 
-            console.log(response.headers.get('Authorization'));
           }
         )
       );
@@ -42,7 +41,7 @@ export class AuthenticationService {
   getAuthenticatedUser() {
     return sessionStorage.getItem(TOKEN);
   }
-  
+
   getAuthenticatedToken() {
     if (this.getAuthenticatedUser()) {
       return sessionStorage.getItem(TOKEN);

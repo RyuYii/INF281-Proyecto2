@@ -37,7 +37,7 @@ class Login(Resource):
       # revoked_store.set(get_jti(access_token), "false", expires * 1.2)
     #   createToken(get_jti(access_token),False,expires * 1.2)
       expiresTime = datetime.today() + expires
-      return messageToken(access_token,str(expiresTime), Routes.protected )
+      return messageToken(access_token, str(expiresTime), Routes.protected)
     else:
       return messages.adminLoginError, HTTPStatus.UNAUTHORIZED
 

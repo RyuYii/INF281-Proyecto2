@@ -5,6 +5,7 @@ from flask_jwt_extended import JWTManager, create_access_token, exceptions, jwt_
 from  Configuration import Configuration
 from Routes import Routes
 from flask import jsonify
+from flask_cors import CORS
 
 from logging.handlers import RotatingFileHandler
 import logging
@@ -21,6 +22,8 @@ handler = RotatingFileHandler(LOG_FILENAME, maxBytes=40000000, backupCount=40)
 logger.addHandler(handler)
 
 app = Flask(__name__)
+
+CORS(app) # This will enable CORS for all routes
 errors = {
   'InternalError': {
       'message': "Internal Error. Wait few Minutes or Contact the Administrator",
@@ -62,21 +65,6 @@ api.add_resource(resources.Index, Routes.index)
 api.add_resource(resources.Login, Routes.login)    
 api.add_resource(resources.Protected, Routes.protected)    
 api.add_resource(resources.UserLogoutAccess, Routes.logout)
-
-
-# @app.route("/token", methods=["POST"])
-# def create_token():
-#     username = request.json.get("username", None)
-#     password = request.json.get("password", None)
-#     # Consulta la base de datos por el nombre de usuario y la contraseña
-#     user = User.filter.query(username=username, password=password).first()
-#     if user is None:
-#           # el usuario no se encontró en la base de datos
-#         return jsonify({"msg": "Bad username or password"}), 401
-    
-#     # crea un nuevo token con el id de usuario dentro
-#     access_token = create_access_token(identity=user.id)
-#     return jsonify({ "token": access_token, "user_id": user.id })
 
 @jwt.expired_token_loader
 def my_expired_token_callback(expired_token):

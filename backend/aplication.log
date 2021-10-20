@@ -287,3 +287,127 @@ Python-dotenv could not parse statement starting at line 15
 127.0.0.1 - - [19/Oct/2021 18:08:59] "OPTIONS /api/login HTTP/1.1" 200 -
 127.0.0.1 - - [19/Oct/2021 18:09:32] "OPTIONS /api/login HTTP/1.1" 200 -
 127.0.0.1 - - [19/Oct/2021 18:26:34] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [19/Oct/2021 18:29:12] "POST /api/login HTTP/1.1" 200 -
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [19/Oct/2021 21:31:43] "GET / HTTP/1.1" 404 -
+127.0.0.1 - - [19/Oct/2021 21:31:43] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [19/Oct/2021 21:31:53] "GET /api HTTP/1.1" 308 -
+127.0.0.1 - - [19/Oct/2021 21:31:53] "GET /api/ HTTP/1.1" 200 -
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [20/Oct/2021 08:20:29] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 08:20:37] "OPTIONS /api/login HTTP/1.1" 200 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [20/Oct/2021 08:29:00] "GET /token HTTP/1.1" 405 -
+127.0.0.1 - - [20/Oct/2021 08:29:09] "POST /token HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [20/Oct/2021 08:45:06] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 08:51:38] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 08:56:31] "OPTIONS /api/login HTTP/1.1" 200 -
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)

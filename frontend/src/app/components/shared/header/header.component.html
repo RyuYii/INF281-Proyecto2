@@ -5,5 +5,9 @@
                 <i class="fas fa-key"></i> Iniciar Sesion
             </a>
         </li>
+        <li class="nav-item " data-target=".navbar-collapse.show">
+            <a class="btn btn-outline-light m-3 " href="#" data-toggle="collapse" *ngIf="authenticationService.isAuthenticated()" (click)="authenticationService.logout()" routerLink="/ingreso">
+                Cerrar Sesion <i class="fas fa-sign-out-alt fa-flip-horizontal"></i></a>
+        </li>
     </ul>
 </nav>

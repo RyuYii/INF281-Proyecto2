@@ -27,8 +27,9 @@ export class IntercepterRequestService implements HttpInterceptor {
     if (token) {
       request = request.clone({
         setHeaders: {
-          Authorization: token
-        }
+          "Content-Type": "application/json",
+          'Authorization': 'Bearer '+token // ⬅⬅⬅ authorization token
+        } 
       });
     }
     return next.handle(request).pipe(
