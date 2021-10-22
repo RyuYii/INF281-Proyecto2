@@ -11,8 +11,11 @@ def createToken(jti: str, revoked: bool, expiresDelta: timedelta):
   # expireAt.replace(tzinfo=timezone.utc)
   # print (expireAt)
   # print(jti,expireAt,revoked)
-  result = db.jwt.insert_one({"jti": jti, "expireAt": expireAt, "revoked": revoked})
-  print (result.inserted_id)
+  # result = db.jwt.insert_one({"jti": jti, "expireAt": expireAt, "revoked": revoked})
+  cursor = db.cursor()
+  print(type(expireAt))
+  cursor.execute(f"INSERT INTO jwt(jti, expire, revoked) VALUES ('{jti}','{expireAt}',{revoked})")
+  db.close()
 
 
 def revokeToken(jti: str):

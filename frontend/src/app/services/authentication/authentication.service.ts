@@ -8,6 +8,43 @@ import { API_URL, TOKEN, AUTHENTICATED_USER} from './../../../environments/envir
   
   
 export class AuthenticationService {
+  modulos: any;
+  roles: any;
+  idRol: number;
+  
+  menus: any = [{
+    abrev: null,
+    descri: "INTEGR. PLANILLAS",
+    enlaces: [{
+        abrev: "PM",
+        descri: "Planilla Mensual",
+        estado: 1,
+        idCategoria: 1,
+        idEnlace: 1,
+        imagen: "",
+        orden: 0,
+        rutaEnlace: "/planilla_mensual"
+      },
+      {
+        abrev: "PM",
+        descri: "Planilla Mensual",
+        estado: 1,
+        idCategoria: 1,
+        idEnlace: 1,
+        imagen: "",
+        orden: 0,
+        rutaEnlace: "/planilla_mensual"
+      }],
+    estado: null,
+    icono: "fas fa-folder-open",
+    idCategoria: 1,
+    idModulo: null,
+    idRol: null,
+    orden: 1,
+  }];
+  menusUser: any = {}
+  menusUserGerencial: any = {}
+  menusUserRoot: any = {}
 
   constructor(
     private http: HttpClient,

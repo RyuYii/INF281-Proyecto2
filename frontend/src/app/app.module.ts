@@ -45,7 +45,6 @@ import { BnNgIdleService } from 'bn-ng-idle';
     FormsModule,
     ReactiveFormsModule
   ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [
     DatePipe,
     BnNgIdleService,

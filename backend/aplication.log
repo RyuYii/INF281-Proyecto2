@@ -411,3 +411,342 @@ Python-dotenv could not parse statement starting at line 15
  * Debugger is active!
  * Debugger PIN: 695-713-340
  * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [20/Oct/2021 15:47:57] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 15:47:57] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:02:06] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:03:48] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:03:48] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:04:17] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:04:18] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:04:53] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:04:54] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:07:52] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:07:52] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:08:00] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:09:07] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:09:08] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:10:19] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:10:19] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:10:49] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:10:50] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:11:22] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:11:22] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:12:32] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:12:32] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:13:39] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:13:39] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:14:18] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:14:18] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:14:52] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:14:53] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:16:47] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:16:48] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:35:32] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:35:32] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:35:54] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:35:54] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:36:13] "POST /token HTTP/1.1" 404 -
+127.0.0.1 - - [20/Oct/2021 16:36:24] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:36:39] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:36:39] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:37:52] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:37:53] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:37:55] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:37:56] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:38:28] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:38:29] "POST /api/login HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:41:30] "OPTIONS /api/users/authenticate HTTP/1.1" 404 -
+127.0.0.1 - - [20/Oct/2021 16:41:37] "OPTIONS /api/users/authenticate HTTP/1.1" 404 -
+127.0.0.1 - - [20/Oct/2021 16:42:03] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:42:04] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:42:45] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:42:45] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:46:15] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:46:15] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:49:02] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:49:02] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:49:13] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:49:13] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:51:32] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:51:32] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:51:41] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:56:36] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:56:36] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 16:56:40] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 16:59:10] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 17:00:30] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [20/Oct/2021 17:00:53] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 17:00:53] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 17:07:38] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 17:07:38] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 17:07:56] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [20/Oct/2021 17:07:56] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 08:06:28] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 08:06:29] "GET /api/protected HTTP/1.1" 401 -
+127.0.0.1 - - [21/Oct/2021 16:05:26] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:05:26] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:05:31] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:05:31] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:05:33] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:05:33] "GET /api/protected HTTP/1.1" 200 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Configuration.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 16:50:38] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:50:38] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 16:52:00] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:52:01] "POST /api/login HTTP/1.1" 500 -
+127.0.0.1 - - [21/Oct/2021 16:54:48] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:54:49] "POST /api/login HTTP/1.1" 500 -
+127.0.0.1 - - [21/Oct/2021 16:55:04] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:55:04] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 16:56:15] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:56:15] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 16:57:59] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:57:59] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 16:59:43] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 16:59:44] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 17:01:36] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 17:01:36] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 17:02:03] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 17:02:04] "POST /api/login HTTP/1.1" 500 -
+127.0.0.1 - - [21/Oct/2021 17:04:28] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 17:04:28] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 17:04:50] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 17:04:51] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\ModelJwt.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [21/Oct/2021 17:06:44] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 17:06:45] "POST /api/login HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat

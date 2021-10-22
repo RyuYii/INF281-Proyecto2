@@ -32,10 +32,10 @@ class Login(Resource):
     #   canAccess, permissions = havePermission(username=data["username"])
     #   if canAccess == False: # Verificar que tiene permisos de admin
     #     return messages.adminNotFound, HTTPStatus.FORBIDDEN
-      expires = timedelta(minutes=expiresMinutes)
+      expires = timedelta(days=expiresMinutes)
       access_token = create_access_token(identity = data["username"], expires_delta=expires)
       # revoked_store.set(get_jti(access_token), "false", expires * 1.2)
-    #   createToken(get_jti(access_token),False,expires * 1.2)
+      # createToken(get_jti(access_token),False,expires * 1.2)
       expiresTime = datetime.today() + expires
       return messageToken(access_token, str(expiresTime), Routes.protected)
     else:
