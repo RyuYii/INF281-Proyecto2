@@ -47,6 +47,6 @@ Thumbs.db
 
 # backend
 .env
-/backend/aplication.log
-/backend/__pycache__/
+backend/aplication.log
+backend/__pycache__/
 
