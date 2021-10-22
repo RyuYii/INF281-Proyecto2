@@ -12,39 +12,61 @@ export class AuthenticationService {
   roles: any;
   idRol: number;
   
-  menus: any = [{
-    abrev: null,
-    descri: "INTEGR. PLANILLAS",
-    enlaces: [{
-        abrev: "PM",
-        descri: "Planilla Mensual",
-        estado: 1,
-        idCategoria: 1,
-        idEnlace: 1,
-        imagen: "",
-        orden: 0,
-        rutaEnlace: "/planilla_mensual"
+  menus: any = [
+      {
+        descri: "Inicio",
+        rutaEnlace: "/welcome"
       },
       {
-        abrev: "PM",
-        descri: "Planilla Mensual",
-        estado: 1,
-        idCategoria: 1,
-        idEnlace: 1,
-        imagen: "",
-        orden: 0,
-        rutaEnlace: "/planilla_mensual"
-      }],
-    estado: null,
-    icono: "fas fa-folder-open",
-    idCategoria: 1,
-    idModulo: null,
-    idRol: null,
-    orden: 1,
-  }];
-  menusUser: any = {}
-  menusUserGerencial: any = {}
-  menusUserRoot: any = {}
+        descri: "Proyectos",
+        rutaEnlace: "/dashboard"
+      },
+      {
+        descri: "About",
+        rutaEnlace: "/about"
+      },
+    ];
+
+  menusUser: any = [
+    {
+      descri: "Perfil",
+      rutaEnlace: "/perfil"
+    },
+    {
+      descri: "About",
+      rutaEnlace: "/welcome"
+    },
+  ];
+
+  menusUserGerencial: any = [
+    {
+      descri: "Perfil",
+      rutaEnlace: "/perfil"
+    },
+    {
+      descri: "mis Proyectos",
+      rutaEnlace: "/welcome"
+    },
+    {
+      descri: "About",
+      rutaEnlace: "/welcome"
+    },
+  ];
+
+  menusUserRoot: any = [
+      {
+        descri: "Inicio",
+        rutaEnlace: "/welcome"
+      },
+      {
+        descri: "Proyectos",
+        rutaEnlace: "/welcome"
+      },
+      {
+        descri: "About",
+        rutaEnlace: "/welcome"
+      },
+    ];
 
   constructor(
     private http: HttpClient,

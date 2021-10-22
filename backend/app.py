@@ -11,7 +11,6 @@ from logging.handlers import RotatingFileHandler
 import logging
 import Resources as resources
 import traceback
-import requests as request
 
 
 # logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)

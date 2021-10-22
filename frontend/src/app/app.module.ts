@@ -18,6 +18,11 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { IntercepterRequestService } from './services/util/intercepter-request.service';
 import { BnNgIdleService } from 'bn-ng-idle';
+import { PerfilComponent } from './components/perfil/perfil.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormularioProyectoComponent } from './components/formulario-proyecto/formulario-proyecto.component';
+import { FormularioRegistroComponent } from './components/formulario-registro/formulario-registro.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +31,12 @@ import { BnNgIdleService } from 'bn-ng-idle';
     HeaderComponent,
     FooterComponent,
     WelcomeComponent,
-    ConfirmModalComponent
+    ConfirmModalComponent,
+    PerfilComponent,
+    DashboardComponent,
+    FormularioProyectoComponent,
+    FormularioRegistroComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
