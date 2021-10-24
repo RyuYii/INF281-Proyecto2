@@ -35,19 +35,19 @@ export class IntercepterRequestService implements HttpInterceptor {
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {
         // this.loader.stop();
-        console.log(error);
+        //console.log(error);
         let errorMsg = '';
         if (error.error instanceof ErrorEvent) {
-          console.log('this is client side error');
+          //console.log('this is client side error');
           errorMsg = `Error: ${error.error.message}`;
         }
         else {
-          console.log(error);
+          //console.log(error);
 
-          console.log('this is server side error');
+          //console.log('this is server side error');
           errorMsg = `Error Code: ${error.status},  Message: ${error.error.message} ${error}`;
         }
-        console.log(errorMsg);
+        //console.log(errorMsg);
         this.spinner.hide();                
         if (error.error.trace && error.error.trace.includes('SibsoException')) {
           this.errorHandlerService.openModalWithComponent('Restriccion', error.error.message);

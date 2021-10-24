@@ -2,7 +2,7 @@ from flask import Flask, session
 from flask_restful import Api
 from flask_session import Session
 from flask_jwt_extended import JWTManager, create_access_token, exceptions, jwt_required, get_jwt_identity
-from  Configuration import Configuration
+from Configuration import Configuration
 from Routes import Routes
 from flask import jsonify
 from flask_cors import CORS
@@ -41,29 +41,12 @@ app.config['JWT_SECRET_KEY'] = Configuration.JWT_SECRET_KEY
 app.config['PROPAGATE_EXCEPTIONS'] = True
 jwt = JWTManager(app)
 
-# app.config['JWT_BLACKLIST_ENABLED'] = True
-# app.config['JWT_BLACKLIST_TOKEN_CHECKS'] = ['access']
-
-
-# @jwt.token_in_blacklist_loader
-# def check_if_token_in_blacklist(decrypted_token):
-# 	jti = decrypted_token['jti']
-# 	try:
-# 		# entry = resources.revoked_store.get(jti)
-# 		entry = resources.getToken(jti,False)
-# 	except:
-# 		traceback.print_exc()
-# 		logger.error("Error", exc_info=1)
-# 		entry = None
-# 	if entry is None:
-# 			return True
-# 	entry.get("revoked",True) == True
-
-
 api.add_resource(resources.Index, Routes.index)
 api.add_resource(resources.Login, Routes.login)    
+api.add_resource(resources.SignIn, Routes.signin)
 api.add_resource(resources.Protected, Routes.protected)    
 api.add_resource(resources.UserLogoutAccess, Routes.logout)
+api.add_resource(resources.ObtenerRol, Routes.obtenerRol)
 
 @jwt.expired_token_loader
 def my_expired_token_callback(expired_token):

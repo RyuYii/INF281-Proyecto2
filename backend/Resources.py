@@ -10,7 +10,7 @@ from Configuration import Configuration
 from Responses import clientResponses as messages, messageToken, addNextRoute
 from auth import verifyLogin
 from Routes import Routes
-
+from Querys import Querys
 
 expiresMinutes = Configuration.TOKEN_MINUTES_LIFE
 
@@ -26,14 +26,14 @@ parser.add_argument('password', type=str, help = 'This field cannot be blank', r
 class Login(Resource):
   def post(self):
     data = parser.parse_args()
-    verify = verifyLogin(data["username"], data["password"])
+    verify, user = verifyLogin(data["username"], data["password"])
     if verify == True:
       # Verificar que tiene permisos de admin
     #   canAccess, permissions = havePermission(username=data["username"])
     #   if canAccess == False: # Verificar que tiene permisos de admin
     #     return messages.adminNotFound, HTTPStatus.FORBIDDEN
       expires = timedelta(days=expiresMinutes)
-      access_token = create_access_token(identity = data["username"], expires_delta=expires)
+      access_token = create_access_token(identity = user[0], expires_delta=expires)
       # revoked_store.set(get_jti(access_token), "false", expires * 1.2)
       # createToken(get_jti(access_token),False,expires * 1.2)
       expiresTime = datetime.today() + expires
@@ -42,15 +42,32 @@ class Login(Resource):
       return messages.adminLoginError, HTTPStatus.UNAUTHORIZED
 
 
+parserSI = reqparse.RequestParser()
+parserSI.add_argument('username', type=str, help = 'This field cannot be blank', required = True)
+parserSI.add_argument('password', type=str, help = 'This field cannot be blank', required = True)
+parserSI.add_argument('nombres', type=str, help = 'This field cannot be blank', required = True)
+parserSI.add_argument('apellidos', type=str, help = 'This field cannot be blank', required = True)
+parserSI.add_argument('fechaNac', type=str, help = 'This field cannot be blank')
+class SignIn(Resource):
+  def post(self):
+    return Querys.signIn(data)
 
 class Index(Resource):
   def get(self):
     return messages.index
 
+parserOR = reqparse.RequestParser()
+parserOR.add_argument('idUser', type=int, help = 'This field cannot be blank', required = True)
+class ObtenerRol(Resource):
+  @jwt_required
+  def post(self):
+    data = parserOR.parse_args()
+    return Querys.obtenerRol(data["idUser"])
+
 class Protected(Resource):
-    @jwt_required
-    def get(self):
-        return {"hola": "hola usuario logeado"}
+  @jwt_required
+  def get(self):
+      return {"hola": "hola usuario logeado"}
     
 class UserLogoutAccess(Resource):
   @jwt_required
@@ -64,4 +81,5 @@ class UserLogoutAccess(Resource):
     except:
       traceback.print_exc()
       app.logger.error("Error", exc_info=1)
-      return messages.defaultError    
+      return messages.defaultError   
+   

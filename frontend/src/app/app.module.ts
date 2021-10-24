@@ -23,6 +23,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { FormularioProyectoComponent } from './components/formulario-proyecto/formulario-proyecto.component';
 import { FormularioRegistroComponent } from './components/formulario-registro/formulario-registro.component';
 import { AboutComponent } from './components/about/about.component';
+import { AdminComponent } from './components/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { AboutComponent } from './components/about/about.component';
     DashboardComponent,
     FormularioProyectoComponent,
     FormularioRegistroComponent,
-    AboutComponent
+    AboutComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

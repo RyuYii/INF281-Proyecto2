@@ -1,5 +1,10 @@
+API = "/api/"
+
 class Routes:
-    index = "/api/"
-    login = "/api/login"
-    logout = "/api/logout"
-    protected = "/api/protected"
+    index = API
+    login = API+"login"
+    logout = API+"logout"
+    protected = API+"protected"
+    obtenerRol = API+"obtenerRol"
+    signin = API+"signin"
+    

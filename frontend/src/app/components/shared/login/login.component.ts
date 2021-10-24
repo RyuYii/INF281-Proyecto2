@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
         (response) => {
           // this.authenticationService.saveToken(response['token'])
-          console.log(this.authenticationService.getAuthenticatedToken())
+          //console.log(this.authenticationService.getAuthenticatedToken())
           this.router.navigate(['welcome']);
         },
         error => {

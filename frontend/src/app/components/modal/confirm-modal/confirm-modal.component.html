@@ -1,1 +1,15 @@
-<p>confirm-modal works!</p>
+<div class="alert-box">
+    <div class="modal-header text-center">
+        <h4 class="modal-title">Confirmación</h4>
+        <button type="button" class="close" aria-label="Close" (click)="_bsModalRef.hide()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        {{text}}
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="onConfirm()">Si</button>
+        <button type="button" class="btn btn-secondary" (click)="onCancel()">No</button>
+    </div>
+</div>

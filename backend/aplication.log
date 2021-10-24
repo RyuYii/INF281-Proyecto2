@@ -1,0 +1,258 @@
+127.0.0.1 - - [21/Oct/2021 21:55:09] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 21:55:09] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:01:47] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:01:47] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:21:48] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:21:48] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:21:53] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:21:55] "OPTIONS /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:21:55] "GET /api/protected HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:37:39] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 22:37:39] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 23:37:39] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Oct/2021 23:37:39] "POST /api/login HTTP/1.1" 200 -
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 19:56:51] "[31m[1mGET /api/protected HTTP/1.1[0m" 401 -
+127.0.0.1 - - [22/Oct/2021 20:29:30] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 20:29:30] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 21:58:55] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 21:58:55] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:06:25] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:06:25] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:08:51] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:08:51] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:11:00] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:11:01] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:11:39] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:11:39] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:12:24] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:12:25] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:13:45] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:13:46] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:16:21] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:16:21] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:28:53] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:28:54] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:33:26] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:33:26] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+127.0.0.1 - - [22/Oct/2021 22:34:18] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:34:18] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:34:37] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:34:37] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:35:40] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:35:41] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:38:53] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:38:53] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:39:04] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:39:05] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:41:27] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:41:27] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [22/Oct/2021 22:42:18] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [22/Oct/2021 22:42:19] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\database.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\database.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 252-214-734
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 11:33:25] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:33:25] "POST /api/login HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 11:44:22] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:44:22] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:44:22] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:44:23] "[31m[1mPOST /api/obtenerRol HTTP/1.1[0m" 400 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 11:47:54] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:47:55] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:47:55] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:47:55] "[35m[1mPOST /api/obtenerRol HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 11:49:52] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:49:52] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:49:52] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:49:54] "POST /api/obtenerRol HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 11:53:12] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:53:13] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:53:13] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 11:53:14] "POST /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:16:03] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:16:03] "[35m[1mPOST /api/login HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\auth.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [23/Oct/2021 12:17:09] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:11] "[31m[1mPOST /api/login HTTP/1.1[0m" 401 -
+127.0.0.1 - - [23/Oct/2021 12:17:22] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:23] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:23] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:25] "POST /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:36] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:38] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:38] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [23/Oct/2021 12:17:39] "POST /api/obtenerRol HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
