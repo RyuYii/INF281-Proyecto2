@@ -44,9 +44,11 @@ jwt = JWTManager(app)
 api.add_resource(resources.Index, Routes.index)
 api.add_resource(resources.Login, Routes.login)    
 api.add_resource(resources.SignIn, Routes.signin)
+api.add_resource(resources.ObtenerDatosPersonales, Routes.obtenerDatosPersonales)
 api.add_resource(resources.Protected, Routes.protected)    
 api.add_resource(resources.UserLogoutAccess, Routes.logout)
 api.add_resource(resources.ObtenerRol, Routes.obtenerRol)
+
 
 @jwt.expired_token_loader
 def my_expired_token_callback(expired_token):

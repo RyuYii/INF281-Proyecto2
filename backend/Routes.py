@@ -7,4 +7,5 @@ class Routes:
     protected = API+"protected"
     obtenerRol = API+"obtenerRol"
     signin = API+"signin"
+    obtenerDatosPersonales = API+"datosPersonales"
     

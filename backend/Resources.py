@@ -66,6 +66,19 @@ class ObtenerRol(Resource):
     data = parserOR.parse_args()
     return Querys.obtenerRol(data["idUser"])
 
+parserODP = reqparse.RequestParser()
+parserODP.add_argument('idUser', type=int, help = 'This field cannot be blank', required = True)
+class ObtenerDatosPersonales(Resource):
+  @jwt_required
+  def post(self):
+    return {
+      "nombres": 'a',
+      "apellidos": 'a',
+      "ci": 'a',
+      "fechaNac": 'a'
+    }
+
+
 class Protected(Resource):
   @jwt_required
   def get(self):

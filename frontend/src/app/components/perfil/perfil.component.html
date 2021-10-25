@@ -1,7 +1,14 @@
-<div>
+<div class="container">
+    <h2>Datos personales</h2>
+    <div>
+        <p>Nombres {{datos["nombres"]}}</p>
+        <p>Apellidos {{datos["apellidos"]}}</p>
+        <p>CI {{datos["ci"]}}</p>
+        <p>Fecha de Nacimiento {{datos["fechaNac"]}}</p>
+    </div>
     <button (click)="habilitarForm()">editar info</button>
-<div *ngIf="habilitado">
-    <button (click)="deshabilitarForm()">cancelar</button>
-    <app-formulario-edicion-proyecto></app-formulario-edicion-proyecto>
-</div>
+    <div *ngIf="habilitado">
+        <button (click)="deshabilitarForm()">cancelar</button>
+        <app-formulario-edicion-datos [datosP]="datos"></app-formulario-edicion-datos>
+    </div>
 </div>
