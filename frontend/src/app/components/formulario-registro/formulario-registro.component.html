@@ -16,6 +16,12 @@
             <div *ngIf="form.apellidos.errors.required">Debe introducir su apellido</div>
         </div>
 
+        <label>CI</label>
+        <input type="text" formControlName="ci" class="form-control" [ngClass]="{ 'is-invalid': form.ci.errors }" />
+        <div *ngIf="form.ci.errors" class="invalid-feedback">
+            <div *ngIf="form.ci.errors.required">Debe introducir su apellido</div>
+        </div>
+
         <label>Username</label>
         <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': form.username.errors }" />
         <div *ngIf="form.username.errors" class="invalid-feedback">

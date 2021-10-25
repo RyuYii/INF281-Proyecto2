@@ -46,10 +46,12 @@ parserSI = reqparse.RequestParser()
 parserSI.add_argument('username', type=str, help = 'This field cannot be blank', required = True)
 parserSI.add_argument('password', type=str, help = 'This field cannot be blank', required = True)
 parserSI.add_argument('nombres', type=str, help = 'This field cannot be blank', required = True)
+parserSI.add_argument('ci', type=str, help = 'This field cannot be blank', required = True)
 parserSI.add_argument('apellidos', type=str, help = 'This field cannot be blank', required = True)
 parserSI.add_argument('fechaNac', type=str, help = 'This field cannot be blank')
 class SignIn(Resource):
   def post(self):
+    data = parserSI.parse_args()
     return Querys.signIn(data)
 
 class Index(Resource):

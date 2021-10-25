@@ -29,6 +29,7 @@ export class FormularioRegistroComponent implements OnInit {
     this.registerForm = this.formBuilder.group({
       nombres: ['', Validators.required],
       apellidos: ['', Validators.required],
+      ci: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       fechaNac: ['']
@@ -46,23 +47,21 @@ export class FormularioRegistroComponent implements OnInit {
     this.modalRef = this.modalService.show(ConfirmModalComponent, {initialState});
     this.modalRef.content.onClose.subscribe(result => {
       if (result) {
-        //this.spinner.show();
-        let obj: any = this.registerForm.value;
+        this.spinner.show();
+        let obj: object = this.registerForm.value;
         console.log(obj);
-        //obj.idEntidadBancaria = parseInt(obj.idEntidadBancaria);
-        /*
-        this.busquedaService.RegistrarPersonaCuentaBancaria(obj).subscribe(
+        this.authService.register(obj).subscribe(
           (data: any) => {
             this.spinner.hide();
-            if (data.code === 1)
+            if (data.code === 1){
               this.toastr.success(data.message);
+              this.router.navigate(['welcome']);
+            }
             else
               this.toastr.warning(data.message);
             this.modalService.hide(1)
-            this.seleccionaroPersona();
           }
-        )
-        */
+        )        
       }
       else {
         console.log('terminate')

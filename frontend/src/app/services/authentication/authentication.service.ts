@@ -72,6 +72,9 @@ export class AuthenticationService {
     private http: HttpClient,
     private accesosService: AccesosService
   ) { }
+  register(body: object) {
+    return this.http.post(`${API_URL}/signin`, body)
+  }
 
   authenticate(username: string, password: string) {
     const body = { username, password };

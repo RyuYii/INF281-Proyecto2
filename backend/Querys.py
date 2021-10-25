@@ -32,6 +32,8 @@ def insert(query):
     cursor = db.cursor()
     try:
         cursor.execute(query)
+        db.commit()
+        cursor.close()
         return {"code":1, "message":"registro correcto"}
     except Exception as e:
         return {"code":0, "message": f"algo salio mal: {e}"}
@@ -50,7 +52,35 @@ class Querys:
         return data
     
     def signIn(data):
+        query = f"""
+            select * from USUARIO where ci = '{data['ci']}'
+        """
+        step = select(query)
+        if len(step) > 0:
+            return {"code":0, "message": "Un usuario tiene el mismo ci"}
+
+        query = f"""
+            insert into PERSONA (ci, fecha_nac, nombre, apellido) values ('{data['ci']}','{data['fechaNac']}', '{data['nombres']}','{data['apellidos']}')
+        """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
         pasw = data['password']
         pasw = hashlib.sha1(pasw.encode()).hexdigest()
-        query = ''
+
+        query = f"""
+            insert into USUARIO (user, password, ci) VALUES ('{data['username']}','{pasw}','{data['ci']}')
+        """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
+
+        query = f"""
+            select id_usuario from USUARIO where ci = '{data['ci']}'
+        """
+        step = select(query)
+
+        query = f"""
+            insert into TIENE (id_usuario, id_rol) VALUES ({step[0]['idUsuario']}, {1})
+        """
         return insert(query)

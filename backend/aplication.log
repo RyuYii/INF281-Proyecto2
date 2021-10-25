@@ -351,3 +351,328 @@
  * Debugger is active!
  * Debugger PIN: 134-145-669
  * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 08:34:28] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 08:34:30] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 08:34:30] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 08:34:31] "POST /api/obtenerRol HTTP/1.1" 200 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Configuration.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 16:15:16] "OPTIONS /api/signin HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:15:16] "POST /api/signin HTTP/1.1" 500 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 16:17:04] "OPTIONS /api/signin HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:17:11] "POST /api/signin HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:21:50] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:21:52] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:21:52] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 16:21:53] "POST /api/obtenerRol HTTP/1.1" 200 -
+ * Detected change in 'D:\\Tareas\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+Python-dotenv could not parse statement starting at line 2
+Python-dotenv could not parse statement starting at line 3
+Python-dotenv could not parse statement starting at line 5
+Python-dotenv could not parse statement starting at line 7
+Python-dotenv could not parse statement starting at line 9
+Python-dotenv could not parse statement starting at line 11
+Python-dotenv could not parse statement starting at line 13
+Python-dotenv could not parse statement starting at line 15
+ * Debugger is active!
+ * Debugger PIN: 695-713-340
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
