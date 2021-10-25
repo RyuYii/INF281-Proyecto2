@@ -15,6 +15,7 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.authenticationService.setMenus(this.authenticationService.getRol());
   }
 
   welcomeView(){

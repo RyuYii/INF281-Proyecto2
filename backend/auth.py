@@ -5,7 +5,7 @@ def verifyLogin(user,pasw):
     pasw = hashlib.sha1(pasw.encode()).hexdigest()
     db = connect()
     cursor = db.cursor()
-    cursor.execute(f"select * from usuario where user like '{user}' and password like '{pasw}'")
+    cursor.execute(f"select * from USUARIO where user like '{user}' and password like '{pasw}'")
     data = cursor.fetchone()
     cursor.close()
     if(data is None):

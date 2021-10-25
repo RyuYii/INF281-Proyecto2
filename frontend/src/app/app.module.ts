@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA, LOCALE_ID } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { DatePipe } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -24,6 +24,10 @@ import { FormularioProyectoComponent } from './components/formulario-proyecto/fo
 import { FormularioRegistroComponent } from './components/formulario-registro/formulario-registro.component';
 import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { FormularioEdicionDatosComponent } from './components/formulario-edicion-datos/formulario-edicion-datos.component';
+import { FormularioEdicionProyectoComponent } from './components/formulario-edicion-proyecto/formulario-edicion-proyecto.component';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
+import { PanelProyectosComponent } from './components/panel-proyectos/panel-proyectos.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,11 @@ import { AdminComponent } from './components/admin/admin.component';
     FormularioProyectoComponent,
     FormularioRegistroComponent,
     AboutComponent,
-    AdminComponent
+    AdminComponent,
+    FormularioEdicionDatosComponent,
+    FormularioEdicionProyectoComponent,
+    ProyectoComponent,
+    PanelProyectosComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +63,8 @@ import { AdminComponent } from './components/admin/admin.component';
     ModalModule.forRoot(),
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    CommonModule
   ],
   providers: [
     DatePipe,

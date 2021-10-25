@@ -13,10 +13,9 @@ def camel_case(s):
 
 cursor = db.cursor()
 cursor.execute("""
-    select rol.descripcion, usuario.user from tiene 
-    left join rol on rol.id_rol = tiene.id_rol
-    left join usuario on usuario.id_usuario = tiene.id_usuario
-    where tiene.id_usuario = 3
+    select PERSONA.ci, PERSONA.nombre, PERSONA.apellido from USUARIO 
+    LEFT JOIN PERSONA ON USUARIO.ci = PERSONA.ci
+    where USUARIO.id_usuario = 10
     """)
 index = cursor.description
 row = list()
@@ -29,4 +28,4 @@ result = pd.DataFrame(list(data), columns=row)
 js = result.to_json(orient = 'records',date_format='iso',compression='gzip')
         #Cerrar conexión, liberar recursos
 cursor.close()
-print(len(json.loads(js)))
+print(json.loads(js))

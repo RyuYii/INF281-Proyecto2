@@ -1,0 +1,49 @@
+<div class="container">
+    <button (click)="habilitarCambioPassword()">Actualizar Password</button>
+    <button (click)="habilitarCambioDatos()">Actualizar datos</button>
+    <div *ngIf="changeData">
+        <form class="col-md-8" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
+
+            <h5>Sign In</h5>
+            <br>
+    
+            <label>Nombres</label>
+            <input type="text" formControlName="nombres" class="form-control" [ngClass]="{ 'is-invalid': form.nombres.errors }" />
+            <div *ngIf="form.nombres.errors" class="invalid-feedback">
+                <div *ngIf="form.nombres.errors.required">Debe introducir se nombre</div>
+            </div>
+    
+            <label>Apellidos</label>
+            <input type="text" formControlName="apellidos" class="form-control" [ngClass]="{ 'is-invalid': form.apellidos.errors }" />
+            <div *ngIf="form.apellidos.errors" class="invalid-feedback">
+                <div *ngIf="form.apellidos.errors.required">Debe introducir su apellido</div>
+            </div>
+
+            <label>Fecha Nacimiento</label>
+            <input type="date" formControlName="fechaNac" class="form-control" [ngClass]="{ 'is-invalid': form.fechaNac.errors }" />
+            
+            <div class="text-center mt-5">
+                <button class="btn btn-primary mr-1" [disabled]="registerForm.invalid">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+    <div *ngIf="changePass">
+        <form class="col-md-8" (ngSubmit)="onSubmit1()" [formGroup]="newPassForm">
+            <label>Password</label>
+            <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': form1.password.errors }" />
+            <div *ngIf="form1.password.errors" class="invalid-feedback">
+                <div *ngIf="form1.password.errors.required">Debe introducir una contraseña</div>
+            </div>
+
+            <label>New Password</label>
+            <input type="password" formControlName="newpassword" class="form-control" [ngClass]="{ 'is-invalid': form1.newpassword.errors }" />
+            <div *ngIf="form1.newpassword.errors" class="invalid-feedback">
+                <div *ngIf="form1.newpassword.errors.required">Debe introducir una contraseña</div>
+            </div>
+
+            <div class="text-center mt-5">
+                <button class="btn btn-primary mr-1" [disabled]="newPassForm.invalid">Guardar Cambios</button>
+            </div>
+        </form>
+    </div>
+</div>

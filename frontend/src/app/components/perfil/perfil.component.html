@@ -1,1 +1,7 @@
-<p>perfil works!</p>
+<div>
+    <button (click)="habilitarForm()">editar info</button>
+<div *ngIf="habilitado">
+    <button (click)="deshabilitarForm()">cancelar</button>
+    <app-formulario-edicion-proyecto></app-formulario-edicion-proyecto>
+</div>
+</div>

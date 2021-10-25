@@ -3,8 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { AboutComponent } from './components/about/about.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { FormularioEdicionProyectoComponent } from './components/formulario-edicion-proyecto/formulario-edicion-proyecto.component';
+import { FormularioProyectoComponent } from './components/formulario-proyecto/formulario-proyecto.component';
 import { FormularioRegistroComponent } from './components/formulario-registro/formulario-registro.component';
+import { PanelProyectosComponent } from './components/panel-proyectos/panel-proyectos.component';
 import { PerfilComponent } from './components/perfil/perfil.component';
+import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { LoginComponent } from './components/shared/login/login.component';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { RootGuard } from './services/guards/root.guard'
@@ -17,8 +21,11 @@ const routes: Routes = [
   { path: 'perfil', component: PerfilComponent },
   { path: 'signin', component: FormularioRegistroComponent},
   { path: 'dashboard', component: DashboardComponent},
+  { path: 'panel', component: PanelProyectosComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent}
+  { path: 'admin', component: AdminComponent},
+  { path: 'formRegistroProy', component: FormularioProyectoComponent},
+  { path: 'proyecto/:idProyecto', component: ProyectoComponent}
 ];
 
 @NgModule({

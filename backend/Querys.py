@@ -39,10 +39,10 @@ def insert(query):
 class Querys:
     def obtenerRol(idUser):
         q = f"""
-            select rol.id_rol, rol.descripcion, usuario.user from tiene 
-            left join rol on rol.id_rol = tiene.id_rol
-            left join usuario on usuario.id_usuario = tiene.id_usuario
-            where tiene.id_usuario = {idUser}
+            select ROL.id_rol, ROL.descripcion, USUARIO.user from TIENE 
+            left join ROL on ROL.id_rol = TIENE.id_rol
+            left join USUARIO on USUARIO.id_usuario = TIENE.id_usuario
+            where TIENE.id_usuario = {idUser}
         """
         data = select(q)
         #if len(data) == 0:

@@ -23,7 +23,7 @@ export class AuthenticationService {
       },
       {
         descri: "Proyectos",
-        rutaEnlace: "/dashboard"
+        rutaEnlace: "/panel"
       },
       {
         descri: "About",
@@ -35,10 +35,6 @@ export class AuthenticationService {
     {
       descri: "Perfil",
       rutaEnlace: "/perfil"
-    },
-    {
-      descri: "About",
-      rutaEnlace: "/welcome"
     },
     {
       descri: "admin",
@@ -53,7 +49,7 @@ export class AuthenticationService {
     },
     {
       descri: "mis Proyectos",
-      rutaEnlace: "/welcome"
+      rutaEnlace: "/dashboard"
     },
     {
       descri: "About",
@@ -63,16 +59,12 @@ export class AuthenticationService {
 
   menusUserRoot: any = [
       {
-        descri: "Inicio",
-        rutaEnlace: "/welcome"
+        descri: "Perfil",
+        rutaEnlace: "/perfil"
       },
       {
-        descri: "Proyectos",
-        rutaEnlace: "/welcome"
-      },
-      {
-        descri: "About",
-        rutaEnlace: "/welcome"
+        descri: "administracion",
+        rutaEnlace: "/admin"
       },
     ];
 
