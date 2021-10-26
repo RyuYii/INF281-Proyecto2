@@ -47,11 +47,9 @@ def insert(query):
 # """
 # print(insert(qr))
 qr = """
-select id_usuario from USUARIO where ci = '123'
+select PERSONA.* from USUARIO
+LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
+where id_usuario = 12
 """
-x = select(qr)[0]['idUsuario']
-
-qr = f"""
-insert into TIENE (id_usuario, id_rol) VALUES ({x}, {2})
-"""
-print(insert(qr))
+#x = select(qr)[0]['password']
+print(select(qr))

@@ -52,6 +52,7 @@ export class FormularioRegistroComponent implements OnInit {
         console.log(obj);
         this.authService.register(obj).subscribe(
           (data: any) => {
+            
             this.spinner.hide();
             if (data.code === 1){
               this.toastr.success(data.message);

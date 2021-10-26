@@ -676,3 +676,210 @@ Python-dotenv could not parse statement starting at line 15
  * Debugger is active!
  * Debugger PIN: 695-713-340
  * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 21:27:42] "[33mGET / HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2021 21:27:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [25/Oct/2021 21:27:48] "[32mGET /api HTTP/1.1[0m" 308 -
+127.0.0.1 - - [25/Oct/2021 21:27:48] "GET /api/ HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:18] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:20] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:20] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:21] "POST /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:38] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:34:38] "[35m[1mPOST /api/datosPersonales HTTP/1.1[0m" 500 -
+127.0.0.1 - - [25/Oct/2021 21:42:46] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:42:47] "[35m[1mPOST /api/datosPersonales HTTP/1.1[0m" 500 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 21:43:45] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:43:45] "[35m[1mPOST /api/datosPersonales HTTP/1.1[0m" 500 -
+127.0.0.1 - - [25/Oct/2021 21:44:34] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:44:34] "[31m[1mPOST /api/datosPersonales HTTP/1.1[0m" 400 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Resources.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 21:45:08] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:45:08] "POST /api/datosPersonales HTTP/1.1" 200 -
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 21:46:27] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:46:27] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:46:58] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:46:58] "POST /api/datosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\test.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 21:48:50] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:48:53] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:49:42] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:49:44] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:49:56] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:49:59] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:51:46] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:51:48] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:07] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:09] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:15] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:17] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:23] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:26] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:42] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:54:44] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:56:54] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:56:56] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:58:10] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 21:58:13] "POST /api/datosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Routes.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\app.py', reloading
+ * Restarting with stat
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [25/Oct/2021 23:53:08] "OPTIONS /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:53:10] "POST /api/login HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:53:10] "OPTIONS /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:53:11] "POST /api/obtenerRol HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:53:15] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:53:17] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:54:27] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:54:29] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:55:25] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:55:27] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:55:58] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:56:00] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:58:50] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [25/Oct/2021 23:58:52] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:00:42] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:00:45] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:01:25] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:01:27] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:01:37] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:01:40] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:02:20] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:02:23] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:02:31] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:02:32] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:03:52] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:03:54] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:04:01] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:04:03] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:04:35] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:04:36] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:10:02] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:10:04] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:10:32] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:10:34] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:11:54] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:11:55] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:14:20] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:14:22] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:15:09] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:15:11] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:16:26] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:16:28] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:17:48] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:17:49] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:19:41] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:19:44] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:00] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:01] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:35] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:37] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:56] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:20:59] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:21:28] "OPTIONS /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:21:30] "POST /api/changeDatosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:22:00] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:22:02] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:23:58] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:24:00] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:24:27] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:24:29] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:26:49] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:26:50] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:26:55] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:28:27] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:28:29] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:28:41] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:28:43] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:34:55] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:34:57] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:35:39] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:35:40] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:36:46] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:36:49] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:39:42] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:39:46] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:40:52] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:40:54] "POST /api/datosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 134-145-669
+ * Running on http://127.0.0.1:9999/ (Press CTRL+C to quit)
+127.0.0.1 - - [26/Oct/2021 00:43:49] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:43:51] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:44:15] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:44:17] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:44:40] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:44:41] "POST /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:45:41] "OPTIONS /api/datosPersonales HTTP/1.1" 200 -
+127.0.0.1 - - [26/Oct/2021 00:45:44] "POST /api/datosPersonales HTTP/1.1" 200 -
+ * Detected change in 'E:\\281\\INF281-Proyecto2\\backend\\Querys.py', reloading

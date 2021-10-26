@@ -5,7 +5,10 @@ class Routes:
     login = API+"login"
     logout = API+"logout"
     protected = API+"protected"
+    
     obtenerRol = API+"obtenerRol"
     signin = API+"signin"
     obtenerDatosPersonales = API+"datosPersonales"
+    changeDatosPersonales = API+"changeDatosPersonales"
+    changePassword = API+"changePassword"
     

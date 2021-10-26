@@ -11,7 +11,17 @@ export class UserService {
     private http: HttpClient
   ) { }
 
+  toDate(date){
+    date = (new Date()).toISOString().split('T')[0]
+    return date;
+  }
   obtenerDatos(body: Object) {
     return this.http.post(`${API_URL}/datosPersonales`, body)
+  }
+  changeDatosPersonales(body: Object){
+    return this.http.post(`${API_URL}/changeDatosPersonales`, body)
+  }
+  changePassword(body: Object){
+    return this.http.post(`${API_URL}/changePassword`, body)
   }
 }

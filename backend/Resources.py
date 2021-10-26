@@ -67,17 +67,34 @@ class ObtenerRol(Resource):
     return Querys.obtenerRol(data["idUser"])
 
 parserODP = reqparse.RequestParser()
-parserODP.add_argument('idUser', type=int, help = 'This field cannot be blank', required = True)
+parserODP.add_argument('idUsuario', type=int, help = 'This field cannot be blank', required = True)
 class ObtenerDatosPersonales(Resource):
   @jwt_required
   def post(self):
-    return {
-      "nombres": 'a',
-      "apellidos": 'a',
-      "ci": 'a',
-      "fechaNac": 'a'
-    }
+    data = parserODP.parse_args()
+    return Querys.obtenerDatosPersonales(data)
 
+parserCDP = reqparse.RequestParser()
+parserCDP.add_argument('nombres', type=str, help = 'This field cannot be blank', required = True)
+parserCDP.add_argument('ci', type=str, help = 'This field cannot be blank', required = True)
+parserCDP.add_argument('apellidos', type=str, help = 'This field cannot be blank', required = True)
+parserCDP.add_argument('fechaNac', type=str, help = 'This field cannot be blank')
+class ChangeDatosPersonales(Resource):
+  @jwt_required
+  def post(self):
+    data = parserCDP.parse_args()
+    return Querys.changeDatosPersonales(data)
+
+
+parserCP = reqparse.RequestParser()
+parserCP.add_argument('idUsuario', type=str, help = 'This field cannot be blank', required = True)
+parserCP.add_argument('password', type=str, help = 'This field cannot be blank', required = True)
+parserCP.add_argument('newpassword', type=str, help = 'This field cannot be blank')
+class ChangePassword(Resource):
+  @jwt_required
+  def post(self):
+    data = parserCP.parse_args()
+    return Querys.changePassword(data)
 
 class Protected(Resource):
   @jwt_required

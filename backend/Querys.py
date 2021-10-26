@@ -84,3 +84,44 @@ class Querys:
             insert into TIENE (id_usuario, id_rol) VALUES ({step[0]['idUsuario']}, {1})
         """
         return insert(query)
+
+    def obtenerDatosPersonales(data):
+        query = f"""
+            select PERSONA.* from USUARIO
+            LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
+            where id_usuario = {data['idUsuario']}
+        """
+        return select(query)
+
+    def changePassword(data):
+        pasw = hashlib.sha1(data['password'].encode()).hexdigest()
+        newpasw = hashlib.sha1(data['newpassword'].encode()).hexdigest()
+        user = data['idUsuario']
+        query = f"""
+            select password from USUARIO where id_usuario = {user}
+        """
+        step = select(query)
+        if len(step) == 0:
+            return {"code":0, "message": "Ocurrio un error, el usuario no es el correcto"}
+
+        x = step[0]['password']
+        if x == pasw:
+            query = f"""
+                update USUARIO set password = '{newpasw}'
+                where id_usuario={user}
+            """
+            return insert(query)
+        else:
+            return {"code":0, "message": "La contraseña no es la correcta, vuelva a intentarlo"}
+
+    def changeDatosPersonales(data):
+        fecha = f"'{data['fechaNac']}'" if not data['fechaNac'] is None else 'null'
+        print(fecha)
+        query = f"""
+            update PERSONA set
+                nombre = '{data['nombres']}',
+                apellido = '{data['apellidos']}',
+                fecha_nac = {fecha}
+            where ci = '{data['ci']}'
+        """
+        return insert(query)
