@@ -53,7 +53,7 @@
                     <th scope="col">Descripcion</th>
                     <th scope="col">Horario</th>
                     <th scope="col">acciones</th>
-                  </tr>
+                </tr>
                 <tr *ngFor="let item of listaActividadesCulturales; let i = index">
                     <td>{{i+1}}</td>
                     <td>{{item?.title}}</td>
@@ -73,7 +73,7 @@
                     <th scope="col">Descripcion</th>
                     <th scope="col">Horario</th>
                     <th scope="col">acciones</th>
-                  </tr>
+                </tr>
                 <tr *ngFor="let item of listaProductos; let i = index">
                     <td>{{i+1}}</td>
                     <td>{{item?.title}}</td>
@@ -93,7 +93,7 @@
                     <th scope="col">Descripcion</th>
                     <th scope="col">Horario</th>
                     <th scope="col">acciones</th>
-                  </tr>
+                </tr>
                 <tr *ngFor="let item of listaActividadesBeneficas; let i = index">
                     <td>{{i+1}}</td>
                     <td>{{item?.title}}</td>
@@ -107,6 +107,10 @@
         <!--Submit-->
         <div class="text-center mt-5">
             <button class="btn btn-primary mr-1" [disabled]="newProyectForm.invalid">Guardar Cambios</button>
+            <button routerLink="/dashboard" class="btn btn-outline-secondary">Cancelar</button>
+        </div>
+        <div class="row">
+
         </div>
 
     </form>
@@ -121,13 +125,13 @@
             <p>Registrar Actividad Benefica</p>
             <label>Nombre</label>
             <input type="text" formControlName="title" class="form-control" />
-            
+
             <label>Descripcion</label>
             <input type="text" formControlName="desc" class="form-control" />
 
             <label>Horario</label>
             <input type="time" formControlName="horario" class="form-control" />
-            
+
             <button>agregar</button>
         </div>
     </form>
@@ -140,13 +144,13 @@
             <p>Registrar Actividad Cultural</p>
             <label>Nombre</label>
             <input type="text" formControlName="title" class="form-control" />
-            
+
             <label>Descripcion</label>
             <input type="text" formControlName="desc" class="form-control" />
 
             <label>Horario</label>
             <input type="time" formControlName="horario" class="form-control" />
-            
+
             <button>agregar</button>
         </div>
     </form>
@@ -159,13 +163,13 @@
             <p>Registrar Producto o Servicio</p>
             <label>Nombre</label>
             <input type="text" formControlName="title" class="form-control" />
-            
+
             <label>Descripcion</label>
             <input type="text" formControlName="desc" class="form-control" />
 
             <label>Precio</label>
             <input type="number" formControlName="precio" class="form-control" />
-            
+
             <button>agregar</button>
         </div>
     </form>

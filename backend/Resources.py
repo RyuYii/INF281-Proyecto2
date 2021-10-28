@@ -28,14 +28,8 @@ class Login(Resource):
     data = parser.parse_args()
     verify, user = verifyLogin(data["username"], data["password"])
     if verify == True:
-      # Verificar que tiene permisos de admin
-    #   canAccess, permissions = havePermission(username=data["username"])
-    #   if canAccess == False: # Verificar que tiene permisos de admin
-    #     return messages.adminNotFound, HTTPStatus.FORBIDDEN
       expires = timedelta(days=expiresMinutes)
       access_token = create_access_token(identity = user[0], expires_delta=expires)
-      # revoked_store.set(get_jti(access_token), "false", expires * 1.2)
-      # createToken(get_jti(access_token),False,expires * 1.2)
       expiresTime = datetime.today() + expires
       return messageToken(access_token, str(expiresTime), Routes.protected)
     else:
@@ -100,7 +94,8 @@ class Protected(Resource):
   @jwt_required
   def get(self):
       return {"hola": "hola usuario logeado"}
-    
+
+#algun dia lo conseguire hacer funcionar...  
 class UserLogoutAccess(Resource):
   @jwt_required
   def post(self):
@@ -114,4 +109,86 @@ class UserLogoutAccess(Resource):
       traceback.print_exc()
       app.logger.error("Error", exc_info=1)
       return messages.defaultError   
+#pensar
+class ObtenerEstadoSolicitud(Resource):
+  @jwt_required
+  def post(self):
+    pass
+
+parserRS = reqparse.RequestParser()
+parserRS.add_argument('idUsuario', type=str, help = 'This field cannot be blank', required = True)
+class RegistrarSolicitud (Resource):
+  @jwt_required
+  def post(self):
+    data = parserRS.parse_args()
+    return Querys.registrarSolicitud(data)
+    
+parserOFP = reqparse.RequestParser()
+parserOFP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
+class ObtenerFaseProyecto(Resource): #pensar
+  @jwt_required
+  def post(self):
+    data = parserOFP.parse_args()
+    return Querys.obtenerFaseProyecto(data)
+    
+parserOPR = reqparse.RequestParser()
+parserOPR.add_argument('idUsuario', type=str)
+class ObtenerProyectosRegistrados(Resource): #parametro null devuelve todos los publicados
+  @jwt_required
+  def post(self):
+    data = parserOPR.parse_args()
+    return Querys.obtenerProyectosRegistrados(data)
+    
+
+class ObtenerProyecto (Resource):
+  @jwt_required
+  def post(self):
+    pass
+class RegistrarProyecto(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EliminarProyecto(Resource):
+  @jwt_required
+  def post(self):
+    pass
+
+class ObtenerActividades(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EditarActividad(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EliminarActividad(Resource):
+  @jwt_required
+  def post(self):
+    pass
+
+class ObtenerProductos(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EditarProductos(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EliminarProducto(Resource):
+  @jwt_required
+  def post(self):
+    pass
+
+class ObtenerPatrocinadores(Resource):
+  @jwt_required
+  def post(self):
+    pass
+class RegistrarPatrocinador (Resource):
+  @jwt_required
+  def post(self):
+    pass
+class EliminarPatrocinador(Resource):
+  @jwt_required
+  def post(self):
+    pass
    

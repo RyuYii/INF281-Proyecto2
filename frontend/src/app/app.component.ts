@@ -96,7 +96,7 @@ export class AppComponent implements OnInit {
     this.modalService.hide(1);
     this.bnIdle.resetTimer();    
     this.authenticationService.logout();        
-    this.router.navigate(['ingreso']);
+    this.router.navigate(['welcome']);
     
   }
 }

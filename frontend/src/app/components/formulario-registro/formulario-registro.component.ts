@@ -56,6 +56,7 @@ export class FormularioRegistroComponent implements OnInit {
             this.spinner.hide();
             if (data.code === 1){
               this.toastr.success(data.message);
+              this.toastr.success("Ahora puedes ingresar con tu nueva cuenta!");
               this.router.navigate(['welcome']);
             }
             else

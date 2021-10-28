@@ -36,10 +36,7 @@ export class AuthenticationService {
       descri: "Perfil",
       rutaEnlace: "/perfil"
     },
-    {
-      descri: "admin",
-      rutaEnlace: "/admin"
-    }
+
   ];
 
   menusUserGerencial: any = [
@@ -50,10 +47,6 @@ export class AuthenticationService {
     {
       descri: "mis Proyectos",
       rutaEnlace: "/dashboard"
-    },
-    {
-      descri: "About",
-      rutaEnlace: "/welcome"
     },
   ];
 

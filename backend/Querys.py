@@ -5,6 +5,7 @@ import hashlib
 
 from re import sub
 
+
 def camel_case(s):
   s = sub(r"(_|-)+", " ", s).title().replace(" ", "")
   return ''.join([s[0].lower(), s[1:]])
@@ -116,7 +117,6 @@ class Querys:
 
     def changeDatosPersonales(data):
         fecha = f"'{data['fechaNac']}'" if not data['fechaNac'] is None else 'null'
-        print(fecha)
         query = f"""
             update PERSONA set
                 nombre = '{data['nombres']}',
@@ -125,3 +125,53 @@ class Querys:
             where ci = '{data['ci']}'
         """
         return insert(query)
+
+
+    def obtenerEstadoSolicitud(data):
+        pass
+
+    def registrarSolicitud(data):
+        pass
+
+    def obtenerFaseProyecto(data):
+        pass
+
+    def obtenerProyectosRegistrados(data):
+        pass
+
+    def obtenerProyecto(data):
+        pass
+
+    def registrarProyecto(data):
+        pass
+
+    def eliminarProyecto(data):
+        pass
+
+    def obtenerActividades(data):
+        pass
+
+    def editarActividad(data):
+        pass
+
+    def eliminarActividad(data):
+        pass
+
+    def obtenerProductos(data):
+        pass
+
+    def editarProductos(data):
+        pass
+
+    def eliminarProducto(data):
+        pass
+
+    def obtenerPatrocinadores(data):
+        pass
+
+    def registrarPatrocinador(data):
+        pass
+
+    def eliminarPatrocinador(data):
+        pass
+

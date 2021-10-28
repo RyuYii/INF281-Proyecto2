@@ -1,11 +1,12 @@
 <div class="container">
-    <button (click)="habilitarCambioPassword()">Actualizar Password</button>
-    <button (click)="habilitarCambioDatos()">Actualizar datos</button>
-    <div *ngIf="changeData">
+    <div class="row justify-content-center my-3">
+        <button (click)="habilitarCambioPassword()" class="btn btn-primary">Actualizar Password</button>
+        <button (click)="habilitarCambioDatos()" class="btn btn-primary">Actualizar datos</button>
+    </div>
+    <div *ngIf="changeData" class="row justify-content-center">
         <form class="col-md-8" (ngSubmit)="onSubmit()" [formGroup]="registerForm">
 
-            <h5>Sign In</h5>
-            <br>
+            <h5>Modificacion de datos</h5>
 
             <label>Nombres</label>
             <input type="text" formControlName="nombres" class="form-control" [ngClass]="{ 'is-invalid': form.nombres.errors }" />
@@ -27,15 +28,17 @@
             </div>
         </form>
     </div>
-    <div *ngIf="changePass">
+    <div *ngIf="changePass" class="row justify-content-center">
         <form class="col-md-8" (ngSubmit)="onSubmit1()" [formGroup]="newPassForm">
-            <label>Password</label>
+            <h5>Cambion de contraseña</h5>
+
+            <label>contraseña</label>
             <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': form1.password.errors }" />
             <div *ngIf="form1.password.errors" class="invalid-feedback">
                 <div *ngIf="form1.password.errors.required">Debe introducir una contraseña</div>
             </div>
 
-            <label>New Password</label>
+            <label>Nueva contraseña</label>
             <input type="password" formControlName="newpassword" class="form-control" [ngClass]="{ 'is-invalid': form1.newpassword.errors }" />
             <div *ngIf="form1.newpassword.errors" class="invalid-feedback">
                 <div *ngIf="form1.newpassword.errors.required">Debe introducir una contraseña</div>

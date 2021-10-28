@@ -53,6 +53,27 @@ api.add_resource(resources.ObtenerRol, Routes.obtenerRol)
 api.add_resource(resources.Protected, Routes.protected)    
 api.add_resource(resources.UserLogoutAccess, Routes.logout)
 
+api.add_resource(resources.ObtenerEstadoSolicitud, Routes.obtenerEstadoSolicitud)
+api.add_resource(resources.RegistrarSolicitud, Routes.registrarSolicitud )
+
+api.add_resource(resources.ObtenerFaseProyecto, Routes.obtenerFaseProyecto) #pensar
+api.add_resource(resources.ObtenerProyectosRegistrados, Routes.obtenerProyectosRegistrados) #parametro null devuelve todos los publicados
+api.add_resource(resources.ObtenerProyecto, Routes.obtenerProyecto )
+api.add_resource(resources.RegistrarProyecto, Routes.registrarProyecto)
+api.add_resource(resources.EliminarProyecto, Routes.eliminarProyecto)
+
+api.add_resource(resources.ObtenerActividades, Routes.obtenerActividades)
+api.add_resource(resources.EditarActividad, Routes.editarActividad)
+api.add_resource(resources.EliminarActividad, Routes.eliminarActividad)
+
+api.add_resource(resources.ObtenerProductos, Routes.obtenerProductos)
+api.add_resource(resources.EditarProductos, Routes.editarProductos)
+api.add_resource(resources.EliminarProducto, Routes.eliminarProducto)
+
+api.add_resource(resources.ObtenerPatrocinadores, Routes.obtenerPatrocinadores)
+api.add_resource(resources.RegistrarPatrocinador, Routes.registrarPatrocinador )
+api.add_resource(resources.EliminarPatrocinador, Routes.eliminarPatrocinador)
+
 @jwt.expired_token_loader
 def my_expired_token_callback(expired_token):
 	token_type = expired_token['type']
