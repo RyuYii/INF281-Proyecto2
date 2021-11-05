@@ -127,20 +127,77 @@ class Querys:
         return insert(query)
 
 
-    def obtenerEstadoSolicitud(data):
-        pass
+    def obtenerSolicitudes():
+        query = """
+        select PERSONA.*, SOLICITUD.* from SOLICITUD 
+        left join USUARIO on SOLICITUD.id_usuario = USUARIO.id_usuario
+        left join PERSONA on PERSONA.ci = USUARIO.ci
+        where SOLICITUD.estado = 1
+        """
+        return select(query)
 
     def registrarSolicitud(data):
-        pass
+        user = data["idUsuario"]
+        motivo = data["motivo"]
+        query = f"""
+        select * from SOLICITUD where id_usuario = {user} and estado = 1
+        """
+        if len(select(query)) != 0:
+            return {"code":0, "message": "La solicitud ya fue registrada, Podra enviar otra solicitud si fue rechazada la solicitud actual"}
+        
+        query = f"""
+        INSERT INTO SOLICITUD(id_usuario, motivo, fec_reg, estado) VALUES ({user},'{motivo}',CURRENT_DATE,1)
+        """
+        return insert(query)
 
-    def obtenerFaseProyecto(data):
-        pass
+    def aceptarSolicitud(data):
+        user = data["idUsuario"]
+        query = f"""
+            update SOLICITUD 
+            set estado = 0
+            where id_usuario = {user}
+        """
+        return insert(query)
+    #proyectos estado 1: solicitud 2:aceptados 3:rechazados
+    def obtenerProyectosEnEspera():
+        query = """
+            select FASE_PROYECTO.id_fase, PROYECTO.*, PERSONA.* from FASE_PROYECTO
+            left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
+            left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
+            left join PERSONA on PERSONA.ci = USUARIO.ci
+            where FASE_PROYECTO.estado = 1
+        """
+        return select(query)
 
     def obtenerProyectosRegistrados(data):
-        pass
+        user = data["idUsuario"]
+        query = ''
+        if user == 0:
+            query = """
+                select FASE_PROYECTO.id_fase, PROYECTO.*, PERSONA.* from FASE_PROYECTO
+                left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
+                left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
+                left join PERSONA on PERSONA.ci = USUARIO.ci
+                where FASE_PROYECTO.estado = 3
+            """
+        else:
+            query = f"""
+                select FASE_PROYECTO.id_fase, PROYECTO.*, PERSONA.* from FASE_PROYECTO
+                left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
+                left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
+                left join PERSONA on PERSONA.ci = USUARIO.ci
+                where FASE_PROYECTO.id_usuario= {user}
+            """
+        return select(query)
 
     def obtenerProyecto(data):
-        pass
+        idProy = data["idProy"]
+        query = f"""
+            select * 
+            from PROYECTO 
+            where id_proy = {idProy}
+        """
+        return select(query)
 
     def registrarProyecto(data):
         pass
@@ -170,7 +227,14 @@ class Querys:
         pass
 
     def registrarPatrocinador(data):
-        pass
+        nombreP = data["nombreP"]
+        tipoPatrocinador = data["tipoPatrocinador"]
+        query = f"""
+            INSERT INTO 
+            PATROCINADOR( nombre_p, tipo_patrocinador) 
+            VALUES ('{nombreP}','{tipoPatrocinador}')
+        """
+        return insert(query)
 
     def eliminarPatrocinador(data):
         pass

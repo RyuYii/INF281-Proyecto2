@@ -46,10 +46,24 @@ def insert(query):
 # insert into USUARIO (user, password, ci) VALUES ('admin','d033e22ae348aeb5660fc2140aec35850c4da997','123')
 # """
 # print(insert(qr))
-qr = """
-select PERSONA.* from USUARIO
-LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
-where id_usuario = 12
+# 0MayvIs75Vl6v27
+
 """
-#x = select(qr)[0]['password']
-print(select(qr))
+INSERT INTO PROYECTO(
+  titulo_proy, mision, 
+  vision, objetivos, id_usuario, 
+  fecha_inicio, fecha_cierre, 
+  banner, tipo_proy, identifier) 
+VALUES (
+  'titulo', 'mision',
+  'vision','objetivo', 12,
+  null, null,
+  null, 1, '0MayvIs75Vl6v27')
+"""
+
+
+qr = f"""
+INSERT INTO PATROCINADOR( nombre_p, tipo_patrocinador) VALUES ('pepsi','comercial')
+"""
+#x = select(qr)[0]['password'] print(''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
+print(insert(qr))

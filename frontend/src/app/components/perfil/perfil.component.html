@@ -16,14 +16,14 @@
             <div class="card-body">
                 <h5 class="card-title">Actualiza tu cuenta</h5>
                 <p class="card-text">Solicita la actualizacion de tu cuenta para asi poder publicar tus propios proyectos</p>
-                <a href="#" class="btn btn-primary">Solicitar</a>
+                <a (click)="solicitarUsuarioGerencial(templateForm)" class="btn btn-primary">Solicitar</a>
             </div>
         </div>
         <div *ngIf="authenticacionService.getRol()!=1" class="col-md-4 card text-center">
             <div class="card-body">
                 <h5 class="card-title">Usuario Gerencial</h5>
                 <p class="card-text">Usted puede publicar sus propios proyectos</p>
-                <a href="#" class="btn btn-primary">publicar</a>
+                <a routerLink="/formRegistroProy" class="btn btn-primary">Registrar</a>
             </div>
         </div>
     </div>
@@ -49,3 +49,17 @@
         </div>
     </div>
 </div>
+
+
+<ng-template #templateForm>
+    <form class="col-md-12" (ngSubmit)="realizarSolicitud()" [formGroup]="newProd">
+
+        <div class="modal-body text-center">
+            <p>Escriba el motivo por el cual require la actualizacion de su cuenta</p>
+            <label>motivo</label>
+            <textarea formControlName="motivo" class="form-control" cols="30" rows="2"></textarea>
+
+            <button>agregar</button>
+        </div>
+    </form>
+</ng-template>

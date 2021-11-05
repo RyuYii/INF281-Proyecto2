@@ -53,10 +53,11 @@ api.add_resource(resources.ObtenerRol, Routes.obtenerRol)
 api.add_resource(resources.Protected, Routes.protected)    
 api.add_resource(resources.UserLogoutAccess, Routes.logout)
 
-api.add_resource(resources.ObtenerEstadoSolicitud, Routes.obtenerEstadoSolicitud)
+api.add_resource(resources.ObtenerSolicitudes, Routes.obtenerSolicitudes)
 api.add_resource(resources.RegistrarSolicitud, Routes.registrarSolicitud )
+api.add_resource(resources.AceptarSolicitud, Routes.aceptarSolicitud )
 
-api.add_resource(resources.ObtenerFaseProyecto, Routes.obtenerFaseProyecto) #pensar
+api.add_resource(resources.ObtenerProyectosEnEspera, Routes.obtenerProyectosEnEspera) #pensar
 api.add_resource(resources.ObtenerProyectosRegistrados, Routes.obtenerProyectosRegistrados) #parametro null devuelve todos los publicados
 api.add_resource(resources.ObtenerProyecto, Routes.obtenerProyecto )
 api.add_resource(resources.RegistrarProyecto, Routes.registrarProyecto)

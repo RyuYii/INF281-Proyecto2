@@ -18,14 +18,14 @@ const routes: Routes = [
   { path: '', component: WelcomeComponent },
   { path: 'ingreso', component: LoginComponent},
   { path: 'welcome', component: WelcomeComponent, canActivate: [RootGuard] },
-  { path: 'perfil', component: PerfilComponent },
+  { path: 'perfil', component: PerfilComponent, canActivate: [RootGuard] },
   { path: 'signin', component: FormularioRegistroComponent},
-  { path: 'dashboard', component: DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent, canActivate: [RootGuard]},
   { path: 'panel', component: PanelProyectosComponent},
   { path: 'about', component: AboutComponent},
-  { path: 'admin', component: AdminComponent},
-  { path: 'formRegistroProy', component: FormularioProyectoComponent},
-  { path: 'proyecto/:idProyecto', component: ProyectoComponent}
+  { path: 'admin', component: AdminComponent, canActivate: [RootGuard]},
+  { path: 'formRegistroProy', component: FormularioProyectoComponent, canActivate: [RootGuard]},
+  { path: 'proyecto/:idProyecto', component: ProyectoComponent, canActivate: [RootGuard]}
 ];
 
 @NgModule({

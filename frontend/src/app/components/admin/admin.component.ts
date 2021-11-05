@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RootService } from 'src/app/services/data/root.service';
 
 @Component({
   selector: 'app-admin',
@@ -7,9 +8,33 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminComponent implements OnInit {
 
-  constructor() { }
+  listSolicitudes:any;
+  listProyectosEnEspera:any;
+  constructor(
+    private rootService: RootService
+  ) { }
 
   ngOnInit(): void {
+    this.rootService.obtenerSolicitudes().subscribe(
+      (data:any)=> {
+        this.listSolicitudes = data;
+        console.log(data)
+      })
+    this.rootService.obtenerProyectosEnEspera().subscribe(
+      (data: any)=>{
+        console.log(data)
+        this.listProyectosEnEspera = data;
+      }
+    )
+  }
+
+  aceptarSolicitud(idUsuario: number){
+    let body: Object = {"idUsuario":idUsuario}
+    this.rootService.aceptarSolicitud(body).subscribe(
+      (data: any) => {
+        console.log(data)
+      }
+    )
   }
 
 }

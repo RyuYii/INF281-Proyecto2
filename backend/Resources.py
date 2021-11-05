@@ -110,40 +110,52 @@ class UserLogoutAccess(Resource):
       app.logger.error("Error", exc_info=1)
       return messages.defaultError   
 #pensar
-class ObtenerEstadoSolicitud(Resource):
+class ObtenerSolicitudes(Resource):
   @jwt_required
-  def post(self):
-    pass
+  def get(self):
+    return Querys.obtenerSolicitudes()
 
 parserRS = reqparse.RequestParser()
 parserRS.add_argument('idUsuario', type=str, help = 'This field cannot be blank', required = True)
+parserRS.add_argument('motivo', type=str, help = 'This field cannot be blank', required = True)
 class RegistrarSolicitud (Resource):
   @jwt_required
   def post(self):
     data = parserRS.parse_args()
     return Querys.registrarSolicitud(data)
-    
-parserOFP = reqparse.RequestParser()
-parserOFP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
-class ObtenerFaseProyecto(Resource): #pensar
+
+parseAS = reqparse.RequestParser()
+parseAS.add_argument('idUsuario', type=str, help = 'This field cannot be blank', required = True)
+class AceptarSolicitud(Resource):
   @jwt_required
   def post(self):
-    data = parserOFP.parse_args()
-    return Querys.obtenerFaseProyecto(data)
+    data = parseAS.parse_args()
+    return Querys.aceptarSolicitud(data)
+    
+#parserOFP = reqparse.RequestParser()
+#parserOFP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
+class ObtenerProyectosEnEspera(Resource): #pensar
+  @jwt_required
+  def get(self):
+    #data = parserOFP.parse_args()
+    return Querys.obtenerProyectosEnEspera()
     
 parserOPR = reqparse.RequestParser()
-parserOPR.add_argument('idUsuario', type=str)
+parserOPR.add_argument('idUsuario', type=int)
 class ObtenerProyectosRegistrados(Resource): #parametro null devuelve todos los publicados
   @jwt_required
   def post(self):
     data = parserOPR.parse_args()
     return Querys.obtenerProyectosRegistrados(data)
     
-
+parserOP = reqparse.RequestParser()
+parserOP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerProyecto (Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserOP.parse_args()
+    return Querys.obtenerProyecto(data)
+
 class RegistrarProyecto(Resource):
   @jwt_required
   def post(self):
@@ -183,10 +195,16 @@ class ObtenerPatrocinadores(Resource):
   @jwt_required
   def post(self):
     pass
+
+parserRP = reqparse.RequestParser()
+parserRP.add_argument('nombreP', type=str, help = 'This field cannot be blank', required = True)
+parserRP.add_argument('tipoPatrocinador', type=str, help = 'This field cannot be blank', required = True)
 class RegistrarPatrocinador (Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserRP.parse_args()
+    return Querys.registrarPatrocinador(data)
+
 class EliminarPatrocinador(Resource):
   @jwt_required
   def post(self):

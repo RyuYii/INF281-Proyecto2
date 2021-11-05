@@ -13,4 +13,15 @@ export class RootService {
   mensajes() {        
     return this.http.get(`${API_URL}/protected`);
   }
+  obtenerSolicitudes(){
+    return this.http.get(`${API_URL}/obtenerSolicitudes`)
+  }
+  aceptarSolicitud(body: Object){
+    return this.http.post(`${API_URL}/aceptarSolicitud`, body)
+  }
+
+
+  obtenerProyectosEnEspera(){
+    return this.http.get(`${API_URL}/obtenerProyectosEnEspera`)
+  }
 }

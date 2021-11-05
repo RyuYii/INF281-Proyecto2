@@ -1,176 +1,190 @@
-<div>
-    <form class="col-md-8" (ngSubmit)="onSubmit1()" [formGroup]="newProyectForm">
-        <h2>Nuevo Proyecto</h2>
+<div class="container">
+  <h2>Nuevo Proyecto</h2>
+  <form class="row" (ngSubmit)="onSubmit1()" [formGroup]="newProyectForm">
 
-        <label>Titulo</label>
-        <input type="text" formControlName="titulo" class="form-control" [ngClass]="{ 'is-invalid': form1.titulo.errors }" />
-        <div *ngIf="form1.titulo.errors" class="invalid-feedback">
-            <div *ngIf="form1.titulo.errors.required">Debe introducir una contraseña</div>
-        </div>
+    <div class="col-md-8">
 
-        <label>Objetivo</label>
-        <input type="text" formControlName="objetivo" class="form-control" [ngClass]="{ 'is-invalid': form1.objetivo.errors }" />
-        <div *ngIf="form1.objetivo.errors" class="invalid-feedback">
-            <div *ngIf="form1.objetivo.errors.required">Debe introducir una contraseña</div>
-        </div>
 
-        <label>Mision</label>
-        <input type="text" formControlName="mision" class="form-control" [ngClass]="{ 'is-invalid': form1.mision.errors }" />
-        <div *ngIf="form1.mision.errors" class="invalid-feedback">
-            <div *ngIf="form1.mision.errors.required">Debe introducir una contraseña</div>
-        </div>
+      <label>Titulo</label>
+      <input type="text" formControlName="titulo" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.titulo.errors }" />
+      <div *ngIf="form1.titulo.errors" class="invalid-feedback">
+        <div *ngIf="form1.titulo.errors.required">Debe introducir una contraseña</div>
+      </div>
 
-        <label>Vision</label>
-        <input type="text" formControlName="vision" class="form-control" [ngClass]="{ 'is-invalid': form1.vision.errors }" />
-        <div *ngIf="form1.vision.errors" class="invalid-feedback">
-            <div *ngIf="form1.vision.errors.required">Debe introducir una contraseña</div>
-        </div>
-        <!--fechas-->
-        <label>Fecha Inicio</label>
-        <input type="date" formControlName="fechaInicio" class="form-control" [ngClass]="{ 'is-invalid': form1.fechaInicio.errors }" />
-        <div *ngIf="form1.fechaInicio.errors" class="invalid-feedback">
-            <div *ngIf="form1.fechaInicio.errors.required">Debe introducir una contraseña</div>
-        </div>
+      <label>Objetivo</label>
+      <input type="text" formControlName="objetivo" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.objetivo.errors }" />
+      <div *ngIf="form1.objetivo.errors" class="invalid-feedback">
+        <div *ngIf="form1.objetivo.errors.required">Debe introducir una contraseña</div>
+      </div>
 
-        <label>Fecha Final</label>
-        <input type="date" formControlName="fechaFinal" class="form-control" [ngClass]="{ 'is-invalid': form1.fechaFinal.errors }" />
-        <div *ngIf="form1.fechaFinal.errors" class="invalid-feedback">
-            <div *ngIf="form1.fechaFinal.errors.required">Debe introducir una contraseña</div>
-        </div>
+      <label>Mision</label>
+      <input type="text" formControlName="mision" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.mision.errors }" />
+      <div *ngIf="form1.mision.errors" class="invalid-feedback">
+        <div *ngIf="form1.mision.errors.required">Debe introducir una contraseña</div>
+      </div>
 
-        <label>Seleccionar tipo proyecto</label>
-        <select name="miselect" formControlName="tipo">
-            <option [value]="item.id" *ngFor="let item of lista">{{item.descripcion}}</option>
-        </select>
+      <label>Vision</label>
+      <input type="text" formControlName="vision" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.vision.errors }" />
+      <div *ngIf="form1.vision.errors" class="invalid-feedback">
+        <div *ngIf="form1.vision.errors.required">Debe introducir una contraseña</div>
+      </div>
+      <!--fechas-->
+      <label>Fecha Inicio</label>
+      <input type="date" formControlName="fechaInicio" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.fechaInicio.errors }" />
+      <div *ngIf="form1.fechaInicio.errors" class="invalid-feedback">
+        <div *ngIf="form1.fechaInicio.errors.required">Debe introducir una contraseña</div>
+      </div>
 
-        <div class="bg-light" *ngIf='newProyectForm.value.tipo == 1'>
-            <h4>Proyecto cultural </h4>
-            <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesCult)">+</a>
-            <table class="table table-hover">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre Actividad</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">acciones</th>
-                </tr>
-                <tr *ngFor="let item of listaActividadesCulturales; let i = index">
-                    <td>{{i+1}}</td>
-                    <td>{{item?.title}}</td>
-                    <td>{{item?.desc}}</td>
-                    <td>{{item?.horario}}</td>
-                    <td><a class="btn btn-danger" (click)="eliminarActCult(i)">-</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="bg-light" *ngIf='newProyectForm.value.tipo == 2'>
-            <h4>Proyecto de servicios</h4>
-            <a class="btn btn-success" (click)="openModalFormActividades(templateFormProductos)">+</a>
-            <table class="table table-hover">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre Actividad</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">acciones</th>
-                </tr>
-                <tr *ngFor="let item of listaProductos; let i = index">
-                    <td>{{i+1}}</td>
-                    <td>{{item?.title}}</td>
-                    <td>{{item?.desc}}</td>
-                    <td>{{item?.horario}}</td>
-                    <td><a class="btn btn-danger" (click)="eliminarProdSer(i)">-</a></td>
-                </tr>
-            </table>
-        </div>
-        <div class="bg-light" *ngIf='newProyectForm.value.tipo == 3'>
-            <h4>Proyecto Benefico</h4>
-            <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesBen)">+</a>
-            <table class="table table-hover">
-                <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Nombre Actividad</th>
-                    <th scope="col">Descripcion</th>
-                    <th scope="col">Horario</th>
-                    <th scope="col">acciones</th>
-                </tr>
-                <tr *ngFor="let item of listaActividadesBeneficas; let i = index">
-                    <td>{{i+1}}</td>
-                    <td>{{item?.title}}</td>
-                    <td>{{item?.desc}}</td>
-                    <td>{{item?.horario}}</td>
-                    <td><a class="btn btn-danger" (click)="eliminarActBen(i)">-</a></td>
-                </tr>
-            </table>
-        </div>
+      <label>Fecha Final</label>
+      <input type="date" formControlName="fechaFinal" class="form-control"
+        [ngClass]="{ 'is-invalid': form1.fechaFinal.errors }" />
+      <div *ngIf="form1.fechaFinal.errors" class="invalid-feedback">
+        <div *ngIf="form1.fechaFinal.errors.required">Debe introducir una contraseña</div>
+      </div>
 
-        <!--Submit-->
-        <div class="text-center mt-5">
-            <button class="btn btn-primary mr-1" [disabled]="newProyectForm.invalid">Guardar Cambios</button>
-            <button routerLink="/dashboard" class="btn btn-outline-secondary">Cancelar</button>
-        </div>
-        <div class="row">
+      <label>Seleccionar tipo proyecto</label>
+      <select name="miselect" formControlName="tipo">
+        <option [value]="item.id" *ngFor="let item of lista">{{item.descripcion}}</option>
+      </select>
 
-        </div>
+      <div class="bg-light" *ngIf='newProyectForm.value.tipo == 1'>
+        <h4>Proyecto cultural </h4>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesCult)">+</a>
+        <table class="table table-hover">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Actividad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Horario</th>
+            <th scope="col">acciones</th>
+          </tr>
+          <tr *ngFor="let item of listaActividadesCulturales; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item?.title}}</td>
+            <td>{{item?.desc}}</td>
+            <td>{{item?.horario}}</td>
+            <td><a class="btn btn-danger" (click)="eliminarActCult(i)">-</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="bg-light" *ngIf='newProyectForm.value.tipo == 2'>
+        <h4>Proyecto de servicios</h4>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormProductos)">+</a>
+        <table class="table table-hover">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Actividad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Horario</th>
+            <th scope="col">acciones</th>
+          </tr>
+          <tr *ngFor="let item of listaProductos; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item?.title}}</td>
+            <td>{{item?.desc}}</td>
+            <td>{{item?.horario}}</td>
+            <td><a class="btn btn-danger" (click)="eliminarProdSer(i)">-</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="bg-light" *ngIf='newProyectForm.value.tipo == 3'>
+        <h4>Proyecto Benefico</h4>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesBen)">+</a>
+        <table class="table table-hover">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nombre Actividad</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Horario</th>
+            <th scope="col">acciones</th>
+          </tr>
+          <tr *ngFor="let item of listaActividadesBeneficas; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{item?.title}}</td>
+            <td>{{item?.desc}}</td>
+            <td>{{item?.horario}}</td>
+            <td><a class="btn btn-danger" (click)="eliminarActBen(i)">-</a></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="col-md-4 mt-3">
+      <div class="alert alert-primary" role="alert">
+        A simple primary alert—check it out!
+      </div>
+    </div>
+    <!--Submit-->
+    <div class="text-center mt-5">
+      <button class="btn btn-primary mr-1" [disabled]="newProyectForm.invalid">Guardar Cambios</button>
+      <button routerLink="/dashboard" class="btn btn-outline-secondary">Cancelar</button>
+    </div>
+    <div class="row">
 
-    </form>
+    </div>
+
+  </form>
 
 </div>
 
 
 <ng-template #templateFormActividadesBen>
-    <form class="col-md-8" (ngSubmit)="agregarActBen()" [formGroup]="newAct">
+  <form class="col-md-8" (ngSubmit)="agregarActBen()" [formGroup]="newAct">
 
-        <div class="modal-body text-center">
-            <p>Registrar Actividad Benefica</p>
-            <label>Nombre</label>
-            <input type="text" formControlName="title" class="form-control" />
+    <div class="modal-body text-center">
+      <p>Registrar Actividad Benefica</p>
+      <label>Nombre</label>
+      <input type="text" formControlName="title" class="form-control" />
 
-            <label>Descripcion</label>
-            <input type="text" formControlName="desc" class="form-control" />
+      <label>Descripcion</label>
+      <input type="text" formControlName="desc" class="form-control" />
 
-            <label>Horario</label>
-            <input type="time" formControlName="horario" class="form-control" />
+      <label>Horario</label>
+      <input type="time" formControlName="horario" class="form-control" />
 
-            <button>agregar</button>
-        </div>
-    </form>
+      <button>agregar</button>
+    </div>
+  </form>
 </ng-template>
 
 <ng-template #templateFormActividadesCult>
-    <form class="col-md-8" (ngSubmit)="agregarActCult()" [formGroup]="newAct">
+  <form class="col-md-8" (ngSubmit)="agregarActCult()" [formGroup]="newAct">
 
-        <div class="modal-body text-center">
-            <p>Registrar Actividad Cultural</p>
-            <label>Nombre</label>
-            <input type="text" formControlName="title" class="form-control" />
+    <div class="modal-body text-center">
+      <p>Registrar Actividad Cultural</p>
+      <label>Nombre</label>
+      <input type="text" formControlName="title" class="form-control" />
 
-            <label>Descripcion</label>
-            <input type="text" formControlName="desc" class="form-control" />
+      <label>Descripcion</label>
+      <input type="text" formControlName="desc" class="form-control" />
 
-            <label>Horario</label>
-            <input type="time" formControlName="horario" class="form-control" />
+      <label>Horario</label>
+      <input type="time" formControlName="horario" class="form-control" />
 
-            <button>agregar</button>
-        </div>
-    </form>
+      <button>agregar</button>
+    </div>
+  </form>
 </ng-template>
 
 <ng-template #templateFormProductos>
-    <form class="col-md-12" (ngSubmit)="agregarProdSer()" [formGroup]="newProd">
+  <form class="col-md-12" (ngSubmit)="agregarProdSer()" [formGroup]="newProd">
 
-        <div class="modal-body text-center">
-            <p>Registrar Producto o Servicio</p>
-            <label>Nombre</label>
-            <input type="text" formControlName="title" class="form-control" />
+    <div class="modal-body text-center">
+      <p>Registrar Producto o Servicio</p>
+      <label>Nombre</label>
+      <input type="text" formControlName="title" class="form-control" />
 
-            <label>Descripcion</label>
-            <input type="text" formControlName="desc" class="form-control" />
+      <label>Descripcion</label>
+      <input type="text" formControlName="desc" class="form-control" />
 
-            <label>Precio</label>
-            <input type="number" formControlName="precio" class="form-control" />
+      <label>Precio</label>
+      <input type="number" formControlName="precio" class="form-control" />
 
-            <button>agregar</button>
-        </div>
-    </form>
+      <button>agregar</button>
+    </div>
+  </form>
 </ng-template>

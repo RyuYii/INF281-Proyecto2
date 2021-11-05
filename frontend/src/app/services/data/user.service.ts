@@ -24,4 +24,9 @@ export class UserService {
   changePassword(body: Object){
     return this.http.post(`${API_URL}/changePassword`, body)
   }
+  registrarSolicitud(body: Object){
+    return this.http.post(`${API_URL}/registrarSolicitud`, body)
+  }
+
+  
 }

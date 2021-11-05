@@ -13,10 +13,11 @@ class Routes:
     changePassword = API+"changePassword"
 
     #realizar
-    obtenerEstadoSolicitud = API+"obtenerEstadoSolicitud"
+    obtenerSolicitudes = API+"obtenerSolicitudes"
     registrarSolicitud  = API+"registrarSolicitud"
+    aceptarSolicitud = API+"aceptarSolicitud"
 
-    obtenerFaseProyecto = API+"obtenerFaseProyecto" #pensar
+    obtenerProyectosEnEspera = API+"obtenerProyectosEnEspera" #pensar
     obtenerProyectosRegistrados = API+"obtenerProyectosRegistrados" #parametro null devuelve todos los publicados
     obtenerProyecto  = API+"obtenerProyecto"
     registrarProyecto = API+"registrarProyecto"
