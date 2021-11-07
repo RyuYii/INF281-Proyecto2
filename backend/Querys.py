@@ -200,28 +200,132 @@ class Querys:
         return select(query)
 
     def registrarProyecto(data):
-        pass
+        listado = data['listado']
+        tipo = data['tipo']
+        ident = (''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
+        query = f"""
+            INSERT INTO PROYECTO(
+                titulo_proy, mision, 
+                vision, objetivos, id_usuario, 
+                fecha_inicio, fecha_cierre, 
+                banner, tipo_proy, identifier) 
+            VALUES (
+                '{data["titulo"]}', '{data["mision"]}',
+                '{data["vision"]}','{data["objetivos"]}', {data["idUsuario"]},
+                {f"'{data['fechaInicio']}'" if not data['fechaInicio'] is None else 'null'}, 
+                {f"'{data['fechaFinal']}'" if not data['fechaFinal'] is None else 'null'},
+                {data["banner"]}, {data["tipo"]}, '{ident}')
+        """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
+        #obtenemos el id_proy generado
+        query = f"""
+            select id_proy from PROYECTO where identifier = '{ident}'
+        """
+        step = select(query)
+        idProy = step[0]["idProy"]
+        #preparamos la fase del proyecto
+        qr = f"""
+        INSERT INTO FASE_PROYECTO(
+            estado, fecha_valoracion, 
+            id_proy, id_usuario) 
+        VALUES (
+            1 , current_date,
+            {idProy}, {data["idUsuario"]}
+        )
+        """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
+
+        #almacenamos los patrocinadores
+
+        return {"code":1, "message":"registro correcto"}
 
     def eliminarProyecto(data):
-        pass
+        query = f"""
+            DELETE FROM PROYECTO WHERE id_proy = {data["idProy"]}
+        """
+        #completar, se tienen que borrar todo lo relacionado con el proyecto
+        return insert(query)
 
+    #actividades works
     def obtenerActividades(data):
-        pass
+        query = f"""
+            select * from ACTIVIDAD WHERE id_proy = {data["idProy"]}
+        """
+        return select(query)
 
     def editarActividad(data):
-        pass
+        idActividad = data["idActividad"]
+        if idActividad is None:
+            query = f"""
+                INSERT INTO ACTIVIDAD(
+                    nombre_actividad, 
+                    descripcion, horario, id_proy) 
+                VALUES (
+                    '{data["title"]}',
+                    '{data["desc"]}',
+                    '{data["horario"]}',
+                    {data["idProy"]}
+                )
+            """
+        else:
+            query = f"""
+                update ACTIVIDAD  
+                set 
+                    nombre_actividad = '{data["title"]}', 
+                    descripcion ='{data["desc"]}', 
+                    horario ='{data["horario"]}'
+                where
+                    id_actividad = {idActividad}
+            """
+        return insert(query)
 
     def eliminarActividad(data):
-        pass
-
+        query = f"""
+            DELETE FROM ACTIVIDAD WHERE id_actividad = {data["idActividad"]}
+        """
+        return insert(query)
+    
+    #productos works
     def obtenerProductos(data):
-        pass
+        query = f"""
+            select * from CATALOGO WHERE id_proy = {data["idProy"]}
+        """
+        return select(query)
 
     def editarProductos(data):
-        pass
+        idCat = data["idCat"]
+        if idCat is None:
+            query = f"""
+                INSERT INTO CATALOGO(
+                    nombre_prod, 
+                    descripcion, precio, id_proy) 
+                VALUES (
+                    '{data["title"]}',
+                    '{data["desc"]}',
+                    {data["precio"]},
+                    {data["idProy"]}
+                )
+            """
+        else:
+            query = f"""
+                update CATALOGO 
+                set nombre_prod = '{data["title"]}', 
+                    descripcion = '{data["desc"]}', 
+                    precio = {data["precio"]}
+                where id_cat = {idCat}
+
+            """
+        return insert(query)
 
     def eliminarProducto(data):
-        pass
+        query = f"""
+            DELETE FROM CATALOGO WHERE id_cat={data["idCat"]}
+        """
+        return insert(query)
 
     def obtenerPatrocinadores(data):
         pass
@@ -239,3 +343,4 @@ class Querys:
     def eliminarPatrocinador(data):
         pass
 
+    
