@@ -1,0 +1,42 @@
+.my-drop-zone { border: dashed 6px lightgray; }
+.nv-file-over { 
+    border: dashed 5px limegreen;
+    justify-content: center } /* Default class applied to drop zones on over */
+
+.imgThumbnail{
+  padding: 4px;
+}
+#seleccionarImagen {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  padding-right: 6px;
+  padding-left: 6px;
+  font-family: serif;
+  font-size: 17px;
+}
+
+#botonesTabla {
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-left: 7px;
+  padding-right: 7px;
+}
+
+.registro{
+  background-color: #E9EAEE;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+:host {
+    display: block;
+  }
+  .uploader-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 80vh;
+    padding-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center
+  }

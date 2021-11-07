@@ -23,14 +23,17 @@ export class IntercepterRequestService implements HttpInterceptor {
     // console.log("Comenzando");
     // this.loader.load();
     const token = this.authenticationService.getAuthenticatedToken();
+    const task = this.authenticationService.getTask();
     this
     if (token) {
-      request = request.clone({
-        setHeaders: {
-          "Content-Type": "application/json",
-          'Authorization': 'Bearer '+token // ⬅⬅⬅ authorization token
-        } 
-      });
+      if(task==1){
+        request = request.clone({
+          setHeaders: {
+            "Content-Type": "application/json",
+            'Authorization': 'Bearer '+token // ⬅⬅⬅ authorization token
+          } 
+        });
+      }
     }
     return next.handle(request).pipe(
       catchError((error: HttpErrorResponse) => {

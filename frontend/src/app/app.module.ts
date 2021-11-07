@@ -30,6 +30,11 @@ import { FormularioEdicionProyectoComponent } from './components/formulario-edic
 import { ProyectoComponent } from './components/proyecto/proyecto.component';
 import { PanelProyectosComponent } from './components/panel-proyectos/panel-proyectos.component';
 
+
+import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
+import { Cloudinary } from 'cloudinary-core';
+import { FileUploadModule } from 'ng2-file-upload';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,9 +69,16 @@ import { PanelProyectosComponent } from './components/panel-proyectos/panel-proy
     NgxSpinnerModule,
     ModalModule.forRoot(),
     HttpClientModule,
+    FileUploadModule,
     FormsModule,
     ReactiveFormsModule,
-    CommonModule
+    CommonModule,
+    CloudinaryModule.forRoot({Cloudinary}, { 
+      cloud_name: 'djkhinfbr' ,
+      api_key: '953777888978946',
+      api_secret: '8Nxm-ZvHpCvOpneRRb2SrEajSVU',
+      upload_preset: 'xvcritvd'
+    } as CloudinaryConfiguration),
   ],
   providers: [
     DatePipe,

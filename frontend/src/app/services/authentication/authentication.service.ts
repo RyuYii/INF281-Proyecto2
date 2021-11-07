@@ -117,7 +117,8 @@ export class AuthenticationService {
           this.roles = null
           sessionStorage.setItem("rol", data[0]["idRol"])
         }
-        this.setMenus(this.getRol())
+        this.setMenus(this.getRol());
+        this.setTask(1);
       }
     )
     /*
@@ -189,6 +190,13 @@ export class AuthenticationService {
       return 0;
     }
     return parseInt(sessionStorage.getItem('rol'));
+  }
+
+  setTask(task){
+    sessionStorage.setItem('task', task);
+  }
+  getTask(){
+    return parseInt(sessionStorage.getItem('task'));
   }
 
 }

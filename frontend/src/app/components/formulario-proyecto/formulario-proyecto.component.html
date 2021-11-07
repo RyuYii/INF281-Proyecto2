@@ -114,8 +114,52 @@
       </div>
     </div>
     <div class="col-md-4 mt-3">
-      <div class="alert alert-primary" role="alert">
-        A simple primary alert—check it out!
+      <div class="row justify-content-center">
+        <div class="col-md-12 text-center"><h4>Baner del Proyecto</h4></div>
+        <div class="col-md-12" *ngIf="uploader?.queue?.length == 0 && listaImagenes.length ==0">
+          <div ng2FileDrop [ngClass]="{'nv-file-over': hasBaseDropZoneOver}" (fileOver)="fileOverBase($event)"
+            [uploader]="uploader" class="well my-drop-zone" style="text-align: center">
+            <p style="color: gray;">Arrastrar imagen aqui...</p>
+            <label type="button" class="btn btn-outline-info" id="seleccionarImagen">
+              Seleccionar Imágenes <input type="file" ng2FileSelect [uploader]="uploader" style="display: none;">
+              <span class="fas fa-folder-open" aria-hidden="true"></span>
+            </label>
+          </div>
+        </div>
+        <div class="col-md-12" *ngIf="listaImagenes.length != 0">
+          <div class="card" style="width: 18rem;">
+            <img [src]="listaImagenes[0].data.url" class="card-img-top" alt="...">
+            <div class="card-body">
+              <button id="botonesTabla" type="button" class="btn btn-secondary" (click)='deleteImage(listaImagenes[0].data)'>
+                <span class="far fa-trash-alt"></span> Retirar
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12" *ngIf="uploader?.queue?.length != 0 ">
+          <div class="card" style="width: 18rem;" *ngFor="let item of uploader.queue">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Nombre: {{ item?.file?.name }}</li>
+              <li class="list-group-item">Tam: {{item?.file?.size}} B</li>
+              <li class="list-group-item">
+                <p>Progreso:</p>
+                <div class="progress" style="margin-bottom: 0;">
+                  <div class="progress-bar progress-bar-striped bg-info" [ngStyle]="{ 'width': item.progress + '%' }">
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="card-body">
+              <a id="botonesTabla" type="button" class="btn btn-secondary" (click)="item.upload()"
+                *ngIf="!(item.isReady || item.isUploading || item.isSuccess)">
+                <span class="fa fa-upload"></span> Cargar
+              </a>
+              <a id="botonesTabla" type="button" class="btn btn-secondary" (click)="item.remove()">
+                <span class="fa fa-trash"></span> Eliminar
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <!--Submit-->
