@@ -149,47 +149,94 @@ class ObtenerProyectosRegistrados(Resource): #parametro null devuelve todos los 
     return Querys.obtenerProyectosRegistrados(data)
     
 parserOP = reqparse.RequestParser()
-parserOP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
+parserOP.add_argument('idProy', type=int, help = 'This field cannot be blank', required = True)
 class ObtenerProyecto (Resource):
   @jwt_required
   def post(self):
     data = parserOP.parse_args()
     return Querys.obtenerProyecto(data)
 
+parserRProy = reqparse.RequestParser()
+parserRProy.add_argument('idProy')
+parserRProy.add_argument('tipo')
+parserRProy.add_argument('banner')
+parserRProy.add_argument('fechaFinal')
+parserRProy.add_argument('fechaInicio')
+parserRProy.add_argument('titulo')
+parserRProy.add_argument('objetivo')
+parserRProy.add_argument('mision')
+parserRProy.add_argument('vision')
+parserRProy.add_argument('listado', type=list)
 class RegistrarProyecto(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserRProy.parse_args()
+    print(data)
+    return data
+
+parserEProy = reqparse.RequestParser()
+parserEProy.add_argument('idProy')
 class EliminarProyecto(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEProy.parse_args()
+    return Querys.eliminarProyecto(data)
 
+parserAcO = reqparse.RequestParser()
+parserAcO.add_argument("idProy",type=int)
 class ObtenerActividades(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserAcO.parse_args()
+    return Querys.obtenerActividades(data)
+
+parserAcE = reqparse.RequestParser()
+parserAcE.add_argument("title",type=str)
+parserAcE.add_argument("desc",type=str)
+parserAcE.add_argument("horario",type=str)
+parserAcE.add_argument("idActividad",type=int)
+parserAcE.add_argument("idProy",type=int)
 class EditarActividad(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserAcE.parse_args()
+    return Querys.editarActividad(data)
+
+parserAcEl = reqparse.RequestParser()
+parserAcEl.add_argument("idActividad",type=int) 
 class EliminarActividad(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserAcEl.parse_args()
+    return Querys.eliminarActividad(data)
 
+parserProO = reqparse.RequestParser()
+parserProO.add_argument("idProy",type=int)
 class ObtenerProductos(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserProO.parse_args()
+    return Querys.obtenerProductos(data)
+
+parserProE = reqparse.RequestParser()
+parserProE.add_argument("title",type=str)
+parserProE.add_argument("desc",type=str)
+parserProE.add_argument("precio",type=float)
+parserProE.add_argument("idCat",type=int)
+parserProE.add_argument("idProy",type=int)
 class EditarProductos(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserProE.parse_args()
+    return Querys.editarProductos(data)
+
+parserProEl = reqparse.RequestParser()
+parserProEl.add_argument("idCat",type=int) 
 class EliminarProducto(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserProEl.parse_args()
+    return Querys.eliminarProducto(data)
 
 class ObtenerPatrocinadores(Resource):
   @jwt_required

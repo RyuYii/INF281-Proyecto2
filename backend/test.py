@@ -63,7 +63,13 @@ VALUES (
 
 
 qr = f"""
-INSERT INTO PATROCINADOR( nombre_p, tipo_patrocinador) VALUES ('pepsi','comercial')
+INSERT INTO FASE_PROYECTO(
+  estado, fecha_valoracion, 
+  id_proy, id_usuario) 
+VALUES (
+  1 , current_date,
+  1, 12
+)
 """
 #x = select(qr)[0]['password'] print(''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
 print(insert(qr))
