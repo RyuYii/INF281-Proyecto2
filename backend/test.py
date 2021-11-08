@@ -65,5 +65,12 @@ VALUES (
 qr = f"""
 INSERT INTO PATROCINADOR( nombre_p, tipo_patrocinador) VALUES ('pepsi','comercial')
 """
+
+qr = f"""
+update CATALOGO
+set descripcion = '?', precio = 0, nombre_prod = '?'
+where id_cat = 9
+"""
+
 #x = select(qr)[0]['password'] print(''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
 print(insert(qr))

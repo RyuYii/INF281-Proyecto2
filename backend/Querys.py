@@ -203,28 +203,76 @@ class Querys:
         pass
 
     def eliminarProyecto(data):
-        pass
+        idProy = data["idProy"]
+        query = f"""
+            delete 
+            from PROYECTO
+            where id_proy = {idProy}
+        """
+        return insert(query)
 
     def obtenerActividades(data):
-        pass
+        idAct = data["idAct"]
+        query = f"""
+            select * 
+            from ACTIVIDAD
+            where id_actividad = {idAct}
+        """
+        return select(query)
 
     def editarActividad(data):
-        pass
+        idAct = data["idAct"]
+        query = f"""
+            update ACTIVIDAD
+            set nombre_actividad = '?', descripcion = '?', horario = ''
+            where id_actividad = {idAct}
+        """
+        return insert(query)
 
     def eliminarActividad(data):
-        pass
+        idAct = data["idAct"]
+        query = f"""
+            delete 
+            from ACTIVIDAD
+            where id_actividad = {idAct}
+        """
+        return insert(query)
 
     def obtenerProductos(data):
-        pass
+        idCat = data["idCat"]
+        query = f"""
+            select * 
+            from CATALOGO
+            where id_cat = {idCat}
+        """
+        return select(query)
 
     def editarProductos(data):
-        pass
+        idCat = data["idCat"]
+        query = f"""
+            update CATALOGO
+            set descripcion = '?', precio = 0, nombre_prod = '?'
+            where id_cat = {idCat}
+        """
+        return insert(query)
 
     def eliminarProducto(data):
-        pass
+        idCat = data["idCat"]
+        query = f"""
+            delete 
+            from CATALOGO
+            where id_cat = {idCat}
+        """
+        return insert(query)
 
     def obtenerPatrocinadores(data):
-        pass
+        idPat = data["idPat"]
+        query = f"""
+            select * 
+            from PATROCINADOR
+            where id_patrocinador = {idPat}
+        """
+        return select(query)
 
     def registrarPatrocinador(data):
         nombreP = data["nombreP"]
@@ -236,6 +284,14 @@ class Querys:
         """
         return insert(query)
 
+    #Eliminar Patrocinador por id_patrocinador
     def eliminarPatrocinador(data):
-        pass
+        idPat = data["idPat"]
+        query = f"""
+            delete 
+            from PATROCINADOR
+            where id_patrocinador = {idPat}
+        """
+        return insert(query)
 
+   

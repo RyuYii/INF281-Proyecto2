@@ -160,41 +160,70 @@ class RegistrarProyecto(Resource):
   @jwt_required
   def post(self):
     pass
+
+parserEPR = reqparse.RequestParser()
+parserEPR.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
 class EliminarProyecto(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEPR.parse_args()
+    return Querys.eliminarProyecto(data)
 
+parserOA = reqparse.RequestParser()
+parserOA.add_argument('idAct', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerActividades(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserOA.parse_args()
+    return Querys.obtenerActividades(data)
+
+parserEAC = reqparse.RequestParser()
+parserEAC.add_argument('idAct', type=str, help = 'This field cannot be blank', required = True)
 class EditarActividad(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEAC.parse_args()
+    return Querys.editarActividad(data)
+
+parserEA = reqparse.RequestParser()
+parserEA.add_argument('idAct', type=str, help = 'This field cannot be blank', required = True)
 class EliminarActividad(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEA.parse_args()
+    return Querys.eliminarActividad(data)
 
+parserOPC = reqparse.RequestParser()
+parserOPC.add_argument('idCat', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerProductos(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserOPC.parse_args()
+    return Querys.obtenerProductos(data)
+
+parserEDC = reqparse.RequestParser()
+parserEDC.add_argument('idCat', type=str, help = 'This field cannot be blank', required = True)
 class EditarProductos(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEDC.parse_args()
+    return Querys.editarProductos(data)
+
+parserEPC = reqparse.RequestParser()
+parserEPC.add_argument('idCat', type=str, help = 'This field cannot be blank', required = True)
 class EliminarProducto(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEPC.parse_args()
+    return Querys.eliminarProducto(data)
 
+parserOPA = reqparse.RequestParser()
+parserOPA.add_argument('idPat', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerPatrocinadores(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserOPA.parse_args()
+    return Querys.obtenerPatrocinadores(data)
 
 parserRP = reqparse.RequestParser()
 parserRP.add_argument('nombreP', type=str, help = 'This field cannot be blank', required = True)
@@ -205,8 +234,11 @@ class RegistrarPatrocinador (Resource):
     data = parserRP.parse_args()
     return Querys.registrarPatrocinador(data)
 
+parserEP = reqparse.RequestParser()
+parserEP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
 class EliminarPatrocinador(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEP.parse_args()
+    return Querys.eliminarPatrocinador(data)
    
