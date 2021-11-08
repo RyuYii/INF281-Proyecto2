@@ -79,7 +79,6 @@ export class FormularioProyectoComponent implements OnInit {
       form.append('upload_preset', this.cloudinary.config().upload_preset);
       // Usar el valor predeterminado "withCredentials" para las solicitudes CORS
       fileItem.withCredentials = false;
-      console.log(fileItem,'#######')
       return { fileItem, form };
     }
 
@@ -127,7 +126,7 @@ export class FormularioProyectoComponent implements OnInit {
   }
   onSubmit1(){
     const initialState = {
-      text: '¿Desea cambiar la contraseña'
+      text: 'El proyecto sera enviado a revision por uno de los administradores \n¿Esta segur@ de enviarlo?'
     };
     this.modalRef = this.modalService.show(ConfirmModalComponent, {initialState});
     this.modalRef.content.onClose.subscribe(result => {
@@ -219,6 +218,7 @@ export class FormularioProyectoComponent implements OnInit {
     this.authService.setTask(0);
     this.http.post(url, body, options).subscribe(response => {
       // Remove deleted item for responses
+      this.toastr.success(`Deleted image - ${data.public_id} ${response.result}`);
       this.listaImagenes = [];
       this.authService.setTask(1);
     });

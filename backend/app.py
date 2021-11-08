@@ -75,6 +75,11 @@ api.add_resource(resources.ObtenerPatrocinadores, Routes.obtenerPatrocinadores)
 api.add_resource(resources.RegistrarPatrocinador, Routes.registrarPatrocinador )
 api.add_resource(resources.EliminarPatrocinador, Routes.eliminarPatrocinador)
 
+api.add_resource(resources.ListarComentarios, Routes.listarComentarios)
+api.add_resource(resources.ListarComentariosProyecto, Routes.listarComentariosProyecto)
+api.add_resource(resources.RegistrarComentario, Routes.registrarComentario)
+api.add_resource(resources.EliminarComentario, Routes.eliminarComentario)
+
 @jwt.expired_token_loader
 def my_expired_token_callback(expired_token):
 	token_type = expired_token['type']

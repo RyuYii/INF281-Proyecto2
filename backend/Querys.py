@@ -343,4 +343,43 @@ class Querys:
     def eliminarPatrocinador(data):
         pass
 
+    def registrarComentario(data):
+        query = f"""
+            INSERT INTO COMENTARIO(
+                comentario, 
+                id_proy, 
+                id_usuario, 
+                fecha_comentario) 
+            VALUES (
+                '{data["comentario"]}',
+                {data["idProy"]},
+                {data["idUsuario"]},
+                current_date
+            )
+        """
+        return insert(query)
+
+    def eliminarComentario(data):
+        query = f"""
+            DELETE FROM COMENTARIO WHERE id_comentario={data["idComentario"]}
+        """
+        return insert(query)
+
+    def listarComentariosProyecto(data):
+        query = f"""
+            select COMENTARIO.*, PERSONA.* from COMENTARIO
+            LEFT JOIN USUARIO ON COMENTARIO.id_usuario = USUARIO.id_usuario
+            LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci 
+            where id_proy = {data["idProy"]}
+        """
+        return select(query)
     
+    #listado para el superUsuario
+    def listarComentarios():
+        query = f"""
+            select COMENTARIO.*, PERSONA.* from COMENTARIO
+            LEFT JOIN USUARIO ON COMENTARIO.id_usuario = USUARIO.id_usuario
+            LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
+            order by COMENTARIO.id_proy
+        """
+        return select(query)

@@ -63,13 +63,10 @@ VALUES (
 
 
 qr = f"""
-INSERT INTO FASE_PROYECTO(
-  estado, fecha_valoracion, 
-  id_proy, id_usuario) 
-VALUES (
-  1 , current_date,
-  1, 12
-)
+select COMENTARIO.*, PERSONA.* from COMENTARIO
+LEFT JOIN USUARIO ON COMENTARIO.id_usuario = USUARIO.id_usuario
+LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
+order by COMENTARIO.id_proy
 """
 #x = select(qr)[0]['password'] print(''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
-print(insert(qr))
+print(select(qr))

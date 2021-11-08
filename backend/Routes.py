@@ -34,3 +34,8 @@ class Routes:
     obtenerPatrocinadores = API+"obtenerPatrocinadores"
     registrarPatrocinador  = API+"registrarPatrocinador"
     eliminarPatrocinador = API+"eliminarPatrocinador"
+
+    registrarComentario = API+"registrarComentario"
+    eliminarComentario = API+"eliminarComentario"
+    listarComentariosProyecto = API+"listarComentariosProyecto"
+    listarComentarios = API+"listarComentarios"

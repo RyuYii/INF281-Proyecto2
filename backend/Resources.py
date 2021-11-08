@@ -256,4 +256,41 @@ class EliminarPatrocinador(Resource):
   @jwt_required
   def post(self):
     pass
+
+class EliminarPatrocinador(Resource):
+  @jwt_required
+  def post(self):
+    pass
+
+parserRCom = reqparse.RequestParser()
+parserRCom.add_argument("comentario",type=str)
+parserRCom.add_argument("idUsuario",type=int)
+parserRCom.add_argument("idProy",type=int)
+class RegistrarComentario(Resource):
+  @jwt_required
+  def post(self):
+    data = parserRCom.parse_args()
+    return Querys.registrarComentario(data)
+
+parserECom = reqparse.RequestParser()
+parserECom.add_argument("idComentario",type=int)
+class EliminarComentario(Resource):
+  @jwt_required
+  def post(self):
+    data = parserECom.parse_args()
+    return Querys.eliminarComentario(data)
+
+parserLComP = reqparse.RequestParser()
+parserLComP.add_argument("idProy",type=int)
+class ListarComentariosProyecto(Resource):
+  @jwt_required
+  def post(self):
+    data = parserLComP.parse_args()
+    return Querys.listarComentariosProyecto(data)
+
+class ListarComentarios(Resource):
+  @jwt_required
+  def get(self):
+    return Querys.listarComentarios()
+
    
