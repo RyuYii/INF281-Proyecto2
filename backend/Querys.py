@@ -2,6 +2,8 @@ from database import connect
 import pandas as pd
 import json
 import hashlib
+import string
+import random
 
 from re import sub
 
@@ -202,7 +204,7 @@ class Querys:
     def registrarProyecto(data):
         listado = data['listado']
         tipo = data['tipo']
-        ident = (''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
+        ident = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(15))
         query = f"""
             INSERT INTO PROYECTO(
                 titulo_proy, mision, 
@@ -211,10 +213,10 @@ class Querys:
                 banner, tipo_proy, identifier) 
             VALUES (
                 '{data["titulo"]}', '{data["mision"]}',
-                '{data["vision"]}','{data["objetivos"]}', {data["idUsuario"]},
+                '{data["vision"]}','{data["objetivo"]}', {data["idUsuario"]},
                 {f"'{data['fechaInicio']}'" if not data['fechaInicio'] is None else 'null'}, 
                 {f"'{data['fechaFinal']}'" if not data['fechaFinal'] is None else 'null'},
-                {data["banner"]}, {data["tipo"]}, '{ident}')
+                '{data["banner"]}', {data["tipo"]}, '{ident}')
         """
         step = insert(query)
         if step['code'] == 0:
@@ -226,7 +228,7 @@ class Querys:
         step = select(query)
         idProy = step[0]["idProy"]
         #preparamos la fase del proyecto
-        qr = f"""
+        query = f"""
         INSERT INTO FASE_PROYECTO(
             estado, fecha_valoracion, 
             id_proy, id_usuario) 
@@ -241,7 +243,7 @@ class Querys:
 
         #almacenamos los patrocinadores
 
-        return {"code":1, "message":"registro correcto"}
+        return {"code":1, "message":"registro exitoso", "idProy":f"{idProy}"}
 
     def eliminarProyecto(data):
         query = f"""

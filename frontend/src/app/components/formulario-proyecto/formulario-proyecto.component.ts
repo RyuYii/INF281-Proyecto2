@@ -6,6 +6,10 @@ import { FileUploader, FileUploaderOptions, ParsedResponseHeaders } from 'ng2-fi
 import { Cloudinary } from '@cloudinary/angular-5.x';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
+import { UserService } from 'src/app/services/data/user.service';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario-proyecto',
@@ -41,7 +45,11 @@ export class FormularioProyectoComponent implements OnInit {
     private modalService: BsModalService,
     private cloudinary: Cloudinary, 
     private http: HttpClient,
-    private authService: AuthenticationService
+    private authService: AuthenticationService,
+    private userService: UserService,
+    private spiner: NgxSpinnerService,
+    private toastr: ToastrService,
+    private router: Router
   ) { 
     this.title = '';
   }
@@ -97,7 +105,7 @@ export class FormularioProyectoComponent implements OnInit {
       objetivo: [''],
       mision: [''],
       vision: [''],
-      tipo: [''],
+      tipo: [1],
       fechaInicio: [''],
       fechaFinal: ['']
     });
@@ -131,34 +139,30 @@ export class FormularioProyectoComponent implements OnInit {
     this.modalRef = this.modalService.show(ConfirmModalComponent, {initialState});
     this.modalRef.content.onClose.subscribe(result => {
       if (result) {
-        //this.spinner.show();
+        this.spiner.show();
         let obj: any = this.newProyectForm.value;
-        if(obj.tipo == 1){
-          obj["listado"] = this.listaActividadesCulturales
-        }
-        if(obj.tipo == 2){  
-          obj["listado"] = this.listaProductos
-        }
-        if(obj.tipo == 3){
-          obj["listado"] = this.listaActividadesBeneficas
-        }
+        obj["idUsuario"] = this.authService.getUser()
         if(this.listaImagenes.length != 0)
-          obj["baner"] = this.listaImagenes[0].data.url
+          obj["banner"] = btoa(this.listaImagenes[0].data.url);
+        else
+          obj["banner"] = btoa('assets/img/banerDefault.jpg');
         console.log(obj);
         //obj.idEntidadBancaria = parseInt(obj.idEntidadBancaria);
-        /*
-        this.busquedaService.RegistrarPersonaCuentaBancaria(obj).subscribe(
+        
+        this.userService.registrarProyecto(obj).subscribe(
           (data: any) => {
-            this.spinner.hide();
-            if (data.code === 1)
+            this.spiner.hide();
+            if (data.code === 1){
               this.toastr.success(data.message);
+              this.llenarRecursos(data.idProy, obj["tipo"]);
+              this.router.navigate(['dashboard']);
+            }
             else
               this.toastr.warning(data.message);
             this.modalService.hide(1)
-            this.seleccionaroPersona();
           }
         )
-        */
+        
       }
       else {
         console.log('terminate')
@@ -166,6 +170,49 @@ export class FormularioProyectoComponent implements OnInit {
     })
 
   }
+  llenarRecursos(idProy:any, tipo:any){
+    if(tipo == 1){
+      this.listaActividadesCulturales.forEach(
+        (item:any)=>{
+          item["idProy"] = idProy;
+          this.userService.editarActividad(item).subscribe((data:any)=>{
+            if(data.code == 0){
+              this.toastr.warning(data.message);
+              return;
+            }
+          })
+        }
+      )
+    }
+    if(tipo == 2){  
+      this.listaProductos.forEach(
+        (item:any)=>{
+          item["idProy"] = idProy;
+          this.userService.editarProductos(item).subscribe((data:any)=>{
+            if(data.code == 0){
+              this.toastr.warning(data.message);
+              return;
+            }
+          })
+        }
+      )
+    }
+    if(tipo == 3){
+      this.listaActividadesBeneficas.forEach(
+        (item:any)=>{
+          item["idProy"] = idProy;
+          this.userService.editarActividad(item).subscribe((data:any)=>{
+            if(data.code == 0){
+              this.toastr.warning(data.message);
+              return;
+            }
+          })
+        }
+      )
+    }
+  }
+
+
   openModalFormActividades(template: TemplateRef<any>) {
     this.modalForm = this.modalService.show(template, {class: 'modal-sm'});
   }

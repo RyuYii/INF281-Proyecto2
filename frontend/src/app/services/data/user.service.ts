@@ -28,5 +28,69 @@ export class UserService {
     return this.http.post(`${API_URL}/registrarSolicitud`, body)
   }
 
-  
+  registrarProyecto(body: Object){
+    return this.http.post(`${API_URL}/registrarProyecto`, body)
+  }
+  eliminarProyecto(body: Object){
+    return this.http.post(`${API_URL}/eliminarProyecto`, body)
+  }
+  obtenerProyecto(body: Object){
+    return this.http.post(`${API_URL}/obtenerProyecto`, body)
+  }
+
+  obtenerProyectosRegistrados(body: Object){
+    return this.http.post(`${API_URL}/obtenerProyectosRegistrados`, body)
+  }
+
+  obtenerActividades(body: Object){
+    return this.http.post(`${API_URL}/obtenerActividades`, body)
+  }
+
+  editarActividad(body: Object){
+    return this.http.post(`${API_URL}/editarActividad`, body)
+  }
+
+  eliminarActividad(body: Object){
+    return this.http.post(`${API_URL}/eliminarActividad`, body)
+  }
+
+  obtenerProductos(body: Object){
+    return this.http.post(`${API_URL}/obtenerProductos`, body)
+  }
+
+  editarProductos(body: Object){
+    return this.http.post(`${API_URL}/editarProductos`, body)
+  }
+
+  eliminarProducto(body: Object){
+    return this.http.post(`${API_URL}/eliminarProducto`, body)
+  }
+
+  obtenerPatrocinadores(body: Object){
+    return this.http.post(`${API_URL}/obtenerPatrocinadores`, body)
+  }
+
+  registrarPatrocinador(body: Object){
+    return this.http.post(`${API_URL}/registrarPatrocinador`, body)
+  }
+
+  eliminarPatrocinador(body: Object){
+    return this.http.post(`${API_URL}/eliminarPatrocinador`, body)
+  }
+
+  registrarComentario(body: Object){
+    return this.http.post(`${API_URL}/registrarComentario`, body)
+  }
+
+  eliminarComentario(body: Object){
+    return this.http.post(`${API_URL}/eliminarComentario`, body)
+  }
+
+  listarComentariosProyecto(body: Object){
+    return this.http.post(`${API_URL}/listarComentariosProyecto`, body)
+  }
+
+  listarComentarios(body: Object){
+    return this.http.post(`${API_URL}/listarComentarios`, body)
+  }
 }

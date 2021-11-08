@@ -86,6 +86,7 @@ export class AuthenticationService {
             //console.log(jwt_decode(token.substr(7, token.length)));
             sessionStorage.setItem("user",jwt_decode(token.substr(7, token.length)).identity);
             //console.log(this.getUser());
+            this.setTask(1);
             this.setConfiguration();
           }
         )
@@ -118,7 +119,6 @@ export class AuthenticationService {
           sessionStorage.setItem("rol", data[0]["idRol"])
         }
         this.setMenus(this.getRol());
-        this.setTask(1);
       }
     )
     /*

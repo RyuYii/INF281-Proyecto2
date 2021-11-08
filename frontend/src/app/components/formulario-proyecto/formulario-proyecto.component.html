@@ -130,9 +130,9 @@
           <div class="card" style="width: 18rem;">
             <img [src]="listaImagenes[0].data.url" class="card-img-top" alt="...">
             <div class="card-body">
-              <button id="botonesTabla" type="button" class="btn btn-secondary" (click)='deleteImage(listaImagenes[0].data)'>
-                <span class="far fa-trash-alt"></span> Retirar
-              </button>
+              <a id="botonesTabla" type="button" class="btn btn-secondary" (click)='deleteImage(listaImagenes[0].data)'>
+                <span class="far fa-trash-alt"></span> Eliminar
+              </a>
             </div>
           </div>
         </div>
@@ -155,7 +155,7 @@
                 <span class="fa fa-upload"></span> Cargar
               </a>
               <a id="botonesTabla" type="button" class="btn btn-secondary" (click)="item.remove()">
-                <span class="fa fa-trash"></span> Eliminar
+                <span class="fa fa-trash"></span> Cambiar
               </a>
             </div>
           </div>

@@ -22,12 +22,14 @@ export class AdminComponent implements OnInit {
       })
     this.rootService.obtenerProyectosEnEspera().subscribe(
       (data: any)=>{
-        console.log(data)
         this.listProyectosEnEspera = data;
       }
     )
   }
 
+  decode(data){
+    return atob(data);
+  }
   aceptarSolicitud(idUsuario: number){
     let body: Object = {"idUsuario":idUsuario}
     this.rootService.aceptarSolicitud(body).subscribe(
