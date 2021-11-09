@@ -342,7 +342,13 @@ class Querys:
         return insert(query)
 
     def obtenerPatrocinadores(data):
-        pass
+        idPat = data["idPat"]
+        query = f"""
+            select * 
+            from PATROCINADOR
+            where id_patrocinador = {idPat}
+        """
+        return select(query)
 
     def registrarPatrocinador(data):
         nombreP = data["nombreP"]
@@ -354,8 +360,15 @@ class Querys:
         """
         return insert(query)
 
+    #Eliminar Patrocinador por id_patrocinador
     def eliminarPatrocinador(data):
-        pass
+        idPat = data["idPat"]
+        query = f"""
+            delete 
+            from PATROCINADOR
+            where id_patrocinador = {idPat}
+        """
+        return insert(query)
 
     def registrarComentario(data):
         query = f"""

@@ -68,5 +68,12 @@ LEFT JOIN USUARIO ON COMENTARIO.id_usuario = USUARIO.id_usuario
 LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
 order by COMENTARIO.id_proy
 """
+
+qr = f"""
+update CATALOGO
+set descripcion = '?', precio = 0, nombre_prod = '?'
+where id_cat = 9
+"""
+
 #x = select(qr)[0]['password'] print(''.join(random.choice(string.ascii_letters + 5) for _ in range(8)))
 print(select(qr))

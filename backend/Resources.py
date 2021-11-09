@@ -237,10 +237,13 @@ class EliminarProducto(Resource):
     data = parserProEl.parse_args()
     return Querys.eliminarProducto(data)
 
+parserOPA = reqparse.RequestParser()
+parserOPA.add_argument('idPat', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerPatrocinadores(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserOPA.parse_args()
+    return Querys.obtenerPatrocinadores(data)
 
 parserRP = reqparse.RequestParser()
 parserRP.add_argument('nombreP', type=str, help = 'This field cannot be blank', required = True)
@@ -251,10 +254,13 @@ class RegistrarPatrocinador (Resource):
     data = parserRP.parse_args()
     return Querys.registrarPatrocinador(data)
 
+parserEP = reqparse.RequestParser()
+parserEP.add_argument('idProy', type=str, help = 'This field cannot be blank', required = True)
 class EliminarPatrocinador(Resource):
   @jwt_required
   def post(self):
-    pass
+    data = parserEP.parse_args()
+    return Querys.eliminarPatrocinador(data)
 
 class EliminarPatrocinador(Resource):
   @jwt_required
