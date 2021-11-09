@@ -159,7 +159,19 @@ class Querys:
             set estado = 0
             where id_usuario = {user}
         """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
+        query = f"""
+            update TIENE
+            set id_rol = 2
+            where id_usuario = {user}
+        """
         return insert(query)
+
+
+
+        
     #proyectos estado 1: solicitud 2:aceptados 3:rechazados
     def obtenerProyectosEnEspera():
         query = """

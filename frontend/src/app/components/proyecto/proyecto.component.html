@@ -1,1 +1,62 @@
-<div>pass</div>
+
+<div class="container">
+    <p>{{idProy}}</p>
+    <!-- presentacion -->
+    <div class="row">
+        <div class="col-md-8">
+            <h3>{{proyecto?.tituloProy}}</h3>
+            <h5>{{proyecto?.objetivos}}</h5>
+            <h5>{{proyecto?.mision}}</h5>
+            <h5>{{proyecto?.vision}}</h5>
+        </div>
+        <div class="col-md-4">
+            <img [src]="decode(proyecto?.banner)" class="img-fluid" alt="...">
+        </div>
+    </div>
+    <!-- actividades -->
+    <div class="row" *ngIf="tipoProyecto">
+        <table class="table table-borderless table-hover">
+            <tr>
+                <th scope="col">Actividad</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Horario</th>
+                <!-- <th scope="col">Handle</th> -->
+            </tr>
+            <tr *ngFor="let item of actividades">
+                <td>{{item?.nombreActividad}}</td>
+                <td>{{item?.descripcion}}</td>
+                <td>{{item?.horario}}</td>
+                <!-- <td>@mdo</td> -->
+              </tr>
+          </table>
+
+    </div>
+    <!-- productos -->
+    <div class="row" *ngIf="!tipoProyecto">
+        <table class="table table-borderless table-hover">
+            <tr>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripcion</th>
+                <th scope="col">Precio</th>
+                <!-- <th scope="col">Handle</th> -->
+            </tr>
+            <tr *ngFor="let item of productos">
+                <td>{{item?.nombreProd}}</td>
+                <td>{{item?.descripcion}}</td>
+                <td>{{item?.precio}}</td>
+                <!-- <td>@mdo</td> -->
+              </tr>
+          </table>
+
+    </div>
+
+    <!-- patrocinadores -->
+    <div class="row">
+
+    </div>
+
+    <!-- comentarios -->
+    <div class="row">
+
+    </div>
+</div>

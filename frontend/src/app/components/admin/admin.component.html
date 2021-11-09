@@ -72,8 +72,8 @@
                     </div>
                     <div class="card-footer">
                       <div class="row justify-content-center">
-                        <a class="btn btn-primary">Aceptar</a>
-                        <a class="btn btn-info">Ver proyecto</a>
+
+                        <a (click)="openModalProyect(proyectoView, item?.idProy)" class="btn btn-info">Ver proyecto</a>
                       </div>
                     </div>
                   </div>
@@ -113,20 +113,23 @@
             </main>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js" integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <!-- Github buttons -->
-    <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script>
-        new Chartist.Line('#traffic-chart', {
-            labels: ['January', 'Februrary', 'March', 'April', 'May', 'June'],
-            series: [
-                [23000, 25000, 19000, 34000, 56000, 64000]
-            ]
-            }, {
-            low: 0,
-            showArea: true
-        });
-    </script>
 </div>
+
+<ng-template #proyectoView data-bs-backdrop="static">
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+      <button type="button" class="btn btn-close btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-window-close"></i></button>
+    </div>
+    <div class="modal-body">
+      <app-proyecto [idProyecto]="idProyectoSeleccionado"></app-proyecto>
+    </div>
+    <div class="modal-footer">
+      <a (click)="valorarProyecto(idProyectoSeleccionado, 2)" class="btn btn-primary">Aceptar</a>
+      <a (click)="valorarProyecto(idProyectoSeleccionado, 2)" class="btn btn-danger">Rechazar</a>
+      <a (click)="cerrarModal()" class="btn btn-secondary">cancelar</a>
+      
+    </div>
+  </div>
+</ng-template>
