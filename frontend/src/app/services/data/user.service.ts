@@ -42,6 +42,10 @@ export class UserService {
     return this.http.post(`${API_URL}/obtenerProyectosRegistrados`, body)
   }
 
+  obtenerProyectosRegistradosGet(){
+    return this.http.get(`${API_URL}/obtenerProyectosRegistrados`)
+  }
+
   obtenerActividades(body: Object){
     return this.http.post(`${API_URL}/obtenerActividades`, body)
   }

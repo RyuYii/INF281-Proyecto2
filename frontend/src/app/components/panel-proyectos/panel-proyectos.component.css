@@ -1,0 +1,16 @@
+.truncar{
+    width:100%;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+
+.tarjeta:hover {
+    background-color:#adb5bd;
+    cursor: pointer;
+  }
+.tarjeta:active {
+background-color: #a4a6a8;
+cursor: pointer;
+}

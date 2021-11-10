@@ -147,6 +147,8 @@ class ObtenerProyectosRegistrados(Resource): #parametro null devuelve todos los 
   def post(self):
     data = parserOPR.parse_args()
     return Querys.obtenerProyectosRegistrados(data)
+  def get(self):
+    return Querys.obtenerProyectosRegistrados({"idUsuario":0})
     
 parserOP = reqparse.RequestParser()
 parserOP.add_argument('idProy', type=int, help = 'This field cannot be blank', required = True)
