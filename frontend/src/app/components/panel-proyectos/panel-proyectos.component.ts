@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { UserService } from 'src/app/services/data/user.service';
 
 @Component({
   selector: 'app-panel-proyectos',
@@ -7,9 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PanelProyectosComponent implements OnInit {
 
-  constructor() { }
+  proyectos: any[] = [];
+
+  constructor(
+    private spinner: NgxSpinnerService,
+    private userService: UserService
+  ) { }
 
   ngOnInit(): void {
+    this.spinner.show();
+    
+    this.userService.obtenerProyectosRegistradosGet().subscribe(
+      (data: any) => {
+        console.log(data)
+        this.proyectos = data;
+        this.spinner.hide();
+      })
   }
+
 
 }
