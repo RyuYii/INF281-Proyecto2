@@ -6,28 +6,15 @@
         <button routerLink="/formRegistroProy" class="btn btn-outline-secondary">Agregar nuevo Proyecto</button>
     </div>
     <div class="row">
-        <div class="card" style="width: 18rem;">
-            <img src="assets/img/banerDefault.jpg" class="card-img-top" alt="...">
+        <div class="card" style="width: 18rem;" *ngFor="let item of listProyectos">
+            <img [src]="decode(item?.banner)" class="card-img-top" alt="...">
             <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../../../assets/img/banerDefault.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-          <div class="card" style="width: 18rem;">
-            <img src="../../../assets/img/banerDefault.jpg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+
+              <h5 class="card-title">{{item?.tituloProy}} 
+                <app-badge [estado]="item?.estado"></app-badge>
+              </h5>
+              <p class="card-text">{{item?.objetivos}}</p>
+              <a [routerLink]="['/proyecto', item?.idProy]" class="btn btn-primary">Ver Proyecto</a>
             </div>
           </div>
     </div>

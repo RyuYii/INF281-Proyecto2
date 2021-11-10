@@ -34,6 +34,7 @@ import { PanelProyectosComponent } from './components/panel-proyectos/panel-proy
 import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5.x';
 import { Cloudinary } from 'cloudinary-core';
 import { FileUploadModule } from 'ng2-file-upload';
+import { BadgeComponent } from './components/elements/badge/badge.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { FileUploadModule } from 'ng2-file-upload';
     FormularioEdicionDatosComponent,
     FormularioEdicionProyectoComponent,
     ProyectoComponent,
-    PanelProyectosComponent
+    PanelProyectosComponent,
+    BadgeComponent
   ],
   imports: [
     BrowserModule,

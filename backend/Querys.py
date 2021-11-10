@@ -188,7 +188,7 @@ class Querys:
         query = ''
         if user == 0:
             query = """
-                select FASE_PROYECTO.id_fase, PROYECTO.*, PERSONA.* from FASE_PROYECTO
+                select FASE_PROYECTO.estado, PROYECTO.*, PERSONA.* from FASE_PROYECTO
                 left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
                 left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
                 left join PERSONA on PERSONA.ci = USUARIO.ci
@@ -196,7 +196,7 @@ class Querys:
             """
         else:
             query = f"""
-                select FASE_PROYECTO.id_fase, PROYECTO.*, PERSONA.* from FASE_PROYECTO
+                select FASE_PROYECTO.estado, PROYECTO.*, PERSONA.* from FASE_PROYECTO
                 left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
                 left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
                 left join PERSONA on PERSONA.ci = USUARIO.ci
@@ -262,6 +262,14 @@ class Querys:
             DELETE FROM PROYECTO WHERE id_proy = {data["idProy"]}
         """
         #completar, se tienen que borrar todo lo relacionado con el proyecto
+        return insert(query)
+
+    def editarProyecto(data):
+        query = f""""""
+        return insert(query)
+    
+    def valorarProyecto(data):
+        query = f""""""
         return insert(query)
 
     #actividades works

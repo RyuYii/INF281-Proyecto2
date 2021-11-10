@@ -173,6 +173,22 @@ class RegistrarProyecto(Resource):
     data = parserRProy.parse_args()
     return Querys.registrarProyecto(data)
 
+parserEdProy = reqparse.RequestParser()
+parserEdProy.add_argument('tipo')
+parserEdProy.add_argument('banner')
+parserEdProy.add_argument('fechaFinal')
+parserEdProy.add_argument('fechaInicio')
+parserEdProy.add_argument('titulo')
+parserEdProy.add_argument('objetivo')
+parserEdProy.add_argument('mision')
+parserEdProy.add_argument('vision')
+parserEdProy.add_argument('idProy')
+class EditarProyecto(Resource):
+  @jwt_required
+  def post(self):
+    data = parserRProy.parse_args()
+    return Querys.registrarProyecto(data)
+
 parserEProy = reqparse.RequestParser()
 parserEProy.add_argument('idProy')
 class EliminarProyecto(Resource):
