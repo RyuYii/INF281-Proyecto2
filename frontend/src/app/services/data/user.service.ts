@@ -12,7 +12,7 @@ export class UserService {
   ) { }
 
   toDate(date){
-    date = (new Date()).toISOString().split('T')[0]
+    date = (date).split('T')[0]
     return date;
   }
   obtenerDatos(body: Object) {
@@ -70,8 +70,8 @@ export class UserService {
     return this.http.post(`${API_URL}/eliminarProducto`, body)
   }
 
-  obtenerPatrocinadores(body: Object){
-    return this.http.post(`${API_URL}/obtenerPatrocinadores`, body)
+  obtenerPatrocinadores(){
+    return this.http.get(`${API_URL}/obtenerPatrocinadores`)
   }
 
   registrarPatrocinador(body: Object){

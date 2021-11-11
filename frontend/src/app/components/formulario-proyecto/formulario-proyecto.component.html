@@ -9,7 +9,7 @@
       <input type="text" formControlName="titulo" class="form-control"
         [ngClass]="{ 'is-invalid': form1.titulo.errors }" />
       <div *ngIf="form1.titulo.errors" class="invalid-feedback">
-        <div *ngIf="form1.titulo.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.titulo.errors.required">Debe introducir un Titulo</div>
       </div>
 
       <label>Objetivo</label>
@@ -31,6 +31,12 @@
         [ngClass]="{ 'is-invalid': form1.vision.errors }" />
       <div *ngIf="form1.vision.errors" class="invalid-feedback">
         <div *ngIf="form1.vision.errors.required">Debe introducir una contraseña</div>
+      </div>
+
+      <label>Descripcion</label>
+      <textarea formControlName="descripcionProy" class="form-control" cols="30" rows="2" [ngClass]="{ 'is-invalid': form1.descripcionProy.errors }"></textarea>
+      <div *ngIf="form1.descripcionProy.errors" class="invalid-feedback">
+        <div *ngIf="form1.descripcionProy.errors.required">Debe introducir una descripcion del proyecto</div>
       </div>
       <!--fechas-->
       <label>Fecha Inicio</label>
@@ -160,6 +166,28 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="container row mt-5">
+        <div class="col-12 p-1 pb-3">
+          <h4>Buscar Patrocinador:</h4>
+          <p-autoComplete formControlName="patrocinador" [suggestions]="patrocinadorFiltrado" (completeMethod)="filtrarPatrocinador($event)" field="nombreP" [minLength]="2" size="50" (onSelect)="seleccionaroPatrocinador()" placeholder="nombre del patrocinador">
+            
+          </p-autoComplete>
+          <p class="font-weight-light pl-1">
+              (*) para buscar solo debe escribir el nombre o ci y seleccionarlo, tenga paciencia
+          </p>
+      </div>
+      </div>
+      <div *ngIf="listaPatrocinadores.length != 0" class="row justify-content-center">
+        <div class="card" style="width: 18rem;">
+          <div class="card-header">
+            Patrocinadores Seleccionados
+          </div>
+          <ul class="list-group list-group-flush">
+            <li *ngFor="let item of listaPatrocinadores" class="list-group-item">{{item?.nombreP}}</li>
+          </ul>
+        </div>
+
       </div>
     </div>
     <!--Submit-->

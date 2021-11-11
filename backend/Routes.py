@@ -22,6 +22,8 @@ class Routes:
     obtenerProyecto  = API+"obtenerProyecto"
     registrarProyecto = API+"registrarProyecto"
     eliminarProyecto = API+"eliminarProyecto"
+    editarProyecto = API+"editarProyecto"
+    valorarProyecto = API+"valorarProyecto"
 
     obtenerActividades = API+"obtenerActividades"
     editarActividad = API+"editarActividad"

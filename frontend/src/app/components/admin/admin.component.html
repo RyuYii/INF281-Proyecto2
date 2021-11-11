@@ -1,118 +1,182 @@
 <div>
-    <nav class="navbar navbar-light bg-light p-3">
-        <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
-            <a class="navbar-brand">
-                Dashboard
-            </a>
-            <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse" data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="col-12 col-md-4 col-lg-2">
-            <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
-        </div>
-        <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
-                  Hello, Admin
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                  <li><a class="dropdown-item" href="#">Messages</a></li>
-                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-                </ul>
-              </div>
-        </div>
-    </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
-                <div class="position-sticky">
-                    <ul class="nav flex-column">
-                        <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="/admin#Dashboard">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
-                            <span class="ml-2">Dashboard</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" href="/admin#solicitudes">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-users"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                            <span class="ml-2">Customers</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                          <a class="nav-link" >
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bar-chart-2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
-                            <span class="ml-2">Reports</span>
-                          </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="btn btn-sm btn-primary ml-3 mt-2" href="https://themesberg.com">
-                                By Themesberg ❤️
-                            </a>
-                        </li>
-                      </ul>
-                </div>
-            </nav>
-            <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4" id="Dashboard">
-                <nav aria-label="breadcrumb">
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="/">Home</a></li>
-                        <li class="breadcrumb-item active" aria-current="page">Overview</li>
-                    </ol>
-                </nav>
-                <h1 class="h2">Dashboard</h1>
-                <p>Lista de proyectos en espera</p>
-                <div class="row my-4">
-                  <div class="card mb-3" style="width: 18rem;" *ngFor="let item of listProyectosEnEspera">
-                    <img [src]="decode(item?.banner)"  class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">{{item?.tituloProy}}</p>
-                    </div>
-                    <div class="card-footer">
-                      <div class="row justify-content-center">
-
-                        <a (click)="openModalProyect(proyectoView, item?.idProy)" class="btn btn-info">Ver proyecto</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="row" id="solicitudes">
-                    <div class="col-12 col-xl-8 mb-4 mb-lg-0">
-                        <div class="card">
-                            <h5 class="card-header">Ultimas Solicitudes</h5>
-                            <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table">
-                                        <thead>
-                                          <tr>
-                                            <th scope="col">CI</th>
-                                            <th scope="col">Nombres</th>
-                                            <th scope="col">Apellidos</th>
-                                            <th scope="col">Motivo</th>
-                                            <th scope="col">Opciones</th>
-                                          </tr>
-                                        </thead>
-                                        <tbody>
-                                          <tr *ngFor='let item of listSolicitudes'>
-                                            <th scope="row">{{item?.ci}}</th>
-                                            <td>{{item?.nombre}}</td>
-                                            <td>{{item?.apellido}}</td>
-                                            <td>{{item?.motivo}}</td>
-                                            <td><a class="btn btn-sm btn-primary" (click)="aceptarSolicitud(item?.idUsuario)">Aceptar</a></td>
-                                          </tr>
-                                        </tbody>
-                                      </table>
-                                </div>
-                                <a class="btn btn-block btn-light">View all</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
+  <nav class="navbar navbar-light bg-light p-3">
+    <div class="d-flex col-12 col-md-3 col-lg-2 mb-2 mb-lg-0 flex-wrap flex-md-nowrap justify-content-between">
+      <a class="navbar-brand">
+        Dashboard
+      </a>
+      <button class="navbar-toggler d-md-none collapsed mb-3" type="button" data-toggle="collapse"
+        data-target="#sidebar" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
     </div>
+    <div class="col-12 col-md-4 col-lg-2">
+      <input class="form-control form-control-dark" type="text" placeholder="Search" aria-label="Search">
+    </div>
+    <div class="col-12 col-md-5 col-lg-8 d-flex align-items-center justify-content-md-end mt-3 mt-md-0">
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+          aria-expanded="false">
+          Hello, Admin
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Messages</a></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/admin#Dashboard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-home">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                  <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span class="ml-2">Dashboard</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin#solicitudes">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-users">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span class="ml-2">Customers</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin#comentarios">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="feather feather-bar-chart-2">
+                  <line x1="18" y1="20" x2="18" y2="10"></line>
+                  <line x1="12" y1="20" x2="12" y2="4"></line>
+                  <line x1="6" y1="20" x2="6" y2="14"></line>
+                </svg>
+                <span class="ml-2">Reports</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="btn btn-sm btn-primary ml-3 mt-2" href="https://themesberg.com">
+                By Themesberg ❤️
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <main class="col-md-9 ml-sm-auto col-lg-10 px-md-4 py-4" id="Dashboard">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Overview</li>
+          </ol>
+        </nav>
+        <h1 class="h2">Dashboard</h1>
+        <p>Lista de proyectos en espera</p>
+        <div class="row my-4">
+          <div class="card mb-3" style="width: 18rem;" *ngFor="let item of listProyectosEnEspera">
+            <img [src]="decode(item?.banner)" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">{{item?.tituloProy}}</h5>
+              <p class="card-text truncar">{{item?.descripcionProy}}</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Author: {{item?.nombre}} {{item?.apellido}}</li>
+                <li class="list-group-item">Fecha Inicio: {{userService.toDate(item?.fechaInicio)}}</li>
+                <li class="list-group-item">Fecha Final: {{userService.toDate(item?.fechaCierre)}}</li>
+              </ul>
+            </div>
+            <div class="card-footer">
+              <div class="row justify-content-center">
+                <a (click)="openModalProyect(proyectoView, item?.idProy)" class="btn btn-info">Ver proyecto</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" id="solicitudes">
+          <div class="col-12 mb-4 mb-lg-0">
+            <div class="card w-10">
+              <h5 class="card-header">Ultimas Solicitudes</h5>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">CI</th>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Motivo</th>
+                        <th scope="col">Opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor='let item of listSolicitudes'>
+                        <th scope="row">{{item?.ci}}</th>
+                        <td>{{item?.nombre}}</td>
+                        <td>{{item?.apellido}}</td>
+                        <td>{{item?.motivo}}</td>
+                        <td><a class="btn btn-sm btn-primary" (click)="aceptarSolicitud(item?.idUsuario)">Aceptar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <a class="btn btn-block btn-light">View all</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <br><br><br>
+        </div>
+        <div class="row" id="comentarios">
+          <div class="col-12 mb-4 mb-lg-0">
+            <div class="card w-10">
+              <h5 class="card-header">Ultimas Comentarios</h5>
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Nombres</th>
+                        <th scope="col">Apellidos</th>
+                        <th scope="col">Comentario</th>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Proyecto</th>
+                        <th scope="col">Opciones</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor='let item of listComentarios'>
+                        <td>{{item?.nombre}}</td>
+                        <td>{{item?.apellido}}</td>
+                        <td>{{item?.comentario}}</td>
+                        <td>{{userService.toDate(item?.fechaComentario)}}</td>
+                        <td>{{item?.tituloProy}}</td>
+                        <td><a class="btn btn-sm btn-danger" (click)="retirarComentario(item?.idComentario)">Borrar</a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <a class="btn btn-block btn-light">View all</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
 </div>
 
 <ng-template #proyectoView data-bs-backdrop="static">
@@ -120,16 +184,17 @@
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-      <button type="button" class="btn btn-close btn-secondary btn-sm" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-window-close"></i></button>
+      <button type="button" class="btn btn-close btn-secondary btn-sm" data-bs-dismiss="modal" (click)="cerrarModal()"><i
+          class="fas fa-window-close"></i></button>
     </div>
     <div class="modal-body">
       <app-proyecto [idProyecto]="idProyectoSeleccionado"></app-proyecto>
     </div>
     <div class="modal-footer">
       <a (click)="valorarProyecto(idProyectoSeleccionado, 2)" class="btn btn-primary">Aceptar</a>
-      <a (click)="valorarProyecto(idProyectoSeleccionado, 2)" class="btn btn-danger">Rechazar</a>
+      <a (click)="valorarProyecto(idProyectoSeleccionado, 3)" class="btn btn-danger">Rechazar</a>
       <a (click)="cerrarModal()" class="btn btn-secondary">cancelar</a>
-      
+
     </div>
   </div>
 </ng-template>

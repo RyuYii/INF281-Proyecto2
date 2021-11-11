@@ -35,6 +35,12 @@ import { CloudinaryModule, CloudinaryConfiguration } from '@cloudinary/angular-5
 import { Cloudinary } from 'cloudinary-core';
 import { FileUploadModule } from 'ng2-file-upload';
 import { BadgeComponent } from './components/elements/badge/badge.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AutoCompleteModule } from 'primeng/autocomplete';
+import {TableModule} from 'primeng/table';
+import {DropdownModule} from 'primeng/dropdown';
+import {InputTextModule} from 'primeng/inputtext';
+
 
 @NgModule({
   declarations: [
@@ -75,6 +81,11 @@ import { BadgeComponent } from './components/elements/badge/badge.component';
     FormsModule,
     ReactiveFormsModule,
     CommonModule,
+    AutoCompleteModule,
+    TableModule,
+    DropdownModule,
+    InputTextModule,
+    Ng2SearchPipeModule,
     CloudinaryModule.forRoot({Cloudinary}, { 
       cloud_name: 'djkhinfbr' ,
       api_key: '953777888978946',

@@ -1,4 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+.truncar{
+    width:100%;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+}
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+.ng-invalid:not(form) {
+    border-left: 5px solid red;
+}
 
 #hero {
     width: 100%;

@@ -87,6 +87,7 @@ export class AuthenticationService {
             sessionStorage.setItem("user",jwt_decode(token.substr(7, token.length)).identity);
             //console.log(this.getUser());
             this.setTask(1);
+            this.setUsername(username);
             this.setConfiguration();
           }
         )
@@ -157,7 +158,12 @@ export class AuthenticationService {
       }
     )*/
   }
-
+  setUsername(username: string){
+    sessionStorage.setItem("username", username)
+  }
+  getUsername(){
+    return sessionStorage.getItem('username')
+  }
   logout() {
     sessionStorage.removeItem(TOKEN);
   }

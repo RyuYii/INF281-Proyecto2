@@ -192,7 +192,8 @@ class Querys:
                 left join PROYECTO on PROYECTO.id_proy = FASE_PROYECTO.id_proy
                 left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
                 left join PERSONA on PERSONA.ci = USUARIO.ci
-                where FASE_PROYECTO.estado = 3
+                where FASE_PROYECTO.estado = 2
+                order by PROYECTO.fecha_inicio
             """
         else:
             query = f"""
@@ -201,6 +202,7 @@ class Querys:
                 left join USUARIO on USUARIO.id_usuario = FASE_PROYECTO.id_usuario
                 left join PERSONA on PERSONA.ci = USUARIO.ci
                 where FASE_PROYECTO.id_usuario= {user}
+                order by PROYECTO.fecha_inicio
             """
         return select(query)
 
@@ -214,7 +216,7 @@ class Querys:
         return select(query)
 
     def registrarProyecto(data):
-        listado = data['listado']
+        listado = data["listado"]["list"]
         tipo = data['tipo']
         ident = ''.join(random.choice(string.ascii_letters + string.digits) for _ in range(15))
         query = f"""
@@ -222,13 +224,13 @@ class Querys:
                 titulo_proy, mision, 
                 vision, objetivos, id_usuario, 
                 fecha_inicio, fecha_cierre, 
-                banner, tipo_proy, identifier) 
+                banner, tipo_proy, identifier, descripcion_proy) 
             VALUES (
                 '{data["titulo"]}', '{data["mision"]}',
                 '{data["vision"]}','{data["objetivo"]}', {data["idUsuario"]},
                 {f"'{data['fechaInicio']}'" if not data['fechaInicio'] is None else 'null'}, 
                 {f"'{data['fechaFinal']}'" if not data['fechaFinal'] is None else 'null'},
-                '{data["banner"]}', {data["tipo"]}, '{ident}')
+                '{data["banner"]}', {data["tipo"]}, '{ident}', '{data['descripcionProy']}')
         """
         step = insert(query)
         if step['code'] == 0:
@@ -255,7 +257,15 @@ class Querys:
 
         #almacenamos los patrocinadores
 
-        return {"code":1, "message":"registro exitoso", "idProy":f"{idProy}"}
+        for idPat in listado:
+            query = f"""
+                INSERT INTO TIENE_P(id_proy, id_patrocinador) VALUES ({idProy},{idPat})
+            """
+            step = insert(query)
+            if step['code'] == 0:
+                return step
+
+        return {"code":1, "message":"registro de Proyecto exitoso", "idProy":f"{idProy}"}
 
     def eliminarProyecto(data):
         query = f"""
@@ -269,7 +279,12 @@ class Querys:
         return insert(query)
     
     def valorarProyecto(data):
-        query = f""""""
+        query = f"""
+        update FASE_PROYECTO SET
+            estado = {data["nota"]},
+            fecha_valoracion = current_date
+            where id_proy = {data["idProy"]}
+        """
         return insert(query)
 
     #actividades works
@@ -349,12 +364,10 @@ class Querys:
         """
         return insert(query)
 
-    def obtenerPatrocinadores(data):
-        idPat = data["idPat"]
+    def obtenerPatrocinadores():
         query = f"""
             select * 
             from PATROCINADOR
-            where id_patrocinador = {idPat}
         """
         return select(query)
 
@@ -412,9 +425,10 @@ class Querys:
     #listado para el superUsuario
     def listarComentarios():
         query = f"""
-            select COMENTARIO.*, PERSONA.* from COMENTARIO
+            select COMENTARIO.*, PERSONA.*, PROYECTO.titulo_proy from COMENTARIO
             LEFT JOIN USUARIO ON COMENTARIO.id_usuario = USUARIO.id_usuario
             LEFT JOIN PERSONA ON PERSONA.ci = USUARIO.ci
-            order by COMENTARIO.id_proy
+            LEFT JOIN PROYECTO ON PROYECTO.id_proy = COMENTARIO.id_proy
+            order by COMENTARIO.fecha_comentario desc
         """
         return select(query)

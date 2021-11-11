@@ -33,13 +33,16 @@ export class FormularioProyectoComponent implements OnInit {
   listaActividadesCulturales: Object[] = [];
   listaActividadesBeneficas: Object[] = [];
   listaProductos: Object[] = [];
+  listaPatrocinadores:any = [];
 
   public uploader: FileUploader;
   public hasBaseDropZoneOver = false;
   private title: string;
   public imageDataArray;
 
-
+  patrocinador:any;
+  patrocinadorFiltrado:any[];
+  patrocinadores:any;
   constructor(
     private formBuilder: FormBuilder,
     private modalService: BsModalService,
@@ -55,6 +58,11 @@ export class FormularioProyectoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.userService.obtenerPatrocinadores().subscribe((data:any)=>{
+      console.log(data);
+      this.patrocinadores=data;
+    })
 
     const uploaderOptions: FileUploaderOptions = {
       url: `https://api.cloudinary.com/v1_1/${this.cloudinary.config().cloud_name}/image/upload`,
@@ -101,13 +109,15 @@ export class FormularioProyectoComponent implements OnInit {
 
 
     this.newProyectForm = this.formBuilder.group({
-      titulo: [''],
-      objetivo: [''],
-      mision: [''],
-      vision: [''],
+      titulo: ['', Validators.required],
+      objetivo: ['', Validators.required],
+      mision: ['', Validators.required],
+      vision: ['', Validators.required],
+      descripcionProy: ['', Validators.required],
       tipo: [1],
       fechaInicio: [''],
-      fechaFinal: ['']
+      fechaFinal: [''],
+      patrocinador: [{}]
     });
     this.setForm();
   }
@@ -146,9 +156,9 @@ export class FormularioProyectoComponent implements OnInit {
           obj["banner"] = btoa(this.listaImagenes[0].data.url);
         else
           obj["banner"] = btoa('assets/img/banerDefault.jpg');
+        obj["patrocinador"] = null;
+        obj["listado"] = {"list":this.obtenerListado()};
         console.log(obj);
-        //obj.idEntidadBancaria = parseInt(obj.idEntidadBancaria);
-        
         this.userService.registrarProyecto(obj).subscribe(
           (data: any) => {
             this.spiner.hide();
@@ -169,6 +179,13 @@ export class FormularioProyectoComponent implements OnInit {
       }
     })
 
+  }
+  obtenerListado(){
+    let lista:any = []
+    this.listaPatrocinadores.forEach(element => {
+      lista.push(element.idPatrocinador)
+    });
+    return lista;
   }
   llenarRecursos(idProy:any, tipo:any){
     if(tipo == 1){
@@ -270,4 +287,17 @@ export class FormularioProyectoComponent implements OnInit {
       this.authService.setTask(1);
     });
   };
+
+  filtrarPatrocinador(event) {
+    this.patrocinadorFiltrado = this.patrocinadores.filter(c=>c.nombreP.startsWith(event.query))
+    console.log(this.patrocinadorFiltrado, '#######')
+  }
+
+  seleccionaroPatrocinador() {
+    console.log(this.newProyectForm.value.patrocinador)
+    this.listaPatrocinadores.push(this.newProyectForm.value.patrocinador)
+    this.newProyectForm.value.patrocinador = {}
+  }
+
+
 }

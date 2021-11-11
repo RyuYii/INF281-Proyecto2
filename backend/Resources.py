@@ -167,12 +167,14 @@ parserRProy.add_argument('titulo')
 parserRProy.add_argument('objetivo')
 parserRProy.add_argument('mision')
 parserRProy.add_argument('vision')
-parserRProy.add_argument('listado')
+parserRProy.add_argument('listado', type=dict)
 parserRProy.add_argument('idUsuario')
+parserRProy.add_argument('descripcionProy')
 class RegistrarProyecto(Resource):
   @jwt_required
   def post(self):
     data = parserRProy.parse_args()
+    #print(data["listado"]["list"])
     return Querys.registrarProyecto(data)
 
 parserEdProy = reqparse.RequestParser()
@@ -185,11 +187,21 @@ parserEdProy.add_argument('objetivo')
 parserEdProy.add_argument('mision')
 parserEdProy.add_argument('vision')
 parserEdProy.add_argument('idProy')
+parserEdProy.add_argument('descripcionProy')
 class EditarProyecto(Resource):
   @jwt_required
   def post(self):
-    data = parserRProy.parse_args()
+    data = parserEdProy.parse_args()
     return Querys.registrarProyecto(data)
+
+parserVaProy = reqparse.RequestParser()
+parserVaProy.add_argument('idProy')
+parserVaProy.add_argument('nota')
+class ValorarProyecto(Resource):
+  @jwt_required
+  def post(self):
+    data = parserVaProy.parse_args()
+    return Querys.valorarProyecto(data)
 
 parserEProy = reqparse.RequestParser()
 parserEProy.add_argument('idProy')
@@ -202,7 +214,6 @@ class EliminarProyecto(Resource):
 parserAcO = reqparse.RequestParser()
 parserAcO.add_argument("idProy",type=int)
 class ObtenerActividades(Resource):
-  @jwt_required
   def post(self):
     data = parserAcO.parse_args()
     return Querys.obtenerActividades(data)
@@ -230,7 +241,6 @@ class EliminarActividad(Resource):
 parserProO = reqparse.RequestParser()
 parserProO.add_argument("idProy",type=int)
 class ObtenerProductos(Resource):
-  @jwt_required
   def post(self):
     data = parserProO.parse_args()
     return Querys.obtenerProductos(data)
@@ -255,13 +265,9 @@ class EliminarProducto(Resource):
     data = parserProEl.parse_args()
     return Querys.eliminarProducto(data)
 
-parserOPA = reqparse.RequestParser()
-parserOPA.add_argument('idPat', type=str, help = 'This field cannot be blank', required = True)
 class ObtenerPatrocinadores(Resource):
-  @jwt_required
-  def post(self):
-    data = parserOPA.parse_args()
-    return Querys.obtenerPatrocinadores(data)
+  def get(self):
+    return Querys.obtenerPatrocinadores()
 
 parserRP = reqparse.RequestParser()
 parserRP.add_argument('nombreP', type=str, help = 'This field cannot be blank', required = True)
@@ -306,7 +312,6 @@ class EliminarComentario(Resource):
 parserLComP = reqparse.RequestParser()
 parserLComP.add_argument("idProy",type=int)
 class ListarComentariosProyecto(Resource):
-  @jwt_required
   def post(self):
     data = parserLComP.parse_args()
     return Querys.listarComentariosProyecto(data)

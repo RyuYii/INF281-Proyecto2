@@ -2,4 +2,5 @@
     <div class="text-center">
         Copyright © 2021 Universidad Mayor de San Andrés
     </div>
+    <span *ngIf="this.authenticationService.isAuthenticated()" class="text-white badge bg-secondary">Usuario Loggeado: {{this.authenticationService.getUsername()}}</span>
 </footer>

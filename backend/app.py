@@ -62,6 +62,8 @@ api.add_resource(resources.ObtenerProyectosRegistrados, Routes.obtenerProyectosR
 api.add_resource(resources.ObtenerProyecto, Routes.obtenerProyecto )
 api.add_resource(resources.RegistrarProyecto, Routes.registrarProyecto)
 api.add_resource(resources.EliminarProyecto, Routes.eliminarProyecto)
+api.add_resource(resources.EditarProyecto, Routes.editarProyecto)
+api.add_resource(resources.ValorarProyecto, Routes.valorarProyecto)
 
 api.add_resource(resources.ObtenerActividades, Routes.obtenerActividades)
 api.add_resource(resources.EditarActividad, Routes.editarActividad)
