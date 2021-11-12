@@ -5,52 +5,52 @@
     <div class="col-md-8">
 
 
-      <label>Titulo</label>
+      <label>Título</label>
       <input type="text" formControlName="titulo" class="form-control"
         [ngClass]="{ 'is-invalid': form1.titulo.errors }" />
       <div *ngIf="form1.titulo.errors" class="invalid-feedback">
-        <div *ngIf="form1.titulo.errors.required">Debe introducir un Titulo</div>
+        <div *ngIf="form1.titulo.errors.required">Debe introducir un Título</div>
       </div>
 
       <label>Objetivo</label>
       <input type="text" formControlName="objetivo" class="form-control"
         [ngClass]="{ 'is-invalid': form1.objetivo.errors }" />
       <div *ngIf="form1.objetivo.errors" class="invalid-feedback">
-        <div *ngIf="form1.objetivo.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.objetivo.errors.required">Debe introducir un objetivo</div>
       </div>
 
-      <label>Mision</label>
+      <label>Misión</label>
       <input type="text" formControlName="mision" class="form-control"
         [ngClass]="{ 'is-invalid': form1.mision.errors }" />
       <div *ngIf="form1.mision.errors" class="invalid-feedback">
-        <div *ngIf="form1.mision.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.mision.errors.required">Debe introducir una misión</div>
       </div>
 
-      <label>Vision</label>
+      <label>Visión</label>
       <input type="text" formControlName="vision" class="form-control"
         [ngClass]="{ 'is-invalid': form1.vision.errors }" />
       <div *ngIf="form1.vision.errors" class="invalid-feedback">
-        <div *ngIf="form1.vision.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.vision.errors.required">Debe introducir una visión</div>
       </div>
 
-      <label>Descripcion</label>
+      <label>Descripción</label>
       <textarea formControlName="descripcionProy" class="form-control" cols="30" rows="2" [ngClass]="{ 'is-invalid': form1.descripcionProy.errors }"></textarea>
       <div *ngIf="form1.descripcionProy.errors" class="invalid-feedback">
-        <div *ngIf="form1.descripcionProy.errors.required">Debe introducir una descripcion del proyecto</div>
+        <div *ngIf="form1.descripcionProy.errors.required">Debe introducir una descripción del proyecto</div>
       </div>
       <!--fechas-->
       <label>Fecha Inicio</label>
       <input type="date" formControlName="fechaInicio" class="form-control"
         [ngClass]="{ 'is-invalid': form1.fechaInicio.errors }" />
       <div *ngIf="form1.fechaInicio.errors" class="invalid-feedback">
-        <div *ngIf="form1.fechaInicio.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.fechaInicio.errors.required">Debe introducir una Fecha de Inicio</div>
       </div>
 
       <label>Fecha Final</label>
       <input type="date" formControlName="fechaFinal" class="form-control"
         [ngClass]="{ 'is-invalid': form1.fechaFinal.errors }" />
       <div *ngIf="form1.fechaFinal.errors" class="invalid-feedback">
-        <div *ngIf="form1.fechaFinal.errors.required">Debe introducir una contraseña</div>
+        <div *ngIf="form1.fechaFinal.errors.required">Debe introducir una Fecha Final</div>
       </div>
 
       <label>Seleccionar tipo proyecto</label>
@@ -66,7 +66,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre Actividad</th>
-            <th scope="col">Descripcion</th>
+            <th scope="col">Descripción</th>
             <th scope="col">Horario</th>
             <th scope="col">acciones</th>
           </tr>
@@ -86,7 +86,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre Actividad</th>
-            <th scope="col">Descripcion</th>
+            <th scope="col">Descripción</th>
             <th scope="col">Precio</th>
             <th scope="col">acciones</th>
           </tr>
@@ -106,7 +106,7 @@
           <tr>
             <th scope="col">#</th>
             <th scope="col">Nombre Actividad</th>
-            <th scope="col">Descripcion</th>
+            <th scope="col">Descripción</th>
             <th scope="col">Horario</th>
             <th scope="col">acciones</th>
           </tr>
