@@ -40,3 +40,29 @@
     align-items: center;
     justify-content: center
   }
+
+  .ui-autocomplete .inputTest {
+    background-color: red;
+}
+.panelTest .ui-autocomplete-items .ui-state-highlight {
+    background-color: blue;
+}
+:host >>> .ui-autocomplete .ui-autocomplete-input {
+  color: rgb(131, 5, 5);
+}
+
+.p-autocomplete-item {
+
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+  background-color: gainsboro !important;
+  border-left-style: solid !important;
+  border-bottom-color: white !important;
+  border-bottom-style: inset !important;
+}
+
+.p-autocomplete-item:hover {
+  background-color: whitesmoke !important;
+}

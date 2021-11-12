@@ -39,6 +39,7 @@ export class ProyectoComponent implements OnInit {
         console.log(data)
         this.proyecto = data[0];
         this.tipoProyecto = data[0].tipoProy == 3 || data[0].tipoProy == 1;
+
         if(this.tipoProyecto){
           this.userService.obtenerActividades(obj).subscribe(
             (result:any)=>{
@@ -61,6 +62,7 @@ export class ProyectoComponent implements OnInit {
       }
     );
     this.obtenerComentarios();
+    this.obtenerPatrocinador();
 
   }
   decode(data){
@@ -74,6 +76,12 @@ export class ProyectoComponent implements OnInit {
         this.comentarios = data;
       }
     )
+  }
+  obtenerPatrocinador(){
+    this.userService.obtenerPatrocinadoresProyecto({"idProy": this.idProy}).subscribe((data:any)=>{
+      this.patrocinadores = data;
+      console.log(data, '$$$$$$$')
+    })
   }
 
 }

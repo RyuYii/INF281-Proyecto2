@@ -21,6 +21,7 @@ export class FormularioProyectoComponent implements OnInit {
   newProyectForm: FormGroup;
   newAct: FormGroup;
   newProd: FormGroup;
+  newPat: FormGroup;
   listaImagenes: any [] = [];
   public modalRef: BsModalRef;
   public modalForm: BsModalRef;
@@ -59,10 +60,7 @@ export class FormularioProyectoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.userService.obtenerPatrocinadores().subscribe((data:any)=>{
-      console.log(data);
-      this.patrocinadores=data;
-    })
+    this.obtenerPatrocinadores();
 
     const uploaderOptions: FileUploaderOptions = {
       url: `https://api.cloudinary.com/v1_1/${this.cloudinary.config().cloud_name}/image/upload`,
@@ -120,6 +118,13 @@ export class FormularioProyectoComponent implements OnInit {
       patrocinador: [{}]
     });
     this.setForm();
+  }
+
+  obtenerPatrocinadores(){
+    this.userService.obtenerPatrocinadores().subscribe((data:any)=>{
+      console.log(data);
+      this.patrocinadores=data;
+    })
   }
   setForm(){
     this.newAct = this.formBuilder.group({
@@ -231,7 +236,21 @@ export class FormularioProyectoComponent implements OnInit {
 
 
   openModalFormActividades(template: TemplateRef<any>) {
-    this.modalForm = this.modalService.show(template, {class: 'modal-sm'});
+    this.modalForm = this.modalService.show(template, {class: 'modal-dialog modal-dialog-centered'});
+  }
+  openModalFormPatrocinadores(template: TemplateRef<any>) {
+    this.newPat = this.formBuilder.group({
+      nombreP: [''],
+      tipoPatrocinador: ['']
+    })
+    this.modalForm = this.modalService.show(template, {class: 'modal-dialog modal-dialog-centered'});
+  }
+
+  agregarPatrocinador(){
+    this.userService.registrarPatrocinador(this.newPat.value).subscribe((data:any)=>{
+      this.toastr.info(data.message)
+      this.obtenerPatrocinadores()
+    })
   }
   decline() {
     this.modalForm.hide();
@@ -296,8 +315,5 @@ export class FormularioProyectoComponent implements OnInit {
   seleccionaroPatrocinador() {
     console.log(this.newProyectForm.value.patrocinador)
     this.listaPatrocinadores.push(this.newProyectForm.value.patrocinador)
-    this.newProyectForm.value.patrocinador = {}
   }
-
-
 }

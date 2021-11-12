@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container pt-5">
   <h2>Nuevo Proyecto</h2>
   <form class="row" (ngSubmit)="onSubmit1()" [formGroup]="newProyectForm">
 
@@ -54,13 +54,14 @@
       </div>
 
       <label>Seleccionar tipo proyecto</label>
-      <select name="miselect" formControlName="tipo">
+      <br>
+      <select name="miselect" class="form-select" formControlName="tipo">
         <option [value]="item.id" *ngFor="let item of lista">{{item.descripcion}}</option>
       </select>
 
       <div class="bg-light" *ngIf='newProyectForm.value.tipo == 1'>
         <h4>Proyecto cultural </h4>
-        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesCult)">+</a>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesCult)">agregar</a>
         <table class="table table-hover">
           <tr>
             <th scope="col">#</th>
@@ -74,13 +75,13 @@
             <td>{{item?.title}}</td>
             <td>{{item?.desc}}</td>
             <td>{{item?.horario}}</td>
-            <td><a class="btn btn-danger" (click)="eliminarActCult(i)">-</a></td>
+            <td><a class="btn btn-danger" (click)="eliminarActCult(i)">quitar</a></td>
           </tr>
         </table>
       </div>
       <div class="bg-light" *ngIf='newProyectForm.value.tipo == 2'>
         <h4>Proyecto de servicios</h4>
-        <a class="btn btn-success" (click)="openModalFormActividades(templateFormProductos)">+</a>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormProductos)">agregar</a>
         <table class="table table-hover">
           <tr>
             <th scope="col">#</th>
@@ -94,13 +95,13 @@
             <td>{{item?.title}}</td>
             <td>{{item?.desc}}</td>
             <td>{{item?.precio}}</td>
-            <td><a class="btn btn-danger" (click)="eliminarProdSer(i)">-</a></td>
+            <td><a class="btn btn-danger" (click)="eliminarProdSer(i)">quitar</a></td>
           </tr>
         </table>
       </div>
       <div class="bg-light" *ngIf='newProyectForm.value.tipo == 3'>
         <h4>Proyecto Benefico</h4>
-        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesBen)">+</a>
+        <a class="btn btn-success" (click)="openModalFormActividades(templateFormActividadesBen)">agregar</a>
         <table class="table table-hover">
           <tr>
             <th scope="col">#</th>
@@ -114,7 +115,7 @@
             <td>{{item?.title}}</td>
             <td>{{item?.desc}}</td>
             <td>{{item?.horario}}</td>
-            <td><a class="btn btn-danger" (click)="eliminarActBen(i)">-</a></td>
+            <td><a class="btn btn-danger" (click)="eliminarActBen(i)">quitar</a></td>
           </tr>
         </table>
       </div>
@@ -174,7 +175,8 @@
             
           </p-autoComplete>
           <p class="font-weight-light pl-1">
-              (*) para buscar solo debe escribir el nombre o ci y seleccionarlo, tenga paciencia
+              (*) para buscar solo debe escribir el nombre del patrocinador seleccionarlo, tenga paciencia
+              no lo encuentra? <a class="link-primary" (click)="openModalFormPatrocinadores(templateFormPat)">registrelo</a>
           </p>
       </div>
       </div>
@@ -205,10 +207,12 @@
 
 
 <ng-template #templateFormActividadesBen>
+  <div class="row justify-content-center">
   <form class="col-md-8" (ngSubmit)="agregarActBen()" [formGroup]="newAct">
-
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Registrar Actividad Benefica</h5>
+    </div>
     <div class="modal-body text-center">
-      <p>Registrar Actividad Benefica</p>
       <label>Nombre</label>
       <input type="text" formControlName="title" class="form-control" />
 
@@ -217,17 +221,21 @@
 
       <label>Horario</label>
       <input type="time" formControlName="horario" class="form-control" />
-
-      <button>agregar</button>
+      <div class="modal-footer">
+        <button class="btn btn-primary">agregar</button>
+      </div>
     </div>
   </form>
+</div>
 </ng-template>
 
 <ng-template #templateFormActividadesCult>
+  <div class="row justify-content-center">
   <form class="col-md-8" (ngSubmit)="agregarActCult()" [formGroup]="newAct">
-
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Registrar Actividad Cultural</h5>
+    </div>
     <div class="modal-body text-center">
-      <p>Registrar Actividad Cultural</p>
       <label>Nombre</label>
       <input type="text" formControlName="title" class="form-control" />
 
@@ -237,16 +245,21 @@
       <label>Horario</label>
       <input type="time" formControlName="horario" class="form-control" />
 
-      <button>agregar</button>
+      <div class="modal-footer">
+        <button class="btn btn-primary">agregar</button>
+      </div>
     </div>
   </form>
+</div>
 </ng-template>
 
 <ng-template #templateFormProductos>
-  <form class="col-md-12" (ngSubmit)="agregarProdSer()" [formGroup]="newProd">
-
+  <div class="row justify-content-center">
+  <form class="col-md-8" (ngSubmit)="agregarProdSer()" [formGroup]="newProd">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Registrar Producto o Servicio</h5>
+    </div>
     <div class="modal-body text-center">
-      <p>Registrar Producto o Servicio</p>
       <label>Nombre</label>
       <input type="text" formControlName="title" class="form-control" />
 
@@ -256,7 +269,32 @@
       <label>Precio</label>
       <input type="number" formControlName="precio" class="form-control" />
 
-      <button>agregar</button>
+      <div class="modal-footer">
+        <button class="btn btn-primary">agregar</button>
+      </div>
     </div>
   </form>
+</div>
+</ng-template>
+
+
+<ng-template #templateFormPat>
+  <div class="row justify-content-center">
+  <form class="col-md-8" (ngSubmit)="agregarPatrocinador()" [formGroup]="newPat">
+    <div class="modal-header">
+      <h5 class="modal-title" id="staticBackdropLabel">Registrar Patrocinador</h5>
+    </div>
+    <div class="modal-body text-center">
+      <label>Nombre</label>
+      <input type="text" formControlName="nombreP" class="form-control" />
+
+      <label>Tipo</label>
+      <input type="text" formControlName="tipoPatrocinador" class="form-control" />
+
+      <div class="modal-footer">
+        <button class="btn btn-primary">agregar</button>
+      </div>
+    </div>
+  </form>
+  </div>
 </ng-template>

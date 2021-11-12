@@ -265,9 +265,18 @@ class EliminarProducto(Resource):
     data = parserProEl.parse_args()
     return Querys.eliminarProducto(data)
 
+
+parserOPaT = reqparse.RequestParser()
+parserOPaT.add_argument("idProy",type=int)
 class ObtenerPatrocinadores(Resource):
   def get(self):
-    return Querys.obtenerPatrocinadores()
+    return Querys.obtenerPatrocinadores(None)
+  def post(self):
+    data = parserOPaT.parse_args()
+    return Querys.obtenerPatrocinadores(data)
+
+
+
 
 parserRP = reqparse.RequestParser()
 parserRP.add_argument('nombreP', type=str, help = 'This field cannot be blank', required = True)

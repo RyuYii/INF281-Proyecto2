@@ -364,12 +364,21 @@ class Querys:
         """
         return insert(query)
 
-    def obtenerPatrocinadores():
-        query = f"""
-            select * 
-            from PATROCINADOR
-        """
-        return select(query)
+    def obtenerPatrocinadores(data):
+        if data is None:
+            query = f"""
+                select * 
+                from PATROCINADOR
+            """
+            return select(query)
+        else:
+            query = f"""
+                select * 
+                from TIENE_P
+                where id_proy = {data["idProy"]}
+            """
+            return select(query)
+
 
     def registrarPatrocinador(data):
         nombreP = data["nombreP"]

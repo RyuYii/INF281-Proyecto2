@@ -73,6 +73,9 @@ export class UserService {
   obtenerPatrocinadores(){
     return this.http.get(`${API_URL}/obtenerPatrocinadores`)
   }
+  obtenerPatrocinadoresProyecto(body: Object){
+    return this.http.post(`${API_URL}/obtenerPatrocinadores`, body)
+  }
 
   registrarPatrocinador(body: Object){
     return this.http.post(`${API_URL}/registrarPatrocinador`, body)

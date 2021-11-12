@@ -30,6 +30,23 @@
     right: 0;
 }
 
+.p-autocomplete-item {
+
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    white-space: nowrap;
+    background-color: gainsboro !important;
+    border-left-style: solid !important;
+    border-bottom-color: white !important;
+    border-bottom-style: inset !important;
+    padding-left: 5px;
+  }
+  
+  .p-autocomplete-item:hover {
+    background-color: whitesmoke !important;
+  }s
+
 #hero .container {
     z-index: 2;
 }

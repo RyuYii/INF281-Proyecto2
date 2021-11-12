@@ -1,21 +1,38 @@
 
-<div class="container">
-    <p>{{idProy}}</p>
+<div class="container pt-4">
     <!-- presentacion -->
-    <div class="row">
-        <div class="col-md-8">
-            <h3>{{proyecto?.tituloProy}}</h3>
-            <h5>{{proyecto?.objetivos}}</h5>
-            <h5>{{proyecto?.mision}}</h5>
-            <h5>{{proyecto?.vision}}</h5>
+    <div class="row justify-content-center">
+
+        <div class="col-md-6">
+            <div class="border-dark border-bottom border-2r">
+                <h3>{{proyecto?.tituloProy}}</h3>
+            </div>
+            <div class="my-2 p-2">
+                <h5> Objetivos:</h5><h6>{{proyecto?.objetivos}}</h6>
+            </div>
+            <div class="my-2 p-2">
+                <h5> Mision:</h5><h6>{{proyecto?.mision}}</h6>
+            </div>
+            <div class="my-2 p-2">
+                <h5> Vision:</h5><h6>{{proyecto?.vision}}</h6>
+            </div>
+            <div class="my-2 p-2">
+                <h5> Descripcion:</h5><h6>{{proyecto?.descripcionProy}}</h6>
+            </div>
         </div>
+
         <div class="col-md-4">
-            <img [src]="decode(proyecto?.banner)" class="img-fluid" alt="...">
+            <figure class="figure">
+                <img [src]="decode(proyecto?.banner)" class="figure-img img-fluid rounded" alt="...">
+                <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
+              </figure>
         </div>
     </div>
     <!-- actividades -->
-    <div class="row" *ngIf="tipoProyecto">
-        <table class="table table-borderless table-hover">
+    <div class="row justify-content-center">
+    <div class="col-md-6" *ngIf="tipoProyecto">
+        <h5>Lista de Actividades</h5>
+        <table class="table table-light table-hover">
             <tr>
                 <th scope="col">Actividad</th>
                 <th scope="col">Descripcion</th>
@@ -32,8 +49,9 @@
 
     </div>
     <!-- productos -->
-    <div class="row" *ngIf="!tipoProyecto">
-        <table class="table table-borderless table-hover">
+    <div class="col-md-6" *ngIf="!tipoProyecto">
+        <h5>Lista de Productos</h5>
+        <table class="table table-light table-hover">
             <tr>
                 <th scope="col">Producto</th>
                 <th scope="col">Descripcion</th>
@@ -51,12 +69,36 @@
     </div>
 
     <!-- patrocinadores -->
-    <div class="row">
-
+    <div class="col-md-4">
+        <h5>Patrocinadores</h5>
+        <ul class="list-group list-group-flush">
+            <li *ngFor="let item of patrocinadores" class="list-group-item">{{item?.nombreP}}</li>
+        </ul>
+    </div>
     </div>
 
     <!-- comentarios -->
-    <div class="row">
-
+    <div class="row p-5 justify-content-center">
+        <div class="col-md-8" *ngIf="comentarios.length == 0">
+            <h6>Aun no hay comentarios...</h6>
+        </div>
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header">
+                  Quote
+                </div>
+                <div class="card-body">
+                  <blockquote class="blockquote mb-0">
+                    <p>A well-known quote, contained in a blockquote element.</p>
+                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-8 border border-dark my-5 rounded-3 p-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Realizar Comentario...</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <button class="btn btn-primary mt-3">Enviar</button>
+        </div>
     </div>
 </div>
