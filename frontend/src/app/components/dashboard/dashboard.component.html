@@ -2,8 +2,17 @@
     <div class="row">
         <h3>Mis Proyectos</h3>
     </div>
-    <div class="row">
-        <button routerLink="/formRegistroProy" class="btn btn-outline-secondary">Agregar nuevo Proyecto</button>
+    <div class="row m-3 p-3">
+      <div class="card">
+        <h5 class="card-header">Consejos</h5>
+        <div class="card-body">
+          <h5 class="card-title">Usted esta habilitado para crear sus proyectos</h5>
+          <p class="card-text">Los proyectos se podran llenar en un formulario</p>
+          <p class="card-text">Asegurese de que tenga la informacion que necesita</p>
+          <p class="card-text">No podra agregar mas items, solo podra modificarlos o eliminarlos, pienselo bien</p>
+          <button routerLink="/formRegistroProy" class="btn btn-outline-secondary">Agregar nuevo Proyecto</button>
+        </div>
+      </div>
     </div>
     <div class="row">
         <div class="card" style="width: 18rem;" *ngFor="let item of listProyectos">
@@ -15,6 +24,8 @@
               </h5>
               <p class="card-text">{{item?.objetivos}}</p>
               <a [routerLink]="['/proyecto', item?.idProy]" class="btn btn-primary">Ver Proyecto</a>
+              <button class="btn btn-danger" (click)="EliminarProyecto(item?.idProy)"><i
+                class="fas fa-trash-alt"></i></button>
             </div>
           </div>
     </div>

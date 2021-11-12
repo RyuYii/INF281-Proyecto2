@@ -153,7 +153,6 @@ class ObtenerProyectosRegistrados(Resource): #parametro null devuelve todos los 
 parserOP = reqparse.RequestParser()
 parserOP.add_argument('idProy', type=int, help = 'This field cannot be blank', required = True)
 class ObtenerProyecto (Resource):
-  @jwt_required
   def post(self):
     data = parserOP.parse_args()
     return Querys.obtenerProyecto(data)
@@ -178,8 +177,6 @@ class RegistrarProyecto(Resource):
     return Querys.registrarProyecto(data)
 
 parserEdProy = reqparse.RequestParser()
-parserEdProy.add_argument('tipo')
-parserEdProy.add_argument('banner')
 parserEdProy.add_argument('fechaFinal')
 parserEdProy.add_argument('fechaInicio')
 parserEdProy.add_argument('titulo')
@@ -192,7 +189,7 @@ class EditarProyecto(Resource):
   @jwt_required
   def post(self):
     data = parserEdProy.parse_args()
-    return Querys.registrarProyecto(data)
+    return Querys.editarProyecto(data)
 
 parserVaProy = reqparse.RequestParser()
 parserVaProy.add_argument('idProy')

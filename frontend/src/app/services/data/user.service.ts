@@ -65,6 +65,10 @@ export class UserService {
   editarProductos(body: Object){
     return this.http.post(`${API_URL}/editarProductos`, body)
   }
+  
+  editarProyecto(body: Object){
+    return this.http.post(`${API_URL}/editarProyecto`, body)
+  }
 
   eliminarProducto(body: Object){
     return this.http.post(`${API_URL}/eliminarProducto`, body)

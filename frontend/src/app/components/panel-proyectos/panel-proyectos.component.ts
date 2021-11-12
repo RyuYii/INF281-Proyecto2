@@ -13,7 +13,7 @@ export class PanelProyectosComponent implements OnInit {
 
   constructor(
     private spinner: NgxSpinnerService,
-    private userService: UserService
+    public userService: UserService,
   ) { }
 
   ngOnInit(): void {
@@ -27,5 +27,7 @@ export class PanelProyectosComponent implements OnInit {
       })
   }
 
-
+  decode(data) {
+    return atob(data);
+  }
 }

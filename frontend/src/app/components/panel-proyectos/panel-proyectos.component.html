@@ -4,17 +4,18 @@
   </div>
   <div class="row row-cols-1 row-cols-md-2 g-4">
     <div class="col" *ngFor="let item of proyectos">
-      <div class="card mb-3 border-dark " style="max-width: 540px; max-height: 206px;">
+      <div class="card mb-3 border-dark " style="max-width: 540px; ">
         <div class="row g-0 ">
           <div class="col-md-4">
-            <img src="assets\img\banerDefault.jpg" class="img-fluid rounded-start" alt="...">
+            <img [src]="decode(item?.banner)" class="img-fluid rounded-start" alt="...">
           </div>
           <div class="col-md-8 ">
-            <div class="card-body tarjeta">
-              <h5 class="card-title">Titulo</h5>
+            <div class="card-body tarjeta" [routerLink]="['/proyecto', item?.idProy]">
+              <h5 class="card-title">{{item?.tituloProy}}</h5>
               <p class="card-text">Descripcion:</p>
-              <p class="card-text truncar">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cupiditate facilis vitae fugit voluptatem dolore veritatis labore cum sapiente praesentium quod, molestiae culpa suscipit nemo eos iusto error aspernatur nobis ea?</p>
-              <p class="card-text"><small class="text-muted">Del - al -</small></p>
+              <p class="card-text truncar">{{item?.descripcionProy}}</p>
+              <p class="card-text"><small class="text-muted">Del {{this.userService.toDate(item?.fechaInicio)}} - al {{this.userService.toDate(item?.fechaInicio)}}</small></p>
+              <p class="card-text"><small class="text-muted">Autor: {{item?.nombre}} {{item?.apellido}}</small></p>
             </div>
           </div>
         </div>

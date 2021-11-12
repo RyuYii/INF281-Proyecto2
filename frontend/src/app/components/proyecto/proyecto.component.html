@@ -1,104 +1,242 @@
-
 <div class="container pt-4">
-    <!-- presentacion -->
-    <div class="row justify-content-center">
+  <!-- presentacion -->
+  <div class="row justify-content-center">
 
-        <div class="col-md-6">
-            <div class="border-dark border-bottom border-2r">
-                <h3>{{proyecto?.tituloProy}}</h3>
-            </div>
-            <div class="my-2 p-2">
-                <h5> Objetivos:</h5><h6>{{proyecto?.objetivos}}</h6>
-            </div>
-            <div class="my-2 p-2">
-                <h5> Mision:</h5><h6>{{proyecto?.mision}}</h6>
-            </div>
-            <div class="my-2 p-2">
-                <h5> Vision:</h5><h6>{{proyecto?.vision}}</h6>
-            </div>
-            <div class="my-2 p-2">
-                <h5> Descripcion:</h5><h6>{{proyecto?.descripcionProy}}</h6>
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <figure class="figure">
-                <img [src]="decode(proyecto?.banner)" class="figure-img img-fluid rounded" alt="...">
-                <figcaption class="figure-caption text-end">A caption for the above image.</figcaption>
-              </figure>
-        </div>
+    <div class="col-md-6">
+      <div class="border-dark border-bottom border-2r">
+        <h3>{{proyecto?.tituloProy}}</h3>
+        <button *ngIf="user == proyecto?.idUsuario" class="btn btn-primary"
+          (click)="openModalFormActividades(templateFormProyecto, 3, null)"><i class="fas fa-edit"></i></button>
+      </div>
+      <div class="my-2 p-2">
+        <h5> Objetivos:</h5>
+        <h6>{{proyecto?.objetivos}}</h6>
+      </div>
+      <div class="my-2 p-2">
+        <h5> Mision:</h5>
+        <h6>{{proyecto?.mision}}</h6>
+      </div>
+      <div class="my-2 p-2">
+        <h5> Vision:</h5>
+        <h6>{{proyecto?.vision}}</h6>
+      </div>
+      <div class="my-2 p-2">
+        <h5> Descripcion:</h5>
+        <h6>{{proyecto?.descripcionProy}}</h6>
+      </div>
     </div>
-    <!-- actividades -->
-    <div class="row justify-content-center">
+
+    <div class="col-md-4">
+      <figure class="figure">
+        <img [src]="decode(proyecto?.banner)" class="figure-img img-fluid rounded" alt="...">
+        <figcaption class="figure-caption text-end">Autor: {{proyecto?.nombre}} {{proyecto?.apellido}}</figcaption>
+      </figure>
+    </div>
+  </div>
+  <!-- actividades -->
+  <div class="row justify-content-center">
     <div class="col-md-6" *ngIf="tipoProyecto">
-        <h5>Lista de Actividades</h5>
-        <table class="table table-light table-hover">
-            <tr>
-                <th scope="col">Actividad</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Horario</th>
-                <!-- <th scope="col">Handle</th> -->
-            </tr>
-            <tr *ngFor="let item of actividades">
-                <td>{{item?.nombreActividad}}</td>
-                <td>{{item?.descripcion}}</td>
-                <td>{{item?.horario}}</td>
-                <!-- <td>@mdo</td> -->
-              </tr>
-          </table>
+      <h5>Lista de Actividades</h5>
+      <table class="table table-light table-hover">
+        <tr>
+          <th scope="col">Actividad</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Horario</th>
+          <th scope="col" *ngIf="user == proyecto?.idUsuario">opciones</th>
+        </tr>
+        <tr *ngFor="let item of actividades">
+          <td>{{item?.nombreActividad}}</td>
+          <td>{{item?.descripcion}}</td>
+          <td>{{item?.horario}}</td>
+          <td *ngIf="user == proyecto?.idUsuario">
+            <button class="btn btn-primary" (click)="openModalFormActividades(templateFormActividades, 1, item)"><i
+                class="fas fa-edit"></i></button>
+            <button class="btn btn-danger" (click)="EliminarActividad(item?.idActividad)"><i
+                class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      </table>
 
     </div>
     <!-- productos -->
     <div class="col-md-6" *ngIf="!tipoProyecto">
-        <h5>Lista de Productos</h5>
-        <table class="table table-light table-hover">
-            <tr>
-                <th scope="col">Producto</th>
-                <th scope="col">Descripcion</th>
-                <th scope="col">Precio</th>
-                <!-- <th scope="col">Handle</th> -->
-            </tr>
-            <tr *ngFor="let item of productos">
-                <td>{{item?.nombreProd}}</td>
-                <td>{{item?.descripcion}}</td>
-                <td>{{item?.precio}}</td>
-                <!-- <td>@mdo</td> -->
-              </tr>
-          </table>
+      <h5>Lista de Productos</h5>
+      <table class="table table-light table-hover">
+        <tr>
+          <th scope="col">Producto</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">Precio</th>
+          <th scope="col" *ngIf="user == proyecto?.idUsuario">opciones</th>
+        </tr>
+        <tr *ngFor="let item of productos">
+          <td>{{item?.nombreProd}}</td>
+          <td>{{item?.descripcion}}</td>
+          <td>{{item?.precio}}</td>
+          <td *ngIf="user == proyecto?.idUsuario">
+            <button class="btn btn-primary" (click)="openModalFormActividades(templateFormProductos, 2, item)"><i
+                class="fas fa-edit"></i></button>
+            <button class="btn btn-danger" (click)="EliminarProducto(item?.idCat)"><i
+                class="fas fa-trash-alt"></i></button>
+          </td>
+        </tr>
+      </table>
 
     </div>
 
     <!-- patrocinadores -->
     <div class="col-md-4">
-        <h5>Patrocinadores</h5>
-        <ul class="list-group list-group-flush">
-            <li *ngFor="let item of patrocinadores" class="list-group-item">{{item?.nombreP}}</li>
-        </ul>
+      <h5>Patrocinadores</h5>
+      <ul class="list-group list-group-flush">
+        <li *ngFor="let item of patrocinadores" class="list-group-item">{{item?.nombreP}}</li>
+      </ul>
     </div>
+  </div>
+
+  <!-- comentarios -->
+  <div class="row p-5 justify-content-center border my-3 rounded-3" *ngIf="!admin">
+    <div class="col-md-8">
+      <h4>Comentarios</h4>
     </div>
 
-    <!-- comentarios -->
-    <div class="row p-5 justify-content-center">
-        <div class="col-md-8" *ngIf="comentarios.length == 0">
-            <h6>Aun no hay comentarios...</h6>
-        </div>
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">
-                  Quote
-                </div>
-                <div class="card-body">
-                  <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
-                  </blockquote>
-                </div>
-              </div>
-        </div>
-        <div class="col-md-8 border border-dark my-5 rounded-3 p-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Realizar Comentario...</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-            <button class="btn btn-primary mt-3">Enviar</button>
-        </div>
+    <div class="col-md-8" *ngIf="comentarios.length == 0">
+      <h6>Aun no hay comentarios...</h6>
     </div>
+    <div class="col-md-8 mb-3" *ngFor="let item of comentarios">
+      <div class="card">
+        <div class="card-header">
+          {{item?.nombre}} {{item?.apellido}}
+        </div>
+        <div class="card-body">
+          <blockquote class="blockquote mb-0">
+            <p>{{item?.comentario}}</p>
+            <footer class="blockquote-footer">Fecha {{this.userService.toDate(item?.fechaComentario)}}</footer>
+          </blockquote>
+        </div>
+        <div class="card-footer" *ngIf="user == item?.idUsuario">
+          <button class="btn btn-danger" (click)="eliminarComentario(item?.idcomentario)"><i
+              class="fas fa-trash-alt"></i> Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 border border-dark my-5 rounded-3 p-3">
+      <form (ngSubmit)="enviarComentario()" [formGroup]="newComment">
+        <label class="form-label">Realizar Comentario...</label>
+        <textarea class="form-control" formControlName="comentario" rows="3"></textarea>
+        <button class="btn btn-primary mt-3">Enviar</button>
+      </form>
+    </div>
+  </div>
 </div>
+
+
+<ng-template #templateFormActividades>
+  <div class="row justify-content-center">
+    <form class="col-md-8" (ngSubmit)="EditarActividad()" [formGroup]="newAct">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registrar Actividad Cultural</h5>
+      </div>
+      <div class="modal-body text-center">
+        <label>Nombre</label>
+        <input type="text" formControlName="title" class="form-control" />
+
+        <label>Descripcion</label>
+        <input type="text" formControlName="desc" class="form-control" />
+
+        <label>Horario</label>
+        <input type="time" formControlName="horario" class="form-control" />
+
+        <div class="modal-footer">
+            <button class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #templateFormProductos>
+  <div class="row justify-content-center">
+    <form class="col-md-8" (ngSubmit)="edtitarProducto()" [formGroup]="newProd">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registrar Producto o Servicio</h5>
+      </div>
+      <div class="modal-body text-center">
+        <label>Nombre</label>
+        <input type="text" formControlName="title" class="form-control" />
+
+        <label>Descripcion</label>
+        <input type="text" formControlName="desc" class="form-control" />
+
+        <label>Precio</label>
+        <input type="number" formControlName="precio" class="form-control" />
+
+        <div class="modal-footer">
+            <button class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>
+
+<ng-template #templateFormProyecto>
+  <div class="row justify-content-center">
+    <form class="col-md-8" (ngSubmit)="editarProyecto()" [formGroup]="newProyectForm">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Registrar Producto o Servicio</h5>
+      </div>
+      <div class="modal-body text-center">
+        <label>Título</label>
+        <input type="text" formControlName="titulo" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.titulo.errors }" />
+        <div *ngIf="form1.titulo.errors" class="invalid-feedback">
+          <div *ngIf="form1.titulo.errors.required">Debe introducir un Título</div>
+        </div>
+
+        <label>Objetivo</label>
+        <input type="text" formControlName="objetivo" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.objetivo.errors }" />
+        <div *ngIf="form1.objetivo.errors" class="invalid-feedback">
+          <div *ngIf="form1.objetivo.errors.required">Debe introducir un objetivo</div>
+        </div>
+
+        <label>Misión</label>
+        <input type="text" formControlName="mision" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.mision.errors }" />
+        <div *ngIf="form1.mision.errors" class="invalid-feedback">
+          <div *ngIf="form1.mision.errors.required">Debe introducir una misión</div>
+        </div>
+
+        <label>Visión</label>
+        <input type="text" formControlName="vision" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.vision.errors }" />
+        <div *ngIf="form1.vision.errors" class="invalid-feedback">
+          <div *ngIf="form1.vision.errors.required">Debe introducir una visión</div>
+        </div>
+
+        <label>Descripción</label>
+        <textarea formControlName="descripcionProy" class="form-control" cols="30" rows="2"
+          [ngClass]="{ 'is-invalid': form1.descripcionProy.errors }"></textarea>
+        <div *ngIf="form1.descripcionProy.errors" class="invalid-feedback">
+          <div *ngIf="form1.descripcionProy.errors.required">Debe introducir una descripción del proyecto</div>
+        </div>
+        <!--fechas-->
+        <label>Fecha Inicio</label>
+        <input type="date" formControlName="fechaInicio" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.fechaInicio.errors }" />
+        <div *ngIf="form1.fechaInicio.errors" class="invalid-feedback">
+          <div *ngIf="form1.fechaInicio.errors.required">Debe introducir una Fecha de Inicio</div>
+        </div>
+
+        <label>Fecha Final</label>
+        <input type="date" formControlName="fechaFinal" class="form-control"
+          [ngClass]="{ 'is-invalid': form1.fechaFinal.errors }" />
+        <div *ngIf="form1.fechaFinal.errors" class="invalid-feedback">
+          <div *ngIf="form1.fechaFinal.errors.required">Debe introducir una Fecha Final</div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn btn-primary">Guardar Cambios</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</ng-template>

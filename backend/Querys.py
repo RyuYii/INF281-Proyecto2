@@ -209,8 +209,10 @@ class Querys:
     def obtenerProyecto(data):
         idProy = data["idProy"]
         query = f"""
-            select * 
-            from PROYECTO 
+            select PROYECTO.*, PERSONA.* 
+            from PROYECTO
+            left join USUARIO on USUARIO.id_usuario = PROYECTO.id_usuario
+            left join PERSONA on PERSONA.ci = USUARIO.ci
             where id_proy = {idProy}
         """
         return select(query)
@@ -271,11 +273,27 @@ class Querys:
         query = f"""
             DELETE FROM PROYECTO WHERE id_proy = {data["idProy"]}
         """
+        step = insert(query)
+        if step['code'] == 0:
+            return step
+        query = f"""
+            DELETE FROM FASE_PROYECTO WHERE id_proy = {data["idProy"]}
+        """
         #completar, se tienen que borrar todo lo relacionado con el proyecto
         return insert(query)
 
     def editarProyecto(data):
-        query = f""""""
+        query = f"""
+            UPDATE PROYECTO SET 
+                titulo_proy='{data['titulo']}',
+                mision='{data['mision']}',
+                vision='{data['vision']}',
+                objetivos='{data['objetivo']}',
+                descripcion_proy='{data['descripcionProy']}',
+                fecha_inicio={f"'{data['fechaInicio']}'" if not data['fechaInicio'] is None else 'null'}, 
+                fecha_cierre={f"'{data['fechaFinal']}'" if not data['fechaFinal'] is None else 'null'}
+            WHERE id_proy={data['idProy']}
+        """
         return insert(query)
     
     def valorarProyecto(data):
@@ -373,8 +391,9 @@ class Querys:
             return select(query)
         else:
             query = f"""
-                select * 
+                select PATROCINADOR.* 
                 from TIENE_P
+                left join PATROCINADOR on TIENE_P.id_patrocinador = PATROCINADOR.id_patrocinador
                 where id_proy = {data["idProy"]}
             """
             return select(query)

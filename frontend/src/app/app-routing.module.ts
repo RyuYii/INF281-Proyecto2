@@ -25,7 +25,7 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent},
   { path: 'admin', component: AdminComponent, canActivate: [RootGuard]},
   { path: 'formRegistroProy', component: FormularioProyectoComponent, canActivate: [RootGuard]},
-  { path: 'proyecto/:idProyecto', component: ProyectoComponent, canActivate: [RootGuard]}
+  { path: 'proyecto/:idProyecto', component: ProyectoComponent}
 ];
 
 @NgModule({
